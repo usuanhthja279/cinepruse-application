@@ -12,6 +12,7 @@ import concurrent.futures
 import contextlib
 import json
 import os
+import subprocess
 import sys
 import threading
 import time
@@ -185,6 +186,8 @@ def main() -> int:
     retry_counts = {"scheduled": 0, "recovered": 0, "exhausted": 0, "permanent": 0}
     retry_categories: dict[str, int] = {}
     last_retry_summary = time.monotonic()
+    dashboard_dirty = False
+    last_dashboard_publish = 0.0
     verified_report = None
     with concurrent.futures.ThreadPoolExecutor(max_workers=5, thread_name_prefix="district") as pool:
         try:
@@ -216,6 +219,8 @@ def main() -> int:
                     if not future.done():
                         continue
                     city, reason = running.pop(future)
+                    if reason != "pre_show":
+                        dashboard_dirty = True
                     if reason == "pre_show":
                         busy_final_cities.discard(city)
                     try:
@@ -322,6 +327,22 @@ def main() -> int:
                         if hourly_active >= 4:
                             break
                 time.sleep(1)
+                if dashboard_dirty and time.monotonic() - last_dashboard_publish >= 300:
+                    exporter = Path(__file__).with_name("export_public_hourly_runs.py")
+                    result = subprocess.run(
+                        [sys.executable, str(exporter), "--date", target_date.isoformat(),
+                         "--store", str(args.store.resolve())],
+                        cwd=str(Path(__file__).resolve().parents[1]),
+                        capture_output=True, text=True, check=False,
+                    )
+                    if result.returncode == 0:
+                        print(f"[{datetime.now(IST).isoformat(timespec='seconds')}] Dashboard data refreshed: "
+                              f"{result.stdout.strip()}", flush=True)
+                        dashboard_dirty = False
+                    else:
+                        print(f"[{datetime.now(IST).isoformat(timespec='seconds')}] Dashboard refresh failed: "
+                              f"{result.stderr.strip() or result.stdout.strip()}", file=sys.stderr, flush=True)
+                    last_dashboard_publish = time.monotonic()
                 if time.monotonic() - last_retry_summary >= 60:
                     emit_retry_summary(retry_counts, retry_categories)
                     last_retry_summary = time.monotonic()
@@ -334,6 +355,19 @@ def main() -> int:
             db.close()
             sys.stdout, sys.stderr = original_out, original_err
             log_file.close()
+    if dashboard_dirty:
+        exporter = Path(__file__).with_name("export_public_hourly_runs.py")
+        result = subprocess.run(
+            [sys.executable, str(exporter), "--date", target_date.isoformat(),
+             "--store", str(args.store.resolve())],
+            cwd=str(Path(__file__).resolve().parents[1]),
+            capture_output=True, text=True, check=False,
+        )
+        if result.returncode == 0:
+            print(f"Final dashboard data refresh: {result.stdout.strip()}", flush=True)
+        else:
+            print(f"Final dashboard refresh failed: {result.stderr.strip() or result.stdout.strip()}",
+                  file=sys.stderr, flush=True)
     return 2 if failure.is_set() else 0
 
 

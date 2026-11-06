@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import csv
 import json
+import argparse
 import sqlite3
+import sys
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -19,9 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STORE = Path(__file__).resolve().parent / "collector_data"
 DB_PATH = STORE / "smart_collector.sqlite"
 TARGETS_PATH = STORE / "city_targets.json"
-OUT = ROOT / "dashboard" / "data" / "district_hourly_runs_2026-11-07"
 IST = ZoneInfo("Asia/Kolkata")
-SERVICE_DATE = "2026-11-07"
 MOVIE_ID = "176276"
 
 CITY_FIELDS = ["service_date_ist", "collection_hour_ist", "display_name", "city_slug",
@@ -67,7 +67,8 @@ def capture_local_time(value: str) -> str:
     return datetime.fromisoformat(value).astimezone(IST).isoformat(timespec="seconds")
 
 
-def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dict:
+def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int,
+                service_date: str, out: Path) -> dict:
     all_caps = conn.execute("""
         SELECT id,city,actual_city,observed_at_utc,status,show_count,error,reason
         FROM captures WHERE movie_id=? ORDER BY id
@@ -75,9 +76,9 @@ def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dic
     hour_caps: dict[str, list[sqlite3.Row]] = defaultdict(list)
     for cap in all_caps:
         local = datetime.fromisoformat(cap["observed_at_utc"]).astimezone(IST)
-        if (local.date().isoformat() == SERVICE_DATE and local.hour == hour
+        if (local.date().isoformat() == service_date and local.hour == hour
                 and cap["status"] in {"ok", "error"}):
-            if cap["reason"] == "hourly":
+            if cap["reason"] in {"baseline", "hourly", "retry"}:
                 hour_caps[cap["city"]].append(cap)
 
     selected: dict[str, sqlite3.Row] = {}
@@ -97,7 +98,7 @@ def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dic
             latest = None
             status = "not_collected_this_hour"
         coverage.append({
-            "service_date_ist": SERVICE_DATE,
+            "service_date_ist": service_date,
             "collection_hour_ist": f"{hour:02d}:00",
             "display_name": target.get("display_name", slug),
             "city_slug": slug,
@@ -108,7 +109,7 @@ def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dic
             "show_count": latest["show_count"] if latest and latest["status"] == "ok" else "",
             "error_category": error_category(latest["error"]) if latest and latest["status"] != "ok" else "",
         })
-    write_csv(OUT / f"city_coverage_{SERVICE_DATE}_{hour:02d}00_IST.csv", CITY_FIELDS, coverage)
+    write_csv(out / f"city_coverage_{service_date}_{hour:02d}00_IST.csv", CITY_FIELDS, coverage)
 
     feed_rows: list[dict] = []
     session_rows: dict[str, list[dict]] = defaultdict(list)
@@ -118,11 +119,11 @@ def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dic
                    total_seats,available_seats,unavailable_seats,estimated_gross_inr,pricing_complete
             FROM observations WHERE capture_id=? AND substr(show_datetime_ist,1,10)=?
             ORDER BY show_datetime_ist,cinema_name
-        """, (capture["id"], SERVICE_DATE)).fetchall()
+        """, (capture["id"], service_date)).fetchall()
         captured_at = capture_local_time(capture["observed_at_utc"])
         for row in obs:
             item = {
-                "service_date_ist": SERVICE_DATE,
+                "service_date_ist": service_date,
                 "collection_hour_ist": f"{hour:02d}:00",
                 "source_city_slug": slug,
                 "actual_city": capture["actual_city"] or "",
@@ -140,21 +141,21 @@ def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dic
             feed_rows.append(item)
             session_rows[row["session_key"]].append(item)
     feed_rows.sort(key=lambda x: (x["show_datetime_ist"], x["source_city_slug"], x["cinema_name"]))
-    write_csv(OUT / f"city_feed_screenings_{SERVICE_DATE}_{hour:02d}00_IST.csv", SHOW_FIELDS, feed_rows)
+    write_csv(out / f"city_feed_screenings_{service_date}_{hour:02d}00_IST.csv", SHOW_FIELDS, feed_rows)
 
     unique_rows: list[dict] = []
     for session_key, rows in session_rows.items():
         latest = max(rows, key=lambda x: x["captured_at_ist"])
         unique_rows.append({**latest, "source_city_feed_count": len({x["source_city_slug"] for x in rows})})
     unique_rows.sort(key=lambda x: (x["show_datetime_ist"], x["cinema_name"]))
-    write_csv(OUT / f"unique_screenings_{SERVICE_DATE}_{hour:02d}00_IST.csv", UNIQUE_FIELDS, unique_rows)
+    write_csv(out / f"unique_screenings_{service_date}_{hour:02d}00_IST.csv", UNIQUE_FIELDS, unique_rows)
 
     captured_n = sum(row["capture_status"] == "captured" for row in coverage)
     failed_n = sum(row["capture_status"] == "failed" for row in coverage)
     not_collected_n = sum(row["capture_status"] == "not_collected_this_hour" for row in coverage)
     revenue = sum(float(row["confirmed_revenue_inr"] or 0) for row in unique_rows)
     return {
-        "service_date_ist": SERVICE_DATE,
+        "service_date_ist": service_date,
         "collection_hour_ist": f"{hour:02d}:00",
         "scheduled_reason": "hourly",
         "target_city_feeds": len(targets),
@@ -174,23 +175,60 @@ def export_hour(conn: sqlite3.Connection, targets: list[dict], hour: int) -> dic
 
 
 def main() -> None:
-    if not DB_PATH.exists():
-        raise FileNotFoundError(DB_PATH)
-    target_data = json.loads(TARGETS_PATH.read_text(encoding="utf-8"))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--date", required=True, help="Collector service date in YYYY-MM-DD")
+    parser.add_argument("--store", type=Path, default=STORE)
+    parser.add_argument("--output", type=Path, default=None)
+    args = parser.parse_args()
+    service_date = datetime.fromisoformat(args.date).date().isoformat()
+    db_path = args.store / "smart_collector.sqlite"
+    targets_path = args.store / "city_targets.json"
+    out = args.output or ROOT / "dashboard" / "data" / f"district_hourly_runs_{service_date}"
+    if not db_path.exists():
+        raise FileNotFoundError(db_path)
+    target_data = json.loads(targets_path.read_text(encoding="utf-8"))
     targets = target_data.get("cities", [])
-    conn = sqlite3.connect(f"file:{DB_PATH.resolve().as_posix()}?mode=ro", uri=True)
+    conn = sqlite3.connect(f"file:{db_path.resolve().as_posix()}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     try:
-        summaries = [export_hour(conn, targets, hour) for hour in (1, 2, 3, 4)]
+        hours = sorted({datetime.fromisoformat(row[0]).astimezone(IST).hour
+                        for row in conn.execute("SELECT observed_at_utc FROM captures WHERE movie_id=? AND status IN ('ok','error') AND reason IN ('baseline','hourly','retry')", (MOVIE_ID,))
+                        if datetime.fromisoformat(row[0]).astimezone(IST).date().isoformat() == service_date})
+        summaries = [export_hour(conn, targets, hour, service_date, out) for hour in hours]
     finally:
         conn.close()
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "run_summaries.json").write_text(
-        json.dumps({"movie": "Ramayana", "movie_id": MOVIE_ID, "service_date_ist": SERVICE_DATE,
-                    "timezone": "Asia/Kolkata", "runs": summaries}, indent=2, ensure_ascii=False) + "\n",
+    out.mkdir(parents=True, exist_ok=True)
+    comparison_files = []
+    sys.path.insert(0, str(ROOT / "dashboard"))
+    from compare_hourly_snapshots import build_from_files
+    for previous, current in zip(summaries, summaries[1:]):
+        prev_hour = previous["collection_hour_ist"].replace(":", "")
+        curr_hour = current["collection_hour_ist"].replace(":", "")
+        name = f"matched_delta_{service_date}_{prev_hour}_{curr_hour}.json"
+        result = build_from_files(
+            out / f"unique_screenings_{service_date}_{prev_hour}_IST.csv",
+            out / f"unique_screenings_{service_date}_{curr_hour}_IST.csv",
+            movie_id=MOVIE_ID,
+            previous_coverage_path=out / f"city_coverage_{service_date}_{prev_hour}_IST.csv",
+            current_coverage_path=out / f"city_coverage_{service_date}_{curr_hour}_IST.csv",
+        )
+        (out / name).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        comparison_files.append(name)
+    generated = datetime.now(IST).isoformat(timespec="seconds")
+    summary_path = out / "run_summaries.json"
+    summary_path.write_text(
+        json.dumps({"movie": "Ramayana", "movie_id": MOVIE_ID, "service_date_ist": service_date,
+                    "timezone": "Asia/Kolkata", "generated_at_ist": generated,
+                    "runs": summaries, "comparisons": comparison_files}, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    print(json.dumps(summaries, indent=2, ensure_ascii=False))
+    manifest = ROOT / "dashboard" / "data" / "district_hourly_runs_latest.json"
+    temp_manifest = manifest.with_suffix(".json.tmp")
+    temp_manifest.write_text(json.dumps({"service_date_ist": service_date,
+                                         "directory": out.relative_to(ROOT / "dashboard").as_posix(),
+                                         "generated_at_ist": generated}, ensure_ascii=False) + "\n", encoding="utf-8")
+    temp_manifest.replace(manifest)
+    print(f"Published {len(summaries)} hourly snapshots for {service_date} at {generated}", flush=True)
 
 
 if __name__ == "__main__":

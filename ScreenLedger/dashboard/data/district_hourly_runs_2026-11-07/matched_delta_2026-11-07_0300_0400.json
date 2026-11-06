@@ -10,10 +10,10 @@
       50,
       70
     ],
-    "matched_future_session_count": 15047,
+    "matched_future_session_count": 15050,
     "matched_session_key_changed_count": 0,
-    "new_session_count": 13,
-    "new_session_count_from_newly_covered_cities": 3,
+    "new_session_count": 10,
+    "new_session_count_from_newly_covered_cities": 0,
     "disappeared_session_count": 0,
     "disappeared_count_from_lost_coverage": 0,
     "capacity_changed_count": 13,
@@ -33,11 +33,11 @@
     "confirmed_revenue_change_inr": {
       "available": false,
       "value": null,
-      "comparable_session_count": 14977,
+      "comparable_session_count": 14980,
       "incomplete_pricing_session_count": 70
     },
     "capture_interval_minutes": {
-      "min": 59.88,
+      "min": 59.45,
       "median": 60.15,
       "max": 60.25
     }
@@ -45,8 +45,8 @@
   "coverage": {
     "previous": {
       "target_city_feed_count": 1321,
-      "captured_city_feed_count": 1010,
-      "failed_city_feed_count": 2,
+      "captured_city_feed_count": 1012,
+      "failed_city_feed_count": 0,
       "not_collected_city_feed_count": 309,
       "other_status_counts": {},
       "capture_window_utc": {
@@ -56,8 +56,8 @@
     },
     "current": {
       "target_city_feed_count": 1321,
-      "captured_city_feed_count": 1011,
-      "failed_city_feed_count": 1,
+      "captured_city_feed_count": 1012,
+      "failed_city_feed_count": 0,
       "not_collected_city_feed_count": 309,
       "other_status_counts": {},
       "capture_window_utc": {
@@ -65,17 +65,11 @@
         "end": "2026-11-06T22:39:14+00:00"
       }
     },
-    "newly_covered_city_feed_count": 2,
-    "no_longer_captured_city_feed_count": 1,
-    "newly_covered_city_slugs": [
-      "alappuzha",
-      "allagadda"
-    ],
-    "no_longer_captured_city_slugs": [
-      "panruti"
-    ],
+    "newly_covered_city_feed_count": 0,
+    "no_longer_captured_city_feed_count": 0,
+    "newly_covered_city_slugs": [],
+    "no_longer_captured_city_slugs": [],
     "new_session_city_slugs": [
-      "alappuzha",
       "guntur",
       "nakodar",
       "vadodara"

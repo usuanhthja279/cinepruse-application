@@ -870,10 +870,10 @@
 2026-11-07,02:00,North Paravur,north-paravur,captured,5837,2026-11-07T02:05:59+05:30,1,33,
 2026-11-07,02:00,Nurpur,nurpur,captured,5838,2026-11-07T02:05:59+05:30,1,16,
 2026-11-07,02:00,Nuziveedu,nuziveedu,captured,5839,2026-11-07T02:05:59+05:30,1,24,
-2026-11-07,02:00,Omalur,omalur,failed,5844,2026-11-07T02:06:01+05:30,1,,other_capture_error
-2026-11-07,02:00,Ongole,ongole,failed,5843,2026-11-07T02:06:01+05:30,1,,other_capture_error
-2026-11-07,02:00,Ottapalam,ottapalam,failed,5842,2026-11-07T02:06:01+05:30,1,,other_capture_error
-2026-11-07,02:00,P Dharmavaram,p-dharmavaram,failed,5841,2026-11-07T02:06:01+05:30,1,,other_capture_error
+2026-11-07,02:00,Omalur,omalur,captured,5910,2026-11-07T02:06:34+05:30,2,2,
+2026-11-07,02:00,Ongole,ongole,captured,5909,2026-11-07T02:06:34+05:30,2,21,
+2026-11-07,02:00,Ottapalam,ottapalam,captured,5912,2026-11-07T02:06:34+05:30,2,11,
+2026-11-07,02:00,P Dharmavaram,p-dharmavaram,captured,5911,2026-11-07T02:06:34+05:30,2,22,
 2026-11-07,02:00,Padampur,padampur,captured,5848,2026-11-07T02:06:02+05:30,1,27,
 2026-11-07,02:00,Paithan,paithan,not_collected_this_hour,,,0,,
 2026-11-07,02:00,Pala,pala,captured,5847,2026-11-07T02:06:02+05:30,1,5,
@@ -906,12 +906,12 @@
 2026-11-07,02:00,Pandharpur,pandharpur,not_collected_this_hour,,,0,,
 2026-11-07,02:00,Pandikkad,pandikkad,captured,5871,2026-11-07T02:06:14+05:30,1,7,
 2026-11-07,02:00,Panipat,panipat,captured,5872,2026-11-07T02:06:14+05:30,1,59,
-2026-11-07,02:00,Panruti,panruti,failed,5873,2026-11-07T02:06:16+05:30,1,,other_capture_error
-2026-11-07,02:00,Pantnagar,pantnagar,failed,5876,2026-11-07T02:06:16+05:30,1,,other_capture_error
+2026-11-07,02:00,Panruti,panruti,captured,5937,2026-11-07T02:06:48+05:30,2,10,
+2026-11-07,02:00,Pantnagar,pantnagar,captured,5939,2026-11-07T02:06:48+05:30,2,47,
 2026-11-07,02:00,Paonta Sahib,paonta-sahib,not_collected_this_hour,,,0,,
 2026-11-07,02:00,Papanasam,papanasam,not_collected_this_hour,,,0,,
-2026-11-07,02:00,Paralakhemundi,paralakhemundi,failed,5874,2026-11-07T02:06:16+05:30,1,,other_capture_error
-2026-11-07,02:00,Paramathivelur,paramathivelur,failed,5875,2026-11-07T02:06:16+05:30,1,,other_capture_error
+2026-11-07,02:00,Paralakhemundi,paralakhemundi,captured,5938,2026-11-07T02:06:48+05:30,2,4,
+2026-11-07,02:00,Paramathivelur,paramathivelur,captured,5936,2026-11-07T02:06:48+05:30,2,4,
 2026-11-07,02:00,Paratwada,paratwada,not_collected_this_hour,,,0,,
 2026-11-07,02:00,Parawada,parawada,captured,5880,2026-11-07T02:06:17+05:30,1,59,
 2026-11-07,02:00,Parigi,parigi,captured,5877,2026-11-07T02:06:17+05:30,1,8,

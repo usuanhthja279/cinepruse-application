@@ -10,12 +10,12 @@
       50,
       70
     ],
-    "matched_future_session_count": 15010,
+    "matched_future_session_count": 15030,
     "matched_session_key_changed_count": 0,
-    "new_session_count": 18,
-    "new_session_count_from_newly_covered_cities": 17,
-    "disappeared_session_count": 8,
-    "disappeared_count_from_lost_coverage": 3,
+    "new_session_count": 1,
+    "new_session_count_from_newly_covered_cities": 0,
+    "disappeared_session_count": 5,
+    "disappeared_count_from_lost_coverage": 0,
     "capacity_changed_count": 32,
     "ambiguous_identity_count": 0,
     "session_key_collision_count": 0,
@@ -33,20 +33,20 @@
     "confirmed_revenue_change_inr": {
       "available": false,
       "value": null,
-      "comparable_session_count": 14944,
-      "incomplete_pricing_session_count": 66
+      "comparable_session_count": 14960,
+      "incomplete_pricing_session_count": 70
     },
     "capture_interval_minutes": {
-      "min": 59.77,
+      "min": 59.43,
       "median": 59.95,
-      "max": 60.1
+      "max": 60.42
     }
   },
   "coverage": {
     "previous": {
       "target_city_feed_count": 1321,
-      "captured_city_feed_count": 1004,
-      "failed_city_feed_count": 8,
+      "captured_city_feed_count": 1012,
+      "failed_city_feed_count": 0,
       "not_collected_city_feed_count": 309,
       "other_status_counts": {},
       "capture_window_utc": {
@@ -56,8 +56,8 @@
     },
     "current": {
       "target_city_feed_count": 1321,
-      "captured_city_feed_count": 1010,
-      "failed_city_feed_count": 2,
+      "captured_city_feed_count": 1012,
+      "failed_city_feed_count": 0,
       "not_collected_city_feed_count": 309,
       "other_status_counts": {},
       "capture_window_utc": {
@@ -65,28 +65,14 @@
         "end": "2026-11-06T21:39:03+00:00"
       }
     },
-    "newly_covered_city_feed_count": 8,
-    "no_longer_captured_city_feed_count": 2,
-    "newly_covered_city_slugs": [
-      "omalur",
-      "ongole",
-      "ottapalam",
-      "p-dharmavaram",
-      "panruti",
-      "pantnagar",
-      "paralakhemundi",
-      "paramathivelur"
-    ],
-    "no_longer_captured_city_slugs": [
-      "alappuzha",
-      "allagadda"
-    ],
+    "newly_covered_city_feed_count": 0,
+    "no_longer_captured_city_feed_count": 0,
+    "newly_covered_city_slugs": [],
+    "no_longer_captured_city_slugs": [],
     "new_session_city_slugs": [
-      "bhopal",
-      "ongole"
+      "bhopal"
     ],
     "disappeared_session_city_slugs": [
-      "alappuzha",
       "bhopal",
       "surat",
       "ulhasnagar",

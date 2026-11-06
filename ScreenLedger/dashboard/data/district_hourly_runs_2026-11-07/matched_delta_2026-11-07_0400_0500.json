@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "movie_id": "176276",
+  "service_date_ist": "2026-11-07",
+  "comparison": {
+    "previous_hour_ist": "04:00",
+    "current_hour_ist": "05:00",
+    "target_interval_minutes": 60,
+    "allowed_interval_minutes": [
+      50,
+      70
+    ],
+    "matched_future_session_count": 14724,
+    "matched_session_key_changed_count": 0,
+    "new_session_count": 1,
+    "new_session_count_from_newly_covered_cities": 0,
+    "disappeared_session_count": 336,
+    "disappeared_count_from_lost_coverage": 332,
+    "capacity_changed_count": 13,
+    "ambiguous_identity_count": 0,
+    "session_key_collision_count": 0,
+    "capture_interval_excluded_count": 0,
+    "already_started_excluded_count": 0,
+    "invalid_previous_rows": 9,
+    "invalid_current_rows": 9,
+    "duplicate_previous_rows_collapsed": 0,
+    "duplicate_current_rows_collapsed": 0,
+    "seat_change": {
+      "positive_booked_plus_blocked_seats": 838,
+      "released_or_corrected_seats": 157,
+      "net_booked_plus_blocked_seat_change": 681
+    },
+    "confirmed_revenue_change_inr": {
+      "available": false,
+      "value": null,
+      "comparable_session_count": 14655,
+      "incomplete_pricing_session_count": 69
+    },
+    "capture_interval_minutes": {
+      "min": 50.9,
+      "median": 60.75,
+      "max": 60.87
+    }
+  },
+  "coverage": {
+    "previous": {
+      "target_city_feed_count": 1321,
+      "captured_city_feed_count": 1012,
+      "failed_city_feed_count": 0,
+      "not_collected_city_feed_count": 309,
+      "other_status_counts": {},
+      "capture_window_utc": {
+        "start": "2026-11-06T22:30:02+00:00",
+        "end": "2026-11-06T22:39:14+00:00"
+      }
+    },
+    "current": {
+      "target_city_feed_count": 1321,
+      "captured_city_feed_count": 931,
+      "failed_city_feed_count": 0,
+      "not_collected_city_feed_count": 390,
+      "other_status_counts": {},
+      "capture_window_utc": {
+        "start": "2026-11-06T23:30:02+00:00",
+        "end": "2026-11-06T23:39:20+00:00"
+      }
+    },
+    "newly_covered_city_feed_count": 0,
+    "no_longer_captured_city_feed_count": 81,
+    "newly_covered_city_slugs": [],
+    "no_longer_captured_city_slugs": [
+      "tumakuru",
+      "tumkur",
+      "tundla",
+      "tuni",
+      "tuticorin",
+      "udaipur",
+      "udumalaippettai",
+      "udumalpet",
+      "ujhani",
+      "ujjain",
+      "ulhasnagar",
+      "ulundurpet",
+      "umbergaon",
+      "umreth",
+      "una",
+      "una-gujarat",
+      "undavalli",
+      "unnao",
+      "uppada",
+      "uthangarai",
+      "uthukottai",
+      "vadakara",
+      "vadakkencherry",
+      "vadalur",
+      "vadipatti",
+      "vadodara",
+      "vaitheeswarankoil",
+      "valanchery",
+      "valapadi",
+      "valigonda",
+      "valsad",
+      "vandavasi",
+      "vaniyambadi",
+      "vapi",
+      "varadium",
+      "varanasi",
+      "vardhanapeta",
+      "varkala",
+      "vasai",
+      "velangi",
+      "velanthavalam",
+      "vellakoil",
+      "vellichanthai",
+      "vellore",
+      "vemulawada",
+      "venkatagiri",
+      "venkatapuram",
+      "veraval",
+      "vettaikaranpudur",
+      "vidisha",
+      "vijapur",
+      "vijayamangalam",
+      "vijayapura",
+      "vijayawada",
+      "vinjamur",
+      "vinukonda",
+      "virudhachalam",
+      "vissannapeta",
+      "vizag",
+      "vizianagaram",
+      "vrindavan",
+      "vuyyuru",
+      "vyara",
+      "wadakkancherry",
+      "wanaparthy",
+      "wandoor",
+      "wani",
+      "warangal",
+      "warora",
+      "washim",
+      "wayanad",
+      "wyra",
+      "yadagirigutta",
+      "yamunanagar",
+      "yelamanchili",
+      "yeleswaram",
+      "yellandu",
+      "yemmiganur",
+      "yerraguntla",
+      "zirakpur",
+      "ziro"
+    ],
+    "new_session_city_slugs": [
+      "raipur"
+    ],
+    "disappeared_session_city_slugs": [
+      "kanpur",
+      "udaipur",
+      "ujjain",
+      "una-gujarat",
+      "undavalli",
+      "unnao",
+      "vadodara",
+      "valsad",
+      "vardhanapeta",
+      "vasai",
+      "veraval",
+      "vidisha",
+      "vijayapura",
+      "vijayawada",
+      "vizag",
+      "wandoor",
+      "warora",
+      "washim",
+      "yellandu",
+      "yemmiganur",
+      "ziro"
+    ]
+  },
+  "quality": {
+    "session_matching": "movie_id + venue + showtime + capacity; session_key used as a fast path",
+    "current_show_filter": "showtime must be later than its current snapshot capture time",
+    "coverage_warning": "Snapshot totals cannot be interpreted as last-hour sales when city-feed coverage differs.",
+    "revenue_warning": "Revenue change is unavailable unless every matched session has complete confirmed-revenue values at both captures.",
+    "previous_data_issues": {
+      "invalid_seat_counts": 9
+    },
+    "current_data_issues": {
+      "invalid_seat_counts": 9
+    },
+    "comparison_exclusions": {
+      "capacity_changed": 13
+    },
+    "duplicate_unique_session_keys": {
+      "previous_count": 0,
+      "current_count": 0
+    }
+  },
+  "source_files": {
+    "previous_unique_screenings_csv": "unique_screenings_2026-11-07_0400_IST.csv",
+    "current_unique_screenings_csv": "unique_screenings_2026-11-07_0500_IST.csv",
+    "previous_city_coverage_csv": "city_coverage_2026-11-07_0400_IST.csv",
+    "current_city_coverage_csv": "city_coverage_2026-11-07_0500_IST.csv"
+  }
+}

@@ -1,6 +1,7 @@
 "use strict";
 
-const ROOT = "data/district_hourly_runs_2026-11-07/";
+let ROOT = "data/district_hourly_runs_2026-11-07/";
+let snapshotDate = "2026-11-07";
 const $ = id => document.getElementById(id);
 const app = { summaries: null, comparisons: [], mapping: [], coverage: [], provenance: null, geo: null, sessionsByRun: {}, sessionPage: 0 };
 const number = value => Number(value || 0).toLocaleString("en-IN");
@@ -46,7 +47,8 @@ function navigate(view) {
 }
 document.querySelectorAll("[data-view]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));
-$("runSelect").addEventListener("change",()=>{app.sessionPage=0;render();if($("movie").classList.contains("active"))loadSessions();});
+$("runSelect").addEventListener("change",()=>{app.sessionPage=0;render();loadCoverageForSelected();if($("movie").classList.contains("active"))loadSessions();});
+async function loadCoverageForSelected(){if(!app.summaries)return;const run=selected();const hour=run.collection_hour_ist.replace(":","");try{const response=await fetch(`${ROOT}city_coverage_${snapshotDate}_${hour}_IST.csv?refresh=${Date.now()}`);if(response.ok)app.coverage=csvRows(await response.text());}catch{} }
 
 function renderMovies(){const q=$("movieSearch").value.trim().toLowerCase();const match="ramayana 176276".includes(q);$("movieListing").innerHTML=match?`<div class="movie-card"><div class="poster">RAMAYANA</div><div style="min-width:0;flex:1"><div class="eyebrow">District capture</div><h2>Ramayana</h2><p class="muted">Movie ID 176276 · November 7, 2026</p><button class="btn primary" data-go="movie">Explore movie →</button></div></div>`:`<div class="empty">No saved movie matches your search. Only movies present in saved capture data appear here.</div>`;document.querySelectorAll("#movieListing [data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));}
 $("movieSearch").addEventListener("input",renderMovies);
@@ -54,7 +56,7 @@ $("movieSearch").addEventListener("input",renderMovies);
 async function loadSessions(){
  if(!app.summaries)return;const index=Math.max(0,Number($("runSelect").value));if(app.sessionsByRun[index]){renderSessions();return;}
  $("sessionCount").textContent="Loading…";const hour=runs()[index].collection_hour_ist.replace(":","");
- try{const response=await fetch(`${ROOT}unique_screenings_2026-11-07_${hour}_IST.csv`);if(!response.ok)throw new Error("Saved screening export unavailable");app.sessionsByRun[index]=csvRows(await response.text());app.sessionPage=0;renderSessions();}
+ try{const response=await fetch(`${ROOT}unique_screenings_${snapshotDate}_${hour}_IST.csv?refresh=${Date.now()}`);if(!response.ok)throw new Error("Saved screening export unavailable");app.sessionsByRun[index]=csvRows(await response.text());app.sessionPage=0;renderSessions();}
  catch(error){$("sessionCount").textContent="Unavailable";$("sessionRows").innerHTML=`<tr><td colspan="9">${esc(error.message)}</td></tr>`;}
 }
 function renderSessions(){
@@ -87,21 +89,34 @@ function drawMap(){
 function renderStates(){if(!app.geo)return;const query=$("stateSearch").value.toLowerCase();const names=app.geo.features.map(f=>f.properties.name).sort((a,b)=>a.localeCompare(b));$("stateResults").innerHTML=names.filter(name=>name.toLowerCase().includes(query)).map(name=>`<button class="regionlink" data-state="${esc(name)}">${esc(name)} <small>Open selector-feed coverage</small></button>`).join("")||'<div class="empty">No state found.</div>';document.querySelectorAll("[data-state]").forEach(node=>node.addEventListener("click",()=>openState(node.dataset.state)));}
 $("stateSearch").addEventListener("input",renderStates);$("closeModal").addEventListener("click",()=>$("stateModal").classList.remove("open"));$("stateModal").addEventListener("click",event=>{if(event.target===$("stateModal"))$("stateModal").classList.remove("open")});document.addEventListener("keydown",event=>{if(event.key==="Escape")$("stateModal").classList.remove("open")});
 
+let loadedSnapshotVersion = "";
+let snapshotRefreshRunning = false;
 async function init(){
  try{
-  const [summary,delta,mapping,coverage,provenance]=await Promise.all([
-   fetch(`${ROOT}run_summaries.json`).then(r=>r.json()),
-   Promise.all(["0100_0200","0200_0300","0300_0400"].map(pair=>fetch(`${ROOT}matched_delta_2026-11-07_${pair}.json`).then(r=>r.ok?r.json():null).catch(()=>null))),
+  if(snapshotRefreshRunning)return;snapshotRefreshRunning=true;
+  const manifestResponse=await fetch(`data/district_hourly_runs_latest.json?refresh=${Date.now()}`,{cache:"no-store"});
+  let nextVersion="";
+  if(manifestResponse.ok){const manifest=await manifestResponse.json();nextVersion=`${manifest.service_date_ist}|${manifest.generated_at_ist}`;if(nextVersion===loadedSnapshotVersion)return;ROOT=`${manifest.directory.replace(/\\/g,"/").replace(/\/$/,"")}/`;snapshotDate=manifest.service_date_ist;}
+  const summaryResponse=await fetch(`${ROOT}run_summaries.json?refresh=${Date.now()}`,{cache:"no-store"});
+  if(!summaryResponse.ok)throw new Error("Published hourly data is unavailable");
+  const summary=await summaryResponse.json();
+  if(nextVersion)loadedSnapshotVersion=nextVersion;
+  const [delta,mapping,coverage,provenance]=await Promise.all([
+   Promise.all((summary.comparisons||[]).map(file=>fetch(`${ROOT}${file}?refresh=${Date.now()}`,{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null))),
    fetch("data/city_state_mapping_2026-11-07.csv").then(r=>r.text()),
-   fetch(`${ROOT}city_coverage_2026-11-07_0200_IST.csv`).then(r=>r.text()),
+   summary.runs.length?fetch(`${ROOT}city_coverage_${snapshotDate}_${summary.runs[summary.runs.length-1].collection_hour_ist.replace(":","")}_IST.csv?refresh=${Date.now()}`).then(r=>r.text()):Promise.resolve(""),
    fetch("data/city_state_mapping_2026-11-07.provenance.json").then(r=>r.json())
   ]);
-  app.summaries=summary;app.comparisons=delta;app.mapping=csvRows(mapping);app.coverage=csvRows(coverage);app.provenance=provenance;
+  app.summaries=summary;app.comparisons=[null,...delta];app.mapping=csvRows(mapping);app.coverage=coverage?csvRows(coverage):[];app.provenance=provenance;app.sessionsByRun={};
+  if(!summary.runs.length)throw new Error("No completed hourly captures are available yet");
+  $("dateTag").textContent=new Date(`${snapshotDate}T00:00:00`).toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"});
   $("runSelect").innerHTML=summary.runs.map((r,i)=>`<option value="${i}">${esc(r.collection_hour_ist)} IST snapshot</option>`).join("");$("runSelect").value=String(summary.runs.length-1);
   render();renderMovies();
   const statuses=provenance.status_counts||{};const mapped=(statuses.matched_exact_2011_town_name||0)+(statuses.matched_exact_2011_settlement_name||0)+(statuses.matched_curated_city_state||0);$("mappingCoverage").textContent=`City-selector state reference: ${number(mapped)} of ${number(provenance.selector_labels)} labels assigned; ${number(statuses.ambiguous_multiple_states||0)} ambiguous and ${number(statuses.unmatched||0)} unmatched. Not a cinema-to-state map.`;
-  const live=await fetch("/api/live/summary").then(r=>r.ok?r.json():Promise.reject()).catch(()=>null);
-  $("liveStatus").textContent=live?"Live collector API reachable · saved snapshots shown below":"Live collector API unavailable · showing the saved November 7 snapshots";
- }catch(error){document.body.insertAdjacentHTML("afterbegin",`<div class="notice">Saved data could not be loaded. Serve this dashboard over HTTP and check the packaged data files. (${esc(error.message)})</div>`);}
+  $("liveStatus").textContent=`Auto-updating · latest completed capture published ${summary.generated_at_ist||"just now"} IST`;
+  document.querySelector(".load-error")?.remove();
+ }catch(error){if(!document.querySelector(".load-error")){const notice=document.createElement("div");notice.className="notice load-error";notice.textContent=`Saved data could not be loaded. ${error.message}`;document.body.prepend(notice);}}
+ finally{snapshotRefreshRunning=false;}
 }
 init();
+setInterval(init,300000);
