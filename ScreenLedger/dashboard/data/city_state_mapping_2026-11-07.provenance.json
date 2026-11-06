@@ -1,0 +1,16 @@
+{
+  "selector_labels": 1331,
+  "status_counts": {
+    "ambiguous_multiple_states": 97,
+    "matched_curated_city_state": 18,
+    "matched_exact_2011_settlement_name": 231,
+    "matched_exact_2011_town_name": 754,
+    "unmatched": 231
+  },
+  "source_url": "https://censusindia.gov.in/nada/index.php/catalog/42648",
+  "workbook_url": "https://censusindia.gov.in/nada/index.php/catalog/42648/download/46323/PC11_TV_DIR.xlsx",
+  "selector_source_url": "https://www.district.in/movies/",
+  "selector_capture_date": "2026-11-07",
+  "method": "Exact normalized Census 2011 town-name match, followed by a unique-state settlement-name fallback for labels absent from the town subset, plus explicitly labeled current-spelling, Telangana split, and owner-confirmed selector aliases; duplicate selector entries retained; no fuzzy matching.",
+  "limitation": "This is a city-selector coverage reference, not a cinema-to-state map. Never aggregate bookings or revenue by this field. Census 2011 names and boundaries may differ from current administrative geography; ambiguous and unmatched entries remain unassigned."
+}

@@ -1,0 +1,1332 @@
+﻿letter,display_label,occurrence,state_or_ut,mapping_status,candidate_states,source_year,mapping_basis
+A,Abohar,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+A,Abu Dhabi,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Abu Road,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+A,Achampet,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Acharapakkam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Addanki,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Adilabad,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+A,Adipur,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+A,Adoni,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+A,Adoor,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+A,Agar,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+A,Agartala,1,Tripura,matched_exact_2011_town_name,Tripura,2011,exact normalized Census 2011 town name
+A,Agra,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+A,Ahmedabad,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Ahmedgarh,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+A,Ahmednagar,1,,ambiguous_multiple_states,Andhra Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+A,Ajman,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Ajmer,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+A,Akbarpur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+A,Akividu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Akola,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+A,Alakode,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+A,Alangayam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Alangudi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Alappuzha,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+A,Aligarh,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+A,Allagadda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Almora,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+A,Alwar,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+A,Amalapuram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+A,Amalner,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+A,Amangal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Ambajogai,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+A,Ambala,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+A,Amballur,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+A,Ambasamudram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Ambernath,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Ambikapur,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+A,Ambur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Ammaiyarkuppam,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Amravati,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+A,Amreli,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+A,Amritsar,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+A,Amroha,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+A,Anaikatti,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+A,Anakapalle,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+A,Anand,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+A,Anandapuram,1,,ambiguous_multiple_states,Andhra Pradesh|Karnataka|Kerala,2011,multiple Census 2011 town matches in different current states/UTs
+A,Anantapur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+A,Anaparthi,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Anaparthy,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Andimadam,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+A,Andul,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+A,Angadipuram,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Angamaly,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+A,Angara,1,,ambiguous_multiple_states,Andhra Pradesh|Chhattisgarh|Jharkhand|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+A,Angul,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+A,Anjar,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+A,Ankleshwar,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Ankola,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+A,Annur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Anthiyur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Arakkonam,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Arakkunnam,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Arambagh,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Aranthangi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Arcot,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Ariyalur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Armoor,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Arni,1,,ambiguous_multiple_states,Gujarat|Karnataka|Maharashtra|Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+A,Arumbavur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Aruppukkottai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Asansol,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+A,Ashoknagar,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+A,Ashta,1,,ambiguous_multiple_states,Madhya Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+A,Ashtamichira,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Atchutapuram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Athagarh,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Atmakur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Atmakur Nellore,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Atraulia,1,,ambiguous_multiple_states,Bihar|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+A,Attili,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+A,Attur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+A,Aurangabad,1,,ambiguous_multiple_states,Bihar|Maharashtra|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+A,Aurangabad,2,,ambiguous_multiple_states,Bihar|Maharashtra|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+A,Aurangabad (West Bengal),1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Authoor,1,,unmatched,,2011,no exact Census 2011 town-name match
+A,Avinashi,1,Rajasthan,matched_exact_2011_settlement_name,Rajasthan,2011,exact normalized Census 2011 settlement name; town record absent
+A,Ayodhya,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+A,Azamgarh,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,B Kothakota,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+B,Baddi,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+B,Badlapur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+B,Badnawar,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Bagalkot,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+B,Bagepalli,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+B,Bagha Purana,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+B,Bagnan,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bahadurgarh,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+B,Bakhrahat,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Balaghat,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Balanagar,1,,ambiguous_multiple_states,Andhra Pradesh|Maharashtra|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+B,Balasinor,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Balasore,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+B,Ballia,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Baloda Bazar,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+B,Banaganapalli,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Banaskantha,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Banga,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+B,Bangalore,1,Karnataka,matched_curated_city_state,Karnataka,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+B,Bangarapet,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+B,Bangarupallem,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Banki,1,,ambiguous_multiple_states,Odisha|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+B,Banswada,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+B,Banswara,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+B,Bapatla,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+B,Barabanki,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Baramulla,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Baraut,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Bardoli,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bareilly,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Bareja,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Barhi,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Barnala,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+B,Barrackpore,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+B,Barwani,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Basantpur,1,,ambiguous_multiple_states,Bihar|Chhattisgarh|Haryana|Himachal Pradesh|Jharkhand|Madhya Pradesh|Odisha|Punjab|Uttar Pradesh|Uttarakhand,2011,multiple Census 2011 town matches in different current states/UTs
+B,Batala,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+B,Bathinda,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+B,Batlagundu,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+B,Bavla,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bayad,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bazpur,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+B,Beawar,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+B,Begusarai,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+B,Belagavi,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bellampally,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Bellary,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+B,Belur,1,,ambiguous_multiple_states,Karnataka|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bendamurulanka,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bengaluru,1,Karnataka,matched_curated_city_state,Karnataka,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+B,Berachampa,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Berhampur,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bestavaripeta,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Bettiah,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+B,Betul,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Bhadohi,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Bhadrachalam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bhadravati,1,,ambiguous_multiple_states,Karnataka|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bhagalpur,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+B,Bhainsa,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+B,Bhandara,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+B,Bharatpur,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+B,Bharuch,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bhatapara,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+B,Bhavnagar,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bheemgal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bhilai Nagar,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+B,Bhilwara,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+B,Bhimavaram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+B,Bhiwadi,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+B,Bhiwandi,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Bhiwani,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+B,Bhongir,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+B,Bhopal,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Bhor,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+B,Bhubaneswar,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+B,Bhuj,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bhupalapalli,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Bhusawal,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+B,Bhuvanagiri,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+B,Bibinagar,1,,ambiguous_multiple_states,Andhra Pradesh|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bidar,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+B,Bihpuria,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+B,Bijainagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Bijapur,1,,ambiguous_multiple_states,Chhattisgarh|Karnataka,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bijnor,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Bikaner,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+B,Bilaspur,1,,ambiguous_multiple_states,Chhattisgarh|Himachal Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bilaspur,2,,ambiguous_multiple_states,Chhattisgarh|Himachal Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bilgi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+B,Bilimora,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Bobbili,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+B,Bodeli,1,,ambiguous_multiple_states,Chhattisgarh|Gujarat,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bodhan,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+B,Bodinayakanur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+B,Boisar,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+B,Bokaro,1,,ambiguous_multiple_states,Jharkhand|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bommidi,1,,ambiguous_multiple_states,Andhra Pradesh|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+B,Bonakal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+B,Borsad,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+B,Buchireddypalem,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Budaun,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Budhana,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Budhlada,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+B,Bulandshahr,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+B,Bundu,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+B,Burdwan,1,,unmatched,,2011,no exact Census 2011 town-name match
+B,Burhanpur,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Burhar,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+B,Byadgi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Chagallu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Chalakudy,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+C,Challakere,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Chamarajanagara,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chamba,1,,ambiguous_multiple_states,Himachal Pradesh|Uttarakhand,2011,multiple Census 2011 town matches in different current states/UTs
+C,Champa,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+C,Chanchal,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+C,Chandausi,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+C,Chandigarh,1,Chandigarh,matched_exact_2011_town_name,Chandigarh,2011,exact normalized Census 2011 town name
+C,Chandrakona,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+C,Chandrapur,1,,ambiguous_multiple_states,Chhattisgarh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+C,Channagiri,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Channarayapatna,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Chanpatia,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+C,Chapra,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+C,Chatra,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+C,Chaygaon,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chebrolu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Cheeka,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+C,Cheepurupalli,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chennai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+C,Chennur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Cherthala,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+C,Cherukupalli,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Cherupuzha,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Cheruvathur,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+C,Chevella,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Cheyyar,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chhabra,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+C,Chhatarpur,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+C,Chhindwara,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+C,Chidambaram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+C,Chikballapur,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+C,Chikkaballapura,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Chilakaluripet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+C,Chimakurthy,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chinnamanur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+C,Chinnasalem,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+C,Chinnur,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chintamani,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Chiplun,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+C,Chipurupalle,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Chirala,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+C,Chitradurga,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+C,Chittoor,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+C,Chityal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Chodavaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Choondal,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+C,Chotila,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+C,Choutuppal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+C,Coimbatore,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+C,Cooch Behar,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Cuddalore,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+C,Curchorem,1,,unmatched,,2011,no exact Census 2011 town-name match
+C,Cuttack,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+D,Dabhoi,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+D,Dabra,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+D,Dahod,1,Madhya Pradesh,matched_exact_2011_settlement_name,Madhya Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dalli Rajhara,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+D,Dalmianagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Daltonganj,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Daman,1,Dadra & Nagar Haveli and Daman & Diu,matched_exact_2011_town_name,Dadra & Nagar Haveli and Daman & Diu,2011,exact normalized Census 2011 town name
+D,Damoh,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+D,Dandeli,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+D,Dantewada,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+D,Daporijo,1,Arunachal Pradesh,matched_exact_2011_town_name,Arunachal Pradesh,2011,exact normalized Census 2011 town name
+D,Darbhanga,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+D,Darjeeling,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Darsi,1,,ambiguous_multiple_states,Andhra Pradesh|Odisha,2011,multiple Census 2011 town matches in different current states/UTs
+D,Daryapur,1,,ambiguous_multiple_states,Andhra Pradesh|Haryana|Jharkhand|Madhya Pradesh|Maharashtra|Punjab|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+D,Dasuya,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Datia,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+D,Dausa,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+D,Davanagere,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+D,Deesa,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+D,Dehgam,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+D,Dehradun,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+D,Delhi/NCR,1,Delhi,matched_curated_city_state,Delhi,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+D,Deoghar,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+D,Deoli,1,,ambiguous_multiple_states,Maharashtra|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+D,Deoria,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+D,Devadurga,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+D,Devakottai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+D,Devarakonda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Devarapalli,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Devgad,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dewas,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+D,Dhamnod,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+D,Dhampur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+D,Dhamtari,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+D,Dhanbad,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+D,Dhanera,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+D,Dharamsala,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Dharapuram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+D,Dharmaj,1,Gujarat,matched_exact_2011_settlement_name,Gujarat,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dharmapuri,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+D,Dharmavaram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+D,Dharpally,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Dharuhera,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+D,Dharwad,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dhaulana,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dhekiajuli,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+D,Dhemaji,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+D,Dholka,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+D,Dhone,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+D,Dhule,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+D,Dhuri,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+D,Dibrugarh,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+D,Digras,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+D,Dimapur,1,Nagaland,matched_exact_2011_town_name,Nagaland,2011,exact normalized Census 2011 town name
+D,Dinanagar,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dindigul,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+D,Domkal,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dongargarh,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+D,Doraha,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+D,Dornakal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dowlaiswaram,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Draksharamam,1,,unmatched,,2011,no exact Census 2011 town-name match
+D,Dubai,1,,ambiguous_multiple_states,Uttar Pradesh|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+D,Dubbak,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dubrajpur,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+D,Duggirala,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+D,Dumka,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+D,Dungarpur,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+D,Durg,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+D,Durgapur,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+E,Edacheri,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+E,Edappadi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+E,Edappal,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+E,Edlapadu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+E,Ekma,1,,ambiguous_multiple_states,Bihar|Odisha|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+E,Ekma Chapra,1,,unmatched,,2011,no exact Census 2011 town-name match
+E,Elamanchili,1,,unmatched,,2011,no exact Census 2011 town-name match
+E,Eluru,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+E,Eral,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+E,Erattupetta,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+E,Eriyur,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+E,Erode,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+E,Etawah,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+E,Ettumanoor,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+F,Faizabad,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+F,Falakata,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+F,Falna,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+F,Faridabad,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+F,Faridkot,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+F,Farrukhabad,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+F,Fatehabad,1,,ambiguous_multiple_states,Haryana|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+F,Fatehpur,1,,ambiguous_multiple_states,Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+F,Fazilka,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+F,Firozabad,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+F,Firozepur,1,,unmatched,,2011,no exact Census 2011 town-name match
+F,Forbesganj,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+F,Fujairah,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Gadag-Betigeri,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+G,Gadarwara,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+G,Gadwal,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+G,Gajapathinagaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Gajendragarh,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+G,Gajuwaka,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Gajwel,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Ganapavaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Gandhidham,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+G,Gandhinagar,1,,ambiguous_multiple_states,Gujarat|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+G,Gangavathi,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Gauribidanur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+G,Gauriganj,1,Jharkhand,matched_exact_2011_settlement_name,Jharkhand,2011,exact normalized Census 2011 settlement name; town record absent
+G,Gaya,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+G,Ghaziabad,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+G,Ghazipur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+G,Ghorasahan,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Ghumarwin,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+G,Gingee,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+G,Giridih,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+G,Goa,1,,ambiguous_multiple_states,Arunachal Pradesh|Jharkhand,2011,multiple Census 2011 town matches in different current states/UTs
+G,Gobichettipalayam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+G,Godavarikhani,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Godda,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+G,Godhra,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+G,Gohana,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+G,Gokak,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+G,Gokavaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Golaghat,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+G,Gonda,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+G,Gondal,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+G,Gondia,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Gopalganj,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+G,Gopiganj,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+G,Gorakhpur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+G,Gorantla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Gotegaon,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+G,Greater Noida,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Gudivada,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+G,Gudiyatham,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+G,Gudur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+G,Gudur (Kurnool),1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Guhagar,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+G,Guna,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+G,Gundlupet,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+G,Guntakal,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+G,Guntur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+G,Gurazala,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+G,Gurdaspur,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+G,Gurugram,1,Uttarakhand,matched_exact_2011_settlement_name,Uttarakhand,2011,exact normalized Census 2011 settlement name; town record absent
+G,Guruvayur,1,,unmatched,,2011,no exact Census 2011 town-name match
+G,Guwahati,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+G,Gwalior,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+H,Hagaribommanahalli,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+H,Hajipur,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+H,Halduchour,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Haldwani,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Haliya,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Halol,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+H,Hamirpur,1,,ambiguous_multiple_states,Himachal Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+H,Handwara,1,Jammu and Kashmir,matched_exact_2011_town_name,Jammu and Kashmir,2011,exact normalized Census 2011 town name
+H,Hanuman Junction,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Hanumangarh,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+H,Hapur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+H,Harda,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+H,Hardoi,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+H,Haridwar,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Harihar,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+H,Harur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+H,Hathras,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+H,Haveri,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+H,Hazaribagh,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Himatnagar,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+H,Himatnagar,2,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+H,Hindaun,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+H,Hindupuram,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Hiramandalam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+H,Hirekerur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+H,Hisar,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+H,Honnali,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+H,Hooghly,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Hoshangabad,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+H,Hoshiarpur,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+H,Hosur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+H,Howrah,1,,unmatched,,2011,no exact Census 2011 town-name match
+H,Hubli-Dharwad,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+H,Husnabad,1,,ambiguous_multiple_states,Andhra Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+H,Huzurabad,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+H,Huzurnagar,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+H,Hyderabad,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+I,Ichalkaranji,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+I,Ichchapuram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+I,Idappadi,1,,unmatched,,2011,no exact Census 2011 town-name match
+I,Idar,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+I,Ieeja,1,,unmatched,,2011,no exact Census 2011 town-name match
+I,Indapur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+I,Indore,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+I,Indukurpet,1,,unmatched,,2011,no exact Census 2011 town-name match
+I,Irinjalakuda,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+I,Islampur,1,,ambiguous_multiple_states,Bihar|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+I,Itanagar,1,Arunachal Pradesh,matched_exact_2011_town_name,Arunachal Pradesh,2011,exact normalized Census 2011 town name
+I,Itarsi,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+J,Jabalpur,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+J,Jadcherla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+J,Jagdalpur,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+J,Jaggampeta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+J,Jaggayyapeta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+J,Jagraon,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+J,Jagtial,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+J,Jaipur,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+J,Jaisalmer,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+J,Jajpur Road,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jalakandapuram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+J,Jalalabad,1,,ambiguous_multiple_states,Punjab|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+J,Jalandhar,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+J,Jalgaon,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+J,Jalore,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jalpaiguri,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+J,Jami,1,,ambiguous_multiple_states,Andhra Pradesh|Arunachal Pradesh|Madhya Pradesh|Odisha,2011,multiple Census 2011 town matches in different current states/UTs
+J,Jamkhambhaliya,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jamkhed,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+J,Jammalamadugu,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+J,Jammikunta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+J,Jammu,1,Jammu and Kashmir,matched_exact_2011_town_name,Jammu and Kashmir,2011,exact normalized Census 2011 town name
+J,Jamnagar,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+J,Jamner,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+J,Jamshedpur,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+J,Jamtara,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+J,Jamui,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+J,Jangaon,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+J,Jangareddygudem,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jannaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+J,Jaora,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+J,Jasdan,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+J,Jatni,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jaunpur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+J,Jawalamukhi,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+J,Jayamkondan,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jaysingpur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+J,Jehanabad,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+J,Jejuri,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+J,Jetpur Navagadh,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+J,Jewar,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+J,Jeypore,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jhabua,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+J,Jhajjar,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+J,Jhansi,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+J,Jharsuguda,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+J,Jhunjhunu,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jiaganj,1,,unmatched,,2011,no exact Census 2011 town-name match
+J,Jind,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+J,Jirapur,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+J,Jodhpur,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+J,Jorhat,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+J,Junagadh,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+J,Junnar,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Kadapa,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kadayam,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kadi,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+K,Kadiri,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kadthal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kaikaluru,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kaithal,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+K,Kakinada,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kakkattil,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kalaburagi,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kalady,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kalakad,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kalimpong,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+K,Kallakurichi,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kallur,1,,ambiguous_multiple_states,Andhra Pradesh|Karnataka|Kerala|Maharashtra|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kalol,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+K,Kalol Panchmahal,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kalpetta,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kalwakurthy,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kalyan-Dombivli,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Kalyani,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+K,Kalyanpur,1,,ambiguous_multiple_states,Assam|Bihar|Chhattisgarh|Gujarat|Himachal Pradesh|Jharkhand|Madhya Pradesh|Odisha|Punjab|Rajasthan|Uttar Pradesh|Uttarakhand|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kamanaickenpalayam,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kamanpur,1,,ambiguous_multiple_states,Andhra Pradesh|Madhya Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kamareddy,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kambainallur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kanchikacherla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kanchipuram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kanchrapara,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+K,Kandukur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kandy,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kangeyam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kangra,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+K,Kanhangad,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kanigiri,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kanipakam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kankipadu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kankroli,1,Rajasthan,matched_exact_2011_settlement_name,Rajasthan,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kannur,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kanpur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+K,Kapadvanj,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+K,Karad,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Karaikudi,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Karambakkudi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Karanja Lad,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Karanodai,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kareli,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+K,Karempudi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Karimangalam,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+K,Karimnagar,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+K,Karkala,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+K,Karmala,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Karnal,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+K,Karur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Karwar,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+K,Kasganj,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+K,Kashipur,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+K,Kasibugga,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kathipudi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Katihar,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+K,Katni,1,,ambiguous_multiple_states,Bihar|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+K,Katpadi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Katrenikona,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kattanam,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kavali,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kaveripattinam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kavindapadi,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kawardha,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+K,Kayamkulam,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Keeranur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kekri,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+K,Kesamudram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Khalilabad,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+K,Khambhat,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+K,Khamgaon,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Khammam,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+K,Khanapur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+K,Khandela,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+K,Khandwa,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+K,Khanna,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+K,Khargone,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+K,Khariar Road,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+K,Khatima,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+K,Khatta,1,,ambiguous_multiple_states,Chhattisgarh|Himachal Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+K,Khed,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Kheda,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+K,Khedbrahma,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+K,Khopoli,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Khurja,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+K,Kichha,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+K,Kinathukadavu,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kinnaur,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kishangarh,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+K,Kochi,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kodad,1,,ambiguous_multiple_states,Andhra Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kodakara,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kodaly,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Koderma,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kodumur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kodungallur,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Koheda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Koilkuntla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kokrajhar,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+K,Kolappalur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kolar,1,,ambiguous_multiple_states,Karnataka|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kolargoldfields,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kolathur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kolhapur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Kolkata,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+K,Kollam,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kollapur,1,,ambiguous_multiple_states,Andhra Pradesh|Karnataka,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kollengode,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kolumam,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+K,Komarapalayam,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kondagaon,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+K,Kondlahalli,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kondotty,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kondur,1,,ambiguous_multiple_states,Andhra Pradesh|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+K,Konithiwada,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Koothattukulam,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Koottanad,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kopargaon,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+K,Koratagere,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+K,Koratla,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Korba,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+K,Kosamba,1,,ambiguous_multiple_states,Gujarat|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kota,1,,ambiguous_multiple_states,Chhattisgarh|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kota Nellore,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kotabommali,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kotdwar,1,Uttarakhand,matched_exact_2011_settlement_name,Uttarakhand,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kothacheruvu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kothagudem,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kothamangalam,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kothampakkam,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kothapeta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kotkapura,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kotma,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+K,Kotpad,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+K,Kotputli,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+K,Kottakkal,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kottarakara,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kovilpatti,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kovvur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kozhikode,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kozhinjampara,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Krishnagiri,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Krishnanagar,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+K,Krishnarajanagara,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+K,Krishnarajpet,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+K,Krosuru,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kuchaman City,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+K,Kuju,1,Jharkhand,matched_exact_2011_settlement_name,Jharkhand,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kukshi,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+K,Kulithalai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kulittalai,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kullu,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+K,Kumbakonam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kundli,1,,ambiguous_multiple_states,Gujarat|Himachal Pradesh|Jharkhand|Madhya Pradesh|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kunnamangalam,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kunnamkulam,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+K,Kuppam,1,,ambiguous_multiple_states,Andhra Pradesh|Puducherry|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+K,Kurinjipadi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+K,Kurmannapalem,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kurnool,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+K,Kurukshetra,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kurumassery,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kushalnagar,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+K,Kusumgram,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+K,Kutch,1,,unmatched,,2011,no exact Census 2011 town-name match
+K,Kuzhithurai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+L,Lakhimpur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+L,Lakhimpur Assam,1,,unmatched,,2011,no exact Census 2011 town-name match
+L,Lakkavaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+L,Lalgudi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+L,Lalkuan,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+L,Latur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+L,Leh,1,Ladakh,matched_curated_city_state,Ladakh,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+L,Lingasugur,1,,unmatched,,2011,no exact Census 2011 town-name match
+L,Lonavala,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+L,Loni,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+L,Lucknow,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+L,Ludhiana,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+L,Lunawada,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+L,Luxettipet,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Macherla,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+M,Machilipatnam,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+M,Madaharpakkam,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+M,Madanapalle,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+M,Madhavaram,1,,ambiguous_multiple_states,Andhra Pradesh|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+M,Madhepura,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+M,Madhira,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Madhugiri,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Madugula,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Madurai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Maduranthakam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Magadi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mahabubabad,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mahalingpur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Maharajganj,1,,ambiguous_multiple_states,Bihar|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+M,Mahbubnagar,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+M,Maheshwar,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+M,Mahishadal,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mahudha,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+M,Makrana,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+M,Mala,1,,ambiguous_multiple_states,Arunachal Pradesh|Bihar|Jammu and Kashmir|Karnataka|Madhya Pradesh|Maharashtra|Odisha|Punjab|Rajasthan|Uttar Pradesh|Uttarakhand|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+M,Malappuram,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+M,Malda,1,,ambiguous_multiple_states,Bihar|Chhattisgarh|Jharkhand|Madhya Pradesh|Odisha|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+M,Malegaon,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+M,Malikipuram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Malkapur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+M,Malkipuram,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Malout,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+M,Malur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mananthavady,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+M,Manapparai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Mancherial,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+M,Mandapeta,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+M,Mandi,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+M,Mandi Dabwali,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+M,Mandi Gobindgarh,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mandvi,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+M,Mandya,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mangaldoi,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+M,Mangaluru,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Manipal,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Manjeri,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+M,Mannargudi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Mannarkkad,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mansa,1,,ambiguous_multiple_states,Gujarat|Punjab,2011,multiple Census 2011 town matches in different current states/UTs
+M,Manuguru,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Manvi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mappedu,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+M,Marandahalli,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Marayoor,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+M,Maripeda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Markapuram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Marpalli,1,,ambiguous_multiple_states,Karnataka|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+M,Marthandam,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Martur,1,,ambiguous_multiple_states,Andhra Pradesh|Karnataka,2011,multiple Census 2011 town matches in different current states/UTs
+M,Maslandapur,1,West Bengal,matched_exact_2011_settlement_name,West Bengal,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mathabhanga,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+M,Mathura,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+M,Mattanur,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mau,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+M,Mavelikara,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mayiladuthurai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Medak,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+M,Medarametla,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Meerut,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+M,Mehsana,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Melattur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Melli,1,Sikkim,matched_exact_2011_settlement_name,Sikkim,2011,exact normalized Census 2011 settlement name; town record absent
+M,Metpally,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mettupalayam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Mettur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Mhow,1,Madhya Pradesh,matched_exact_2011_settlement_name,Madhya Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Midnapore,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Miryalaguda,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+M,Mirzapur-cum-Vindhyachal,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+M,Moga,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+M,Mogalthur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mohali,1,,ambiguous_multiple_states,Chhattisgarh|Madhya Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+M,Moradabad,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+M,Morbi,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Morena,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+M,Morinda,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+M,Motihari,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+M,Mudalgi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Muddebihal,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mudhol,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mughalsarai,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+M,Mukerian,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+M,Mukhed,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+M,Mukkam,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+M,Muktsar,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+M,Mullanpur,1,Punjab,matched_exact_2011_settlement_name,Punjab,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mulug,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mumbai,1,Maharashtra,matched_curated_city_state,Maharashtra,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+M,Mumbai (Greater),1,Maharashtra,matched_curated_city_state,Maharashtra,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+M,Mummidivaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mundargi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+M,Mundra,1,,ambiguous_multiple_states,Chhattisgarh|Gujarat|Haryana|Madhya Pradesh|Maharashtra|Odisha|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+M,Muniguda,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+M,Murtizapur,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+M,Musiri,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Muthur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+M,Muvattupuzha,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+M,Muzaffarnagar,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+M,Muzaffarpur,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+M,Muzzafarnagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+M,Mylavaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+M,Mysuru,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Nabadwip,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+N,Nabarangapur,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+N,Nadaun,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+N,Nadia,1,,ambiguous_multiple_states,Assam|Madhya Pradesh|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+N,Nadiad,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+N,Nagaon,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+N,Nagapattinam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+N,Nagaram,1,,ambiguous_multiple_states,Andhra Pradesh|Chhattisgarh|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+N,Nagarasampatti,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Nagari,1,,ambiguous_multiple_states,Andhra Pradesh|Chhattisgarh,2011,multiple Census 2011 town matches in different current states/UTs
+N,Nagarkurnool,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nagaur,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+N,Nagda,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+N,Nagercoil,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+N,Nagireddypet,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nagpur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+N,Naharlagun,1,Arunachal Pradesh,matched_exact_2011_town_name,Arunachal Pradesh,2011,exact normalized Census 2011 town name
+N,Naidupeta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nainital,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+N,Nakodar,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+N,Nakrekal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nalbari,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+N,Nalgonda,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+N,Nallajerla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nallamada,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Namakkal,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+N,Nambiyur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+N,Nanded,1,,ambiguous_multiple_states,Madhya Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+N,Nandigama,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nandurbar,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+N,Nandyal,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+N,Nanjangud,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+N,Narasannapeta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Narasaraopet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+N,Narayanapur,1,,ambiguous_multiple_states,Andhra Pradesh|Karnataka|Odisha,2011,multiple Census 2011 town matches in different current states/UTs
+N,Narayankhed,1,,ambiguous_multiple_states,Andhra Pradesh|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+N,Narayanpet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+N,Nargund,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+N,Narnaul,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+N,Narsampet,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Narsapur,1,,ambiguous_multiple_states,Andhra Pradesh|Chhattisgarh|Karnataka|Maharashtra,2011,multiple Census 2011 town matches in different current states/UTs
+N,Narsinghpur,1,,ambiguous_multiple_states,Bihar|Chhattisgarh|Jharkhand|Madhya Pradesh|Odisha|Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+N,Narsipatnam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Narwana,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+N,Nashik,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+N,Nashirabad,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nathdwara,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+N,Nava Raipur,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Navi Mumbai,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+N,Navsari,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+N,Nawada,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+N,Nawalgarh,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+N,Nawanshahr,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+N,Nawapara,1,,ambiguous_multiple_states,Chhattisgarh|Jharkhand|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+N,Nazirpur,1,,ambiguous_multiple_states,Bihar|West Bengal,2011,multiple Census 2011 town matches in different current states/UTs
+N,Neelapalle,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Neemuch,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+N,Nekkonda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nelakondapally,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Nellimarla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nellore,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+N,New Delhi,1,Delhi,matched_curated_city_state,Delhi,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+N,NewTehri,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Neyveli,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nichlaul,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+N,Nidadavolu,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Nimbahera,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+N,Nindra,1,,ambiguous_multiple_states,Andhra Pradesh|Jharkhand,2011,multiple Census 2011 town matches in different current states/UTs
+N,Nirjuli,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Nirmal,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+N,Nizamabad,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+N,Noida,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+N,Nokha,1,,ambiguous_multiple_states,Bihar|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+N,North Paravur,1,,unmatched,,2011,no exact Census 2011 town-name match
+N,Nurpur,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+N,Nuziveedu,1,,unmatched,,2011,no exact Census 2011 town-name match
+O,Omalur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+O,Ongole,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+O,Ottapalam,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,P Dharmavaram,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Padampur,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+P,Paithan,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Pala,1,,ambiguous_multiple_states,Chhattisgarh|Gujarat|Karnataka|Madhya Pradesh|Maharashtra|Meghalaya|Odisha|Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+P,Palacode,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+P,Palakkad,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+P,Palakol,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Palakollu,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Palakonda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Palamaner,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Palampur,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+P,Palani,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Palasa,1,,ambiguous_multiple_states,Gujarat|Odisha,2011,multiple Census 2011 town matches in different current states/UTs
+P,Palej,1,Gujarat,matched_exact_2011_settlement_name,Gujarat,2011,exact normalized Census 2011 settlement name; town record absent
+P,Palghar,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Pali,1,,ambiguous_multiple_states,Chhattisgarh|Madhya Pradesh|Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+P,Palitana,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+P,Palladam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pallipalayam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pallipattu,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Palluruthy,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Palvancha,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Palwal,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+P,Pamarru,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pamidi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pamur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Panachamoodu,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Panaji,1,Goa,matched_exact_2011_town_name,Goa,2011,exact normalized Census 2011 town name
+P,Panchkula,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+P,Pandalam,1,,ambiguous_multiple_states,Kerala|Odisha,2011,multiple Census 2011 town matches in different current states/UTs
+P,Pandavapura,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+P,Pandharpur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Pandikkad,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+P,Panipat,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+P,Panruti,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pantnagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Paonta Sahib,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+P,Papanasam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Paralakhemundi,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+P,Paramathivelur,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Paratwada,1,Madhya Pradesh,matched_exact_2011_settlement_name,Madhya Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Parawada,1,Rajasthan,matched_exact_2011_settlement_name,Rajasthan,2011,exact normalized Census 2011 settlement name; town record absent
+P,Parigi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Parkal,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Parli,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Parvathipuram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Patan,1,,ambiguous_multiple_states,Chhattisgarh|Gujarat|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+P,Patan Chhattisgarh,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Pathanapuram,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pathankot,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+P,Pathapatnam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Patiala,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+P,Patna,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+P,Patran,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+P,Patratu,1,,ambiguous_multiple_states,Chhattisgarh|Jharkhand,2011,multiple Census 2011 town matches in different current states/UTs
+P,Pattambi,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pattukkottai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pavagada,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+P,Payakaraopeta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Payyanur,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Pedakurapadu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pedana,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Pedanandipadu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Peddapalli,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+P,Peddapuram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Pen,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Pendra,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+P,Pendurthi,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Pennadam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pennagaram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Penuganchiprolu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Penugonda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Penumuru,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Perambra,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+P,Peravurani,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Peringottukara,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Perinthalmanna,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+P,Periyakulam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pernambut,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Perundalaiyur,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+P,Perundurai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Petlad,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+P,Piduguralla,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Pilani,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+P,Pileru,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pilibhit,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+P,Pilkhuwa,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+P,Pinjore,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+P,Pipariya,1,,ambiguous_multiple_states,Chhattisgarh|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+P,Pirangut,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pithampur,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+P,Pithapuram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Pitlam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Podili,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Pollachi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Ponda,1,Goa,matched_exact_2011_town_name,Goa,2011,exact normalized Census 2011 town name
+P,Ponduru,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+P,Ponnamaravathi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Ponnani,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+P,Ponneri,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Ponnur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Port Blair,1,Andaman and Nicobar Islands,matched_exact_2011_town_name,Andaman and Nicobar Islands,2011,exact normalized Census 2011 town name
+P,Pratapgarh (Uttar Pradesh),1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Prayagraj,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Proddatur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Puducherry,1,Puducherry,matched_exact_2011_town_name,Puducherry,2011,exact normalized Census 2011 town name
+P,Pudukkottai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+P,Pulgaon,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Pulivendula,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Puliyankudi,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Punalur,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+P,Pune,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Punganur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+P,Punjai Puliampatti,1,,unmatched,,2011,no exact Census 2011 town-name match
+P,Puri,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+P,Purnia,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+P,Pusad,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+P,Puthoor,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+P,Puttur,1,,ambiguous_multiple_states,Andhra Pradesh|Karnataka,2011,multiple Census 2011 town matches in different current states/UTs
+P,PutturAP,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Rabkavi,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+R,Raebareli,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Rahata,1,,ambiguous_multiple_states,Bihar|Madhya Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+R,Rahuri,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+R,Raichur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+R,Raiganj,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+R,Raigarh,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+R,Raikal,1,,ambiguous_multiple_states,Andhra Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+R,Railway Koduru,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Raipur,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+R,Raisinghnagar,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+R,Rajahmundry,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+R,Rajam,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+R,Rajampet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+R,Rajapalayam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+R,Rajavommangi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+R,Rajkot,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+R,Rajnandgaon,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+R,Rajpipla,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+R,Ramabhadrapuram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+R,Ramachandrapuram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+R,Ramanathapuram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+R,Ramayampet,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+R,Ramgarh,1,,ambiguous_multiple_states,Jammu and Kashmir|Rajasthan,2011,multiple Census 2011 town matches in different current states/UTs
+R,Ramnagar,1,,ambiguous_multiple_states,Bihar|Uttar Pradesh|Uttarakhand,2011,multiple Census 2011 town matches in different current states/UTs
+R,Rampur,1,,ambiguous_multiple_states,Himachal Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+R,Ranaghat,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+R,Ranastalam,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+R,Ranchi,1,Jharkhand,matched_exact_2011_town_name,Jharkhand,2011,exact normalized Census 2011 town name
+R,Ranebennur,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Ranipet,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Ranipokhari,1,Odisha,matched_exact_2011_settlement_name,Odisha,2011,exact normalized Census 2011 settlement name; town record absent
+R,Ranjangaon,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+R,Rapur,1,,ambiguous_multiple_states,Andhra Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+R,Ras Al Khaimah,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Rasipuram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+R,Rath,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+R,Ratlam,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+R,Ravulapalem,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+R,Raxaul,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Rayachoti,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+R,Rayagada,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+R,Razole,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+R,Repalle,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+R,Rewa,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+R,Rewari,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+R,Rishikesh,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+R,Rohtak,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+R,Ron,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+R,Roorkee,1,Uttarakhand,matched_exact_2011_town_name,Uttarakhand,2011,exact normalized Census 2011 town name
+R,Ropar,1,,ambiguous_multiple_states,Himachal Pradesh|Uttarakhand,2011,multiple Census 2011 town matches in different current states/UTs
+R,Rourkela,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Routhulapudi,1,,unmatched,,2011,no exact Census 2011 town-name match
+R,Rudrapur,1,,ambiguous_multiple_states,Uttar Pradesh|Uttarakhand,2011,multiple Census 2011 town matches in different current states/UTs
+R,Rupnagar,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+S,Sadasivpet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Sadivapeta,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Safidon,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+S,Sagwara,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+S,Saharanpur,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+S,Saharsa,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+S,Sahjanwa,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+S,Sakti,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+S,Salem,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Saligram,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+S,Salur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Saluru,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+S,Samalkota,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Samastipur,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+S,Sambalpur,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+S,Sambhal,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+S,Sanand,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+S,Sangamner,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+S,Sangareddi,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sangaria,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+S,Sangli Miraj Kupwad,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+S,Sangola,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+S,Sangrur,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+S,Sankagiri,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sankarankovil,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sankarapuram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sankeshwar,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+S,Sarangarh,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+S,Sarangpur MP,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sardulgarh,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+S,Sarni,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sasaram,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+S,Sathankulam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sathupalli,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sathupally,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sathuvachari,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sathyamangalam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Satna,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sattenapalle,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Sattur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Satyavedu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+S,Secunderabad,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+S,Sehore,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sendhwa,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Seoni,1,,ambiguous_multiple_states,Himachal Pradesh|Madhya Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Seoni Malwa,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sethiyathope,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Shadnagar,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+S,Shahada,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Shahdol,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Shahpur,1,,ambiguous_multiple_states,Bihar|Karnataka|Madhya Pradesh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Shajapur,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Shamgarh,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sharjah,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Shillong,1,Meghalaya,matched_exact_2011_town_name,Meghalaya,2011,exact normalized Census 2011 town name
+S,Shimla,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+S,Shirpur,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+S,Shirur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+S,Shivamogga,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Shivpuri,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sholinghur,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Shrirampur,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+S,Siddhpur,1,Uttar Pradesh,matched_exact_2011_settlement_name,Uttar Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+S,Siddipet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Sidlaghatta,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+S,Sihora,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sikar,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+S,Silchar,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+S,Siliguri,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+S,Silvassa,1,Dadra & Nagar Haveli and Daman & Diu,matched_exact_2011_town_name,Dadra & Nagar Haveli and Daman & Diu,2011,exact normalized Census 2011 town name
+S,Sindagi,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+S,Sindhanur,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sindhudurg,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Singarayakonda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+S,Singrauli,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+S,Sinnar,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+S,Sira,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+S,Sircilla,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Sirkali,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sirmaur,1,,ambiguous_multiple_states,Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Sirpur Kagaznagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sirsa,1,,ambiguous_multiple_states,Haryana|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Sirsi,1,,ambiguous_multiple_states,Karnataka|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Siruvalur,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+S,Sitamarhi,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+S,Sitapur,1,,ambiguous_multiple_states,Chhattisgarh|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Sivagangai,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sivakasi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sivasagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Solan,1,Himachal Pradesh,matched_exact_2011_town_name,Himachal Pradesh,2011,exact normalized Census 2011 town name
+S,Somandepalle,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+S,Somanur,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sonari,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+S,Sonipat,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+S,Sri Ganganagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Srikakulam,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Srikalahasti,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+S,Srinagar,1,Jammu and Kashmir,matched_curated_city_state,Jammu and Kashmir,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+S,Srivaikuntam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Srivilliputhur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sugauli,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+S,Sujangarh,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+S,Sukma,1,Chhattisgarh,matched_exact_2011_town_name,Chhattisgarh,2011,exact normalized Census 2011 town name
+S,Sullurpeta,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sultan Bathery,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sultanpur,1,,ambiguous_multiple_states,Madhya Pradesh|Punjab|Uttar Pradesh|Uttarakhand,2011,multiple Census 2011 town matches in different current states/UTs
+S,Sulur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Sumerpur,1,,ambiguous_multiple_states,Rajasthan|Uttar Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+S,Sunam,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Sundargarh,1,Odisha,matched_exact_2011_town_name,Odisha,2011,exact normalized Census 2011 town name
+S,Sundernagar,1,,unmatched,,2011,no exact Census 2011 town-name match
+S,Supaul,1,Bihar,matched_exact_2011_town_name,Bihar,2011,exact normalized Census 2011 town name
+S,Surandai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+S,Surat,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+S,Surendranagar,1,Tripura,matched_exact_2011_settlement_name,Tripura,2011,exact normalized Census 2011 settlement name; town record absent
+S,Suryapet,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tadepalligudem,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tadikalapudi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+T,Tadipatri,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Talikoti,1,Karnataka,matched_exact_2011_settlement_name,Karnataka,2011,exact normalized Census 2011 settlement name; town record absent
+T,Tallapudi,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Talwandi Bhai,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+T,Tanda,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+T,Tandur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tanguturu,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+T,Tanuku,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tasgaon,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+T,Tatipaka,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tekkali,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+T,Tenali,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tenkasi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tezpur,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+T,Thalassery,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+T,Thalikulam,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Thammampatti,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Thane,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+T,Thanipadi,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+T,Thanjavur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tharad,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+T,Thavanampalle,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+T,Theni Allinagaram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Thirunageswaram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Thiruppathur,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Thiruthani,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Thiruthuraipoondi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Thiruvalangadu,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Thiruvalla,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+T,Thiruvallur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Thiruvananthapuram,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+T,Thiruvannamalai,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Thiruvarur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Thorrur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+T,Thrissur,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+T,Thuraiyur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tindivanam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tinsukia,1,Assam,matched_exact_2011_town_name,Assam,2011,exact normalized Census 2011 town name
+T,Tiptur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+T,Tiruchendur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tiruchengode,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tiruchirappalli,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tirukoilur,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tirumalgiri,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tirunelveli,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+T,Tirupati,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tirupattur,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+T,Tirupur,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tirur,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+T,Tiruvuru,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Titagarh,1,West Bengal,matched_exact_2011_town_name,West Bengal,2011,exact normalized Census 2011 town name
+T,Titilagarh,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tittagudi,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tohana,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+T,Tonk,1,Rajasthan,matched_exact_2011_town_name,Rajasthan,2011,exact normalized Census 2011 town name
+T,Toopran,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Trichy,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Trivandrum,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tumakuru,1,,unmatched,,2011,no exact Census 2011 town-name match
+T,Tumkur,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+T,Tundla,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+T,Tuni,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+T,Tuticorin,1,,unmatched,,2011,no exact Census 2011 town-name match
+U,Udaipur,1,,ambiguous_multiple_states,Rajasthan|Tripura,2011,multiple Census 2011 town matches in different current states/UTs
+U,Udgir,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+U,Udumalaippettai,1,,unmatched,,2011,no exact Census 2011 town-name match
+U,Udumalpet,1,,unmatched,,2011,no exact Census 2011 town-name match
+U,Udupi,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+U,Ujhani,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+U,Ujjain,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+U,Ulhasnagar,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+U,Ulundurpet,1,,unmatched,,2011,no exact Census 2011 town-name match
+U,Umbergaon,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+U,Umm Al Quwain,1,,unmatched,,2011,no exact Census 2011 town-name match
+U,Umreth,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+U,Una,1,,ambiguous_multiple_states,Gujarat|Himachal Pradesh,2011,multiple Census 2011 town matches in different current states/UTs
+U,Una (Gujarat),1,,unmatched,,2011,no exact Census 2011 town-name match
+U,Undavalli,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+U,Unnao,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+U,Uppada,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+U,Uthangarai,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+U,Uthukottai,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vadakara,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+V,Vadakkencherry,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vadalur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vadipatti,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vadodara,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Vaitheeswarankoil,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Valanchery,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Valapadi,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Valigonda,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+V,Valliyur,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Valsad,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Vandavasi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vaniyambadi,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vansda,1,Dadra & Nagar Haveli and Daman & Diu,matched_exact_2011_settlement_name,Dadra & Nagar Haveli and Daman & Diu,2011,exact normalized Census 2011 settlement name; town record absent
+V,Vapi,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Varadium,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Varanasi,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+V,Vardhanapeta,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Varkala,1,Kerala,matched_exact_2011_town_name,Kerala,2011,exact normalized Census 2011 town name
+V,Vasai,1,Gujarat,matched_exact_2011_settlement_name,Gujarat,2011,exact normalized Census 2011 settlement name; town record absent
+V,Vedaranyam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Velangi,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+V,Velanthavalam,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vele,1,Maharashtra,matched_exact_2011_settlement_name,Maharashtra,2011,exact normalized Census 2011 settlement name; town record absent
+V,Vellakoil,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vellichanthai,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vellore,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vemulawada,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Venkatagiri,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+V,Venkatapuram,1,,ambiguous_multiple_states,Andhra Pradesh|Tamil Nadu,2011,multiple Census 2011 town matches in different current states/UTs
+V,Veraval,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Vettaikaranpudur,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vidisha,1,Madhya Pradesh,matched_exact_2011_town_name,Madhya Pradesh,2011,exact normalized Census 2011 town name
+V,Vijapur,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Vijayamangalam,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vijayapura,1,Karnataka,matched_exact_2011_town_name,Karnataka,2011,exact normalized Census 2011 town name
+V,Vijayawada,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+V,Villupuram,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+V,Viluppuram,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Vinjamur,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+V,Vinukonda,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+V,Viralimalai,1,Tamil Nadu,matched_exact_2011_settlement_name,Tamil Nadu,2011,exact normalized Census 2011 settlement name; town record absent
+V,Viramgam,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Virudhachalam,1,Tamil Nadu,matched_exact_2011_town_name,Tamil Nadu,2011,exact normalized Census 2011 town name
+V,Visakhapatnam,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Visnagar,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+V,Vissannapeta,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vita,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+V,Vizag,1,,unmatched,,2011,no exact Census 2011 town-name match
+V,Vizianagaram,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+V,Vrindavan,1,Uttar Pradesh,matched_exact_2011_town_name,Uttar Pradesh,2011,exact normalized Census 2011 town name
+V,Vuyyuru,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+V,Vyara,1,Gujarat,matched_exact_2011_town_name,Gujarat,2011,exact normalized Census 2011 town name
+W,Wadakkancherry,1,,unmatched,,2011,no exact Census 2011 town-name match
+W,Wanaparthy,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+W,Wandoor,1,Kerala,matched_exact_2011_settlement_name,Kerala,2011,exact normalized Census 2011 settlement name; town record absent
+W,Wani,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+W,Warangal,1,Telangana,matched_curated_city_state,Telangana,2011,curated current city/state crosswalk; Delhi NCR uses project-owner-confirmed District New Delhi resolution
+W,Warora,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+W,Washim,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+W,Waterland,1,,unmatched,,2011,no exact Census 2011 town-name match
+W,Wayanad,1,,unmatched,,2011,no exact Census 2011 town-name match
+W,West Champaran,1,,unmatched,,2011,no exact Census 2011 town-name match
+W,Wyra,1,,unmatched,,2011,no exact Census 2011 town-name match
+Y,Yadagirigutta,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+Y,Yamunanagar,1,Haryana,matched_exact_2011_town_name,Haryana,2011,exact normalized Census 2011 town name
+Y,Yavatmal,1,Maharashtra,matched_exact_2011_town_name,Maharashtra,2011,exact normalized Census 2011 town name
+Y,Yelamanchili,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+Y,Yeleswaram,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+Y,Yellandu,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+Y,Yemmiganur,1,Andhra Pradesh,matched_exact_2011_town_name,Andhra Pradesh,2011,exact normalized Census 2011 town name
+Y,Yerraguntla,1,Andhra Pradesh,matched_exact_2011_settlement_name,Andhra Pradesh,2011,exact normalized Census 2011 settlement name; town record absent
+Z,Zaheerabad,1,,unmatched,,2011,no exact Census 2011 town-name match
+Z,Zirakpur,1,Punjab,matched_exact_2011_town_name,Punjab,2011,exact normalized Census 2011 town name
+Z,Ziro,1,Arunachal Pradesh,matched_exact_2011_town_name,Arunachal Pradesh,2011,exact normalized Census 2011 town name
