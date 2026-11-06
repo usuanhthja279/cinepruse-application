@@ -1,0 +1,43 @@
+[
+  {
+    "snapshot_utc": "2026-11-06T15:38:19+00:00",
+    "source_url": "https://www.district.in/movies/ramayana-movie-tickets-in-kolkata-MV176276",
+    "source_city": "kolkata",
+    "actual_city": "kolkata",
+    "movie_id": "176276",
+    "movie_name": "Ramayana",
+    "duration_minutes": 195,
+    "languages": [
+      "Hindi"
+    ],
+    "release_date": "2026-11-05",
+    "poster": "https://b.zmtcdn.com/data/edition_assets/17933636961338644.jpg",
+    "available_dates": [
+      "2026-11-06",
+      "2026-11-07",
+      "2026-11-08",
+      "2026-11-09",
+      "2026-11-10",
+      "2026-11-11",
+      "2026-11-12"
+    ],
+    "format_group_ids": [
+      "rtb7dmwvuo"
+    ],
+    "cinemas_with_shows": 29,
+    "shows": 117,
+    "seat_categories": 410,
+    "total_seats_across_shows": 27663,
+    "available_seats_across_shows": 20461,
+    "unavailable_seats_across_shows": 7202,
+    "unavailable_pct": 26.03,
+    "assumed_booked_seats_across_shows": 7202,
+    "assumed_occupancy_pct": 26.03,
+    "priced_show_count": 117,
+    "unpriced_show_count": 0,
+    "known_priced_gross_inr": 3948610.0,
+    "estimated_gross_inr": 3948610.0,
+    "collection_policy": "Count all unavailable seats, including blocked and held, as assumed booked; value at advertised area prices.",
+    "coverage_note": "ESTIMATE only: unavailable/blocked seats are assumed booked. Not confirmed tickets sold, actual gross or net box office."
+  }
+]

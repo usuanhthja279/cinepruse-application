@@ -1,0 +1,5070 @@
+{
+  "service_date": "2026-11-07",
+  "movie_id": "176276",
+  "verified_city_count": 1012,
+  "initial_target_count": 1321,
+  "source_completeness_verified": false,
+  "note": "Only cities with a successful validated capture are included. This is an operational allowlist, not proof the selector roster is complete.",
+  "cities": [
+    {
+      "display_name": "Abohar",
+      "slug": "abohar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Abu Road",
+      "slug": "abu-road",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Acharapakkam",
+      "slug": "acharapakkam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Addanki",
+      "slug": "addanki",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Adilabad",
+      "slug": "adilabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Adoni",
+      "slug": "adoni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Agartala",
+      "slug": "agartala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Agra",
+      "slug": "agra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ahmedabad",
+      "slug": "ahmedabad",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Ahmedgarh",
+      "slug": "ahmedgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ahmednagar",
+      "slug": "ahmednagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ajmer",
+      "slug": "ajmer",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Akbarpur",
+      "slug": "akbarpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Akividu",
+      "slug": "akividu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Akola",
+      "slug": "akola",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Alangayam",
+      "slug": "alangayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Alangudi",
+      "slug": "alangudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Alappuzha",
+      "slug": "alappuzha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Aligarh",
+      "slug": "aligarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Allagadda",
+      "slug": "allagadda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Alwar",
+      "slug": "alwar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amalapuram",
+      "slug": "amalapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amangal",
+      "slug": "amangal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ambala",
+      "slug": "ambala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amballur",
+      "slug": "amballur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ambasamudram",
+      "slug": "ambasamudram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ambernath",
+      "slug": "ambernath",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ambur",
+      "slug": "ambur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ammaiyarkuppam",
+      "slug": "ammaiyarkuppam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amravati",
+      "slug": "amravati",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amreli",
+      "slug": "amreli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amritsar",
+      "slug": "amritsar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Amroha",
+      "slug": "amroha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anaikatti",
+      "slug": "anaikatti",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anakapalle",
+      "slug": "anakapalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anand",
+      "slug": "anand",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anantapur",
+      "slug": "anantapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anaparthi",
+      "slug": "anaparthi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anaparthy",
+      "slug": "anaparthy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Andimadam",
+      "slug": "andimadam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Andul",
+      "slug": "andul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Angadipuram",
+      "slug": "angadipuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Angamaly",
+      "slug": "angamaly",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Angara",
+      "slug": "angara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Angul",
+      "slug": "angul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anjar",
+      "slug": "anjar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ankleshwar",
+      "slug": "ankleshwar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ankola",
+      "slug": "ankola",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Annur",
+      "slug": "annur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Anthiyur",
+      "slug": "anthiyur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Arakkunnam",
+      "slug": "arakkunnam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Aranthangi",
+      "slug": "aranthangi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Arcot",
+      "slug": "arcot",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Armoor",
+      "slug": "armoor",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Arni",
+      "slug": "arni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Asansol",
+      "slug": "asansol",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ashoknagar",
+      "slug": "ashoknagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ashta",
+      "slug": "ashta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ashtamichira",
+      "slug": "ashtamichira",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Atchutapuram",
+      "slug": "atchutapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Athagarh",
+      "slug": "athagarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Atmakur Nellore",
+      "slug": "atmakur-nellore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Atraulia",
+      "slug": "atraulia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Attili",
+      "slug": "attili",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Aurangabad",
+      "slug": "aurangabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Authoor",
+      "slug": "authoor",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Avinashi",
+      "slug": "avinashi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ayodhya",
+      "slug": "ayodhya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Baddi",
+      "slug": "baddi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Badlapur",
+      "slug": "badlapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bagalkot",
+      "slug": "bagalkot",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bagnan",
+      "slug": "bagnan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bahadurgarh",
+      "slug": "bahadurgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bakhrahat",
+      "slug": "bakhrahat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Balaghat",
+      "slug": "balaghat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Balasinor",
+      "slug": "balasinor",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Balasore",
+      "slug": "balasore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Banaskantha",
+      "slug": "banaskantha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Banga",
+      "slug": "banga",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bangalore",
+      "slug": "bengaluru",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Bangarapet",
+      "slug": "bangarapet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bangarupallem",
+      "slug": "bangarupallem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Banki",
+      "slug": "banki",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Banswara",
+      "slug": "banswara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bapatla",
+      "slug": "bapatla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Barabanki",
+      "slug": "barabanki",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Baraut",
+      "slug": "baraut",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bardoli",
+      "slug": "bardoli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bareilly",
+      "slug": "bareilly",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bareja",
+      "slug": "bareja",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Barnala",
+      "slug": "barnala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Barrackpore",
+      "slug": "barrackpore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Barwani",
+      "slug": "barwani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Basantpur",
+      "slug": "basantpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Batala",
+      "slug": "batala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bathinda",
+      "slug": "bathinda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bavla",
+      "slug": "bavla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bazpur",
+      "slug": "bazpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Beawar",
+      "slug": "beawar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Begusarai",
+      "slug": "begusarai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Belagavi",
+      "slug": "belagavi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bellampally",
+      "slug": "bellampally",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bellary",
+      "slug": "bellary",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Belur",
+      "slug": "belur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bendamurulanka",
+      "slug": "bendamurulanka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Berachampa",
+      "slug": "berachampa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bestavaripeta",
+      "slug": "bestavaripeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bettiah",
+      "slug": "bettiah",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Betul",
+      "slug": "betul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhadohi",
+      "slug": "bhadohi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhadrachalam",
+      "slug": "bhadrachalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhadravati",
+      "slug": "bhadravati",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhandara",
+      "slug": "bhandara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bharatpur",
+      "slug": "bharatpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bharuch",
+      "slug": "bharuch",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhavnagar",
+      "slug": "bhavnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bheemgal",
+      "slug": "bheemgal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhilwara",
+      "slug": "bhilwara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhimavaram",
+      "slug": "bhimavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhiwadi",
+      "slug": "bhiwadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhiwandi",
+      "slug": "bhiwandi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhiwani",
+      "slug": "bhiwani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhongir",
+      "slug": "bhongir",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhopal",
+      "slug": "bhopal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhubaneswar",
+      "slug": "bhubaneswar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhuj",
+      "slug": "bhuj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhupalapalli",
+      "slug": "bhupalapalli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhusawal",
+      "slug": "bhusawal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bhuvanagiri",
+      "slug": "bhuvanagiri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bibinagar",
+      "slug": "bibinagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bihpuria",
+      "slug": "bihpuria",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bijainagar",
+      "slug": "bijainagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bijapur",
+      "slug": "bijapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bikaner",
+      "slug": "bikaner",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bilaspur",
+      "slug": "bilaspur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bilimora",
+      "slug": "bilimora",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bobbili",
+      "slug": "bobbili",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bodeli",
+      "slug": "bodeli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bodhan",
+      "slug": "bodhan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bokaro",
+      "slug": "bokaro",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bonakal",
+      "slug": "bonakal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Borsad",
+      "slug": "borsad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Buchireddypalem",
+      "slug": "buchireddypalem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Budaun",
+      "slug": "budaun",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Budhana",
+      "slug": "budhana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Budhlada",
+      "slug": "budhlada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bulandshahr",
+      "slug": "bulandshahr",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Bundu",
+      "slug": "bundu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Burdwan",
+      "slug": "burdwan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Burhanpur",
+      "slug": "burhanpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Burhar",
+      "slug": "burhar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Byadgi",
+      "slug": "byadgi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chagallu",
+      "slug": "chagallu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chalakudy",
+      "slug": "chalakudy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chamarajanagara",
+      "slug": "chamarajanagara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chandigarh",
+      "slug": "chandigarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chandrapur",
+      "slug": "chandrapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Channagiri",
+      "slug": "channagiri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chanpatia",
+      "slug": "chanpatia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chapra",
+      "slug": "chapra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chaygaon",
+      "slug": "chaygaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chebrolu",
+      "slug": "chebrolu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cheeka",
+      "slug": "cheeka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cheepurupalli",
+      "slug": "cheepurupalli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chennai",
+      "slug": "chennai",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Cherthala",
+      "slug": "cherthala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cherukupalli",
+      "slug": "cherukupalli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chevella",
+      "slug": "chevella",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cheyyar",
+      "slug": "cheyyar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chhatarpur",
+      "slug": "chhatarpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chhindwara",
+      "slug": "chhindwara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chidambaram",
+      "slug": "chidambaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chikkaballapura",
+      "slug": "chikkaballapura",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chilakaluripet",
+      "slug": "chilakaluripet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chimakurthy",
+      "slug": "chimakurthy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chintamani",
+      "slug": "chintamani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chiplun",
+      "slug": "chiplun",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chipurupalle",
+      "slug": "chipurupalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chirala",
+      "slug": "chirala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chittoor",
+      "slug": "chittoor",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chityal",
+      "slug": "chityal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Chodavaram",
+      "slug": "chodavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Choondal",
+      "slug": "choondal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Choutuppal",
+      "slug": "choutuppal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Coimbatore",
+      "slug": "coimbatore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cooch Behar",
+      "slug": "cooch-behar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cuddalore",
+      "slug": "cuddalore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Curchorem",
+      "slug": "curchorem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Cuttack",
+      "slug": "cuttack",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dabhoi",
+      "slug": "dabhoi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dabra",
+      "slug": "dabra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dahod",
+      "slug": "dahod",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dalmianagar",
+      "slug": "dalmianagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Daman",
+      "slug": "daman",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Damoh",
+      "slug": "damoh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dantewada",
+      "slug": "dantewada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Darjeeling",
+      "slug": "darjeeling",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Darsi",
+      "slug": "darsi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Daryapur",
+      "slug": "daryapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dasuya",
+      "slug": "dasuya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Datia",
+      "slug": "datia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dausa",
+      "slug": "dausa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Davanagere",
+      "slug": "davanagere",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Deesa",
+      "slug": "deesa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dehgam",
+      "slug": "dehgam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dehradun",
+      "slug": "dehradun",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Delhi/NCR",
+      "slug": "delhi-ncr",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Deoli",
+      "slug": "deoli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Devakottai",
+      "slug": "devakottai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dewas",
+      "slug": "dewas",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhampur",
+      "slug": "dhampur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhamtari",
+      "slug": "dhamtari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhanbad",
+      "slug": "dhanbad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhanera",
+      "slug": "dhanera",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharamsala",
+      "slug": "dharamsala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharapuram",
+      "slug": "dharapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharmaj",
+      "slug": "dharmaj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharmavaram",
+      "slug": "dharmavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharpally",
+      "slug": "dharpally",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharuhera",
+      "slug": "dharuhera",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dharwad",
+      "slug": "dharwad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhaulana",
+      "slug": "dhaulana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhekiajuli",
+      "slug": "dhekiajuli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhemaji",
+      "slug": "dhemaji",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dholka",
+      "slug": "dholka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhone",
+      "slug": "dhone",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dhuri",
+      "slug": "dhuri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dibrugarh",
+      "slug": "dibrugarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dimapur",
+      "slug": "dimapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dinanagar",
+      "slug": "dinanagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Domkal",
+      "slug": "domkal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dongargarh",
+      "slug": "dongargarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Doraha",
+      "slug": "doraha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dornakal",
+      "slug": "dornakal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dowlaiswaram",
+      "slug": "dowlaiswaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Draksharamam",
+      "slug": "draksharamam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dubbak",
+      "slug": "dubbak",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dubrajpur",
+      "slug": "dubrajpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Duggirala",
+      "slug": "duggirala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Dumka",
+      "slug": "dumka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Durg",
+      "slug": "durg",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Durgapur",
+      "slug": "durgapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Edacheri",
+      "slug": "edacheri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Edappadi",
+      "slug": "edappadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Edappal",
+      "slug": "edappal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Edlapadu",
+      "slug": "edlapadu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ekma",
+      "slug": "ekma",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ekma Chapra",
+      "slug": "ekma-chapra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Elamanchili",
+      "slug": "elamanchili",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Eluru",
+      "slug": "eluru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Eral",
+      "slug": "eral",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Erattupetta",
+      "slug": "erattupetta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Eriyur",
+      "slug": "eriyur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Erode",
+      "slug": "erode",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Etawah",
+      "slug": "etawah",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ettumanoor",
+      "slug": "ettumanoor",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Faizabad",
+      "slug": "faizabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Faridabad",
+      "slug": "faridabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Faridkot",
+      "slug": "faridkot",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Farrukhabad",
+      "slug": "farrukhabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Fatehabad",
+      "slug": "fatehabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Fatehpur",
+      "slug": "fatehpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Fazilka",
+      "slug": "fazilka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Firozabad",
+      "slug": "firozabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Firozepur",
+      "slug": "firozepur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Forbesganj",
+      "slug": "forbesganj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gadarwara",
+      "slug": "gadarwara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gadwal",
+      "slug": "gadwal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gajapathinagaram",
+      "slug": "gajapathinagaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gajuwaka",
+      "slug": "gajuwaka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gajwel",
+      "slug": "gajwel",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ganapavaram",
+      "slug": "ganapavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gandhidham",
+      "slug": "gandhidham",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gandhinagar",
+      "slug": "gandhinagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gauribidanur",
+      "slug": "gauribidanur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gauriganj",
+      "slug": "gauriganj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gaya",
+      "slug": "gaya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ghaziabad",
+      "slug": "ghaziabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ghazipur",
+      "slug": "ghazipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ghorasahan",
+      "slug": "ghorasahan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ghumarwin",
+      "slug": "ghumarwin",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gingee",
+      "slug": "gingee",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Giridih",
+      "slug": "giridih",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Goa",
+      "slug": "goa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gobichettipalayam",
+      "slug": "gobichettipalayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Godavarikhani",
+      "slug": "godavarikhani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Godhra",
+      "slug": "godhra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gohana",
+      "slug": "gohana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gokavaram",
+      "slug": "gokavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Golaghat",
+      "slug": "golaghat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gondal",
+      "slug": "gondal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gondia",
+      "slug": "gondia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gopalganj",
+      "slug": "gopalganj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gorakhpur",
+      "slug": "gorakhpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gorantla",
+      "slug": "gorantla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Greater Noida",
+      "slug": "greater-noida",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gudivada",
+      "slug": "gudivada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gudiyatham",
+      "slug": "gudiyatham",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gudur (Kurnool)",
+      "slug": "gudur-kurnool",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Guhagar",
+      "slug": "guhagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Guna",
+      "slug": "guna",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gundlupet",
+      "slug": "gundlupet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Guntakal",
+      "slug": "guntakal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Guntur",
+      "slug": "guntur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gurazala",
+      "slug": "gurazala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gurdaspur",
+      "slug": "gurdaspur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Guruvayur",
+      "slug": "guruvayur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Guwahati",
+      "slug": "guwahati",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Gwalior",
+      "slug": "gwalior",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hajipur",
+      "slug": "hajipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Haldwani",
+      "slug": "haldwani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Haliya",
+      "slug": "haliya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Halol",
+      "slug": "halol",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hamirpur",
+      "slug": "hamirpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Handwara",
+      "slug": "handwara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hanuman Junction",
+      "slug": "hanuman-junction",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hanumangarh",
+      "slug": "hanumangarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hapur",
+      "slug": "hapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Haridwar",
+      "slug": "haridwar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Harur",
+      "slug": "harur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hathras",
+      "slug": "hathras",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Himatnagar",
+      "slug": "himatnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hindupuram",
+      "slug": "hindupuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hiramandalam",
+      "slug": "hiramandalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hirekerur",
+      "slug": "hirekerur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hisar",
+      "slug": "hisar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hoshangabad",
+      "slug": "hoshangabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hoshiarpur",
+      "slug": "hoshiarpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hosur",
+      "slug": "hosur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Howrah",
+      "slug": "howrah",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Husnabad",
+      "slug": "husnabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Huzurabad",
+      "slug": "huzurabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Hyderabad",
+      "slug": "hyderabad",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Ichalkaranji",
+      "slug": "ichalkaranji",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Idappadi",
+      "slug": "idappadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Idar",
+      "slug": "idar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Indore",
+      "slug": "indore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Indukurpet",
+      "slug": "indukurpet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Irinjalakuda",
+      "slug": "irinjalakuda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Itarsi",
+      "slug": "itarsi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jabalpur",
+      "slug": "jabalpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jadcherla",
+      "slug": "jadcherla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jagdalpur",
+      "slug": "jagdalpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jaggampeta",
+      "slug": "jaggampeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jaggayyapeta",
+      "slug": "jaggayyapeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jagraon",
+      "slug": "jagraon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jagtial",
+      "slug": "jagtial",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jaipur",
+      "slug": "jaipur",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Jaisalmer",
+      "slug": "jaisalmer",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jajpur Road",
+      "slug": "jajpur-road",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jalakandapuram",
+      "slug": "jalakandapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jalalabad",
+      "slug": "jalalabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jalandhar",
+      "slug": "jalandhar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jalgaon",
+      "slug": "jalgaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jalore",
+      "slug": "jalore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jalpaiguri",
+      "slug": "jalpaiguri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jami",
+      "slug": "jami",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jamkhambhaliya",
+      "slug": "jamkhambhaliya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jamkhed",
+      "slug": "jamkhed",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jammalamadugu",
+      "slug": "jammalamadugu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jammikunta",
+      "slug": "jammikunta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jammu",
+      "slug": "jammu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jamnagar",
+      "slug": "jamnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jamner",
+      "slug": "jamner",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jamshedpur",
+      "slug": "jamshedpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jamtara",
+      "slug": "jamtara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jangaon",
+      "slug": "jangaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jaora",
+      "slug": "jaora",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jasdan",
+      "slug": "jasdan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jaunpur",
+      "slug": "jaunpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jawalamukhi",
+      "slug": "jawalamukhi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jayamkondan",
+      "slug": "jayamkondan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jaysingpur",
+      "slug": "jaysingpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jehanabad",
+      "slug": "jehanabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jejuri",
+      "slug": "jejuri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jhabua",
+      "slug": "jhabua",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jhajjar",
+      "slug": "jhajjar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jhansi",
+      "slug": "jhansi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jharsuguda",
+      "slug": "jharsuguda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jhunjhunu",
+      "slug": "jhunjhunu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jiaganj",
+      "slug": "jiaganj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jind",
+      "slug": "jind",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jirapur",
+      "slug": "jirapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jodhpur",
+      "slug": "jodhpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Jorhat",
+      "slug": "jorhat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Junagadh",
+      "slug": "junagadh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kadapa",
+      "slug": "kadapa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kadayam",
+      "slug": "kadayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kadi",
+      "slug": "kadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kadthal",
+      "slug": "kadthal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kaikaluru",
+      "slug": "kaikaluru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kakinada",
+      "slug": "kakinada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kakkattil",
+      "slug": "kakkattil",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalaburagi",
+      "slug": "kalaburagi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalady",
+      "slug": "kalady",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalakad",
+      "slug": "kalakad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalimpong",
+      "slug": "kalimpong",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kallur",
+      "slug": "kallur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalol",
+      "slug": "kalol",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalol Panchmahal",
+      "slug": "kalol-panchmahal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalpetta",
+      "slug": "kalpetta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalwakurthy",
+      "slug": "kalwakurthy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kalyani",
+      "slug": "kalyani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kamanaickenpalayam",
+      "slug": "kamanaickenpalayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kamanpur",
+      "slug": "kamanpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kamareddy",
+      "slug": "kamareddy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kambainallur",
+      "slug": "kambainallur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kanchikacherla",
+      "slug": "kanchikacherla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kanchipuram",
+      "slug": "kanchipuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kanchrapara",
+      "slug": "kanchrapara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kandukur",
+      "slug": "kandukur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kangeyam",
+      "slug": "kangeyam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kangra",
+      "slug": "kangra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kanigiri",
+      "slug": "kanigiri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kanipakam",
+      "slug": "kanipakam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kankipadu",
+      "slug": "kankipadu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kankroli",
+      "slug": "kankroli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kannur",
+      "slug": "kannur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kanpur",
+      "slug": "kanpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kapadvanj",
+      "slug": "kapadvanj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karaikudi",
+      "slug": "karaikudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karambakkudi",
+      "slug": "karambakkudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karanodai",
+      "slug": "karanodai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kareli",
+      "slug": "kareli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karimnagar",
+      "slug": "karimnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karnal",
+      "slug": "karnal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karur",
+      "slug": "karur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Karwar",
+      "slug": "karwar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kashipur",
+      "slug": "kashipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kathipudi",
+      "slug": "kathipudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Katihar",
+      "slug": "katihar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Katni",
+      "slug": "katni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Katpadi",
+      "slug": "katpadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Katrenikona",
+      "slug": "katrenikona",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kavali",
+      "slug": "kavali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kavindapadi",
+      "slug": "kavindapadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kawardha",
+      "slug": "kawardha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Keeranur",
+      "slug": "keeranur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khalilabad",
+      "slug": "khalilabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khambhat",
+      "slug": "khambhat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khammam",
+      "slug": "khammam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khanapur",
+      "slug": "khanapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khandwa",
+      "slug": "khandwa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khanna",
+      "slug": "khanna",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khariar Road",
+      "slug": "khariar-road",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khatta",
+      "slug": "khatta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khed",
+      "slug": "khed",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kheda",
+      "slug": "kheda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khopoli",
+      "slug": "khopoli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Khurja",
+      "slug": "khurja",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kichha",
+      "slug": "kichha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kinathukadavu",
+      "slug": "kinathukadavu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kishangarh",
+      "slug": "kishangarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kochi",
+      "slug": "kochi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kodad",
+      "slug": "kodad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kodakara",
+      "slug": "kodakara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kodaly",
+      "slug": "kodaly",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kodumur",
+      "slug": "kodumur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kodungallur",
+      "slug": "kodungallur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kokrajhar",
+      "slug": "kokrajhar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolappalur",
+      "slug": "kolappalur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolar",
+      "slug": "kolar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolargoldfields",
+      "slug": "kolargoldfields",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolathur",
+      "slug": "kolathur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolhapur",
+      "slug": "kolhapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolkata",
+      "slug": "kolkata",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Kollengode",
+      "slug": "kollengode",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kolumam",
+      "slug": "kolumam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Komarapalayam",
+      "slug": "komarapalayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kondagaon",
+      "slug": "kondagaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kondotty",
+      "slug": "kondotty",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kondur",
+      "slug": "kondur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Konithiwada",
+      "slug": "konithiwada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Koothattukulam",
+      "slug": "koothattukulam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kopargaon",
+      "slug": "kopargaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Koratagere",
+      "slug": "koratagere",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Koratla",
+      "slug": "koratla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kosamba",
+      "slug": "kosamba",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kota",
+      "slug": "kota",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kota Nellore",
+      "slug": "kota-nellore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kotabommali",
+      "slug": "kotabommali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kotdwar",
+      "slug": "kotdwar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kothacheruvu",
+      "slug": "kothacheruvu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kothagudem",
+      "slug": "kothagudem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kothamangalam",
+      "slug": "kothamangalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kothampakkam",
+      "slug": "kothampakkam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kothapeta",
+      "slug": "kothapeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kotkapura",
+      "slug": "kotkapura",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kotma",
+      "slug": "kotma",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kotpad",
+      "slug": "kotpad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kotputli",
+      "slug": "kotputli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kottakkal",
+      "slug": "kottakkal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kovilpatti",
+      "slug": "kovilpatti",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kovvur",
+      "slug": "kovvur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kozhikode",
+      "slug": "kozhikode",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kozhinjampara",
+      "slug": "kozhinjampara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Krishnanagar",
+      "slug": "krishnanagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Krishnarajanagara",
+      "slug": "krishnarajanagara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Krishnarajpet",
+      "slug": "krishnarajpet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Krosuru",
+      "slug": "krosuru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kuju",
+      "slug": "kuju",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kukshi",
+      "slug": "kukshi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kullu",
+      "slug": "kullu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kumbakonam",
+      "slug": "kumbakonam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kundli",
+      "slug": "kundli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kunnamangalam",
+      "slug": "kunnamangalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kunnamkulam",
+      "slug": "kunnamkulam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kuppam",
+      "slug": "kuppam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kurinjipadi",
+      "slug": "kurinjipadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kurmannapalem",
+      "slug": "kurmannapalem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kurnool",
+      "slug": "kurnool",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kurukshetra",
+      "slug": "kurukshetra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kurumassery",
+      "slug": "kurumassery",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Kuzhithurai",
+      "slug": "kuzhithurai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Lakhimpur Assam",
+      "slug": "lakhimpur-assam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Lakkavaram",
+      "slug": "lakkavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Lalgudi",
+      "slug": "lalgudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Lalkuan",
+      "slug": "lalkuan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Latur",
+      "slug": "latur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Leh",
+      "slug": "leh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Lonavala",
+      "slug": "lonavala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Loni",
+      "slug": "loni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Lucknow",
+      "slug": "lucknow",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Ludhiana",
+      "slug": "ludhiana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Luxettipet",
+      "slug": "luxettipet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Macherla",
+      "slug": "macherla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Machilipatnam",
+      "slug": "machilipatnam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Madaharpakkam",
+      "slug": "madaharpakkam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Madhavaram",
+      "slug": "madhavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Madhepura",
+      "slug": "madhepura",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Madhira",
+      "slug": "madhira",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Madugula",
+      "slug": "madugula",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Madurai",
+      "slug": "madurai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Maduranthakam",
+      "slug": "maduranthakam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Magadi",
+      "slug": "magadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mahabubabad",
+      "slug": "mahabubabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mahalingpur",
+      "slug": "mahalingpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Maharajganj",
+      "slug": "maharajganj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mahbubnagar",
+      "slug": "mahbubnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mahishadal",
+      "slug": "mahishadal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mahudha",
+      "slug": "mahudha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Makrana",
+      "slug": "makrana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mala",
+      "slug": "mala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Malappuram",
+      "slug": "malappuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Malda",
+      "slug": "malda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Malikipuram",
+      "slug": "malikipuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Malkipuram",
+      "slug": "malkipuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Malout",
+      "slug": "malout",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Malur",
+      "slug": "malur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mancherial",
+      "slug": "mancherial",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mandapeta",
+      "slug": "mandapeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mandi",
+      "slug": "mandi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mandi Gobindgarh",
+      "slug": "mandi-gobindgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mandvi",
+      "slug": "mandvi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mandya",
+      "slug": "mandya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mangaldoi",
+      "slug": "mangaldoi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Manjeri",
+      "slug": "manjeri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mannargudi",
+      "slug": "mannargudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mannarkkad",
+      "slug": "mannarkkad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mansa",
+      "slug": "mansa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mappedu",
+      "slug": "mappedu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Maripeda",
+      "slug": "maripeda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Markapuram",
+      "slug": "markapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Marthandam",
+      "slug": "marthandam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Martur",
+      "slug": "martur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Maslandapur",
+      "slug": "maslandapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mathura",
+      "slug": "mathura",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mattanur",
+      "slug": "mattanur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mau",
+      "slug": "mau",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mayiladuthurai",
+      "slug": "mayiladuthurai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Medarametla",
+      "slug": "medarametla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Meerut",
+      "slug": "meerut",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mehsana",
+      "slug": "mehsana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Melattur",
+      "slug": "melattur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Metpally",
+      "slug": "metpally",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mettupalayam",
+      "slug": "mettupalayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mhow",
+      "slug": "mhow",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Miryalaguda",
+      "slug": "miryalaguda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Moga",
+      "slug": "moga",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mogalthur",
+      "slug": "mogalthur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mohali",
+      "slug": "mohali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Moradabad",
+      "slug": "moradabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Morena",
+      "slug": "morena",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Morinda",
+      "slug": "morinda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Motihari",
+      "slug": "motihari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mudalgi",
+      "slug": "mudalgi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Muddebihal",
+      "slug": "muddebihal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mudhol",
+      "slug": "mudhol",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mughalsarai",
+      "slug": "mughalsarai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mukerian",
+      "slug": "mukerian",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mukkam",
+      "slug": "mukkam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Muktsar",
+      "slug": "muktsar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mullanpur",
+      "slug": "mullanpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mumbai",
+      "slug": "mumbai",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Mummidivaram",
+      "slug": "mummidivaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mundra",
+      "slug": "mundra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Murtizapur",
+      "slug": "murtizapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Muthur",
+      "slug": "muthur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Muvattupuzha",
+      "slug": "muvattupuzha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Muzaffarnagar",
+      "slug": "muzaffarnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Muzaffarpur",
+      "slug": "muzaffarpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mylavaram",
+      "slug": "mylavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Mysuru",
+      "slug": "mysuru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nabadwip",
+      "slug": "nabadwip",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nadaun",
+      "slug": "nadaun",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nadia",
+      "slug": "nadia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nadiad",
+      "slug": "nadiad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagaon",
+      "slug": "nagaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagapattinam",
+      "slug": "nagapattinam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagaram",
+      "slug": "nagaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagari",
+      "slug": "nagari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagarkurnool",
+      "slug": "nagarkurnool",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagercoil",
+      "slug": "nagercoil",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagireddypet",
+      "slug": "nagireddypet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nagpur",
+      "slug": "nagpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Naharlagun",
+      "slug": "naharlagun",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Naidupeta",
+      "slug": "naidupeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nainital",
+      "slug": "nainital",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nakodar",
+      "slug": "nakodar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nakrekal",
+      "slug": "nakrekal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nalgonda",
+      "slug": "nalgonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nallamada",
+      "slug": "nallamada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Namakkal",
+      "slug": "namakkal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nambiyur",
+      "slug": "nambiyur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nanded",
+      "slug": "nanded",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nandigama",
+      "slug": "nandigama",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nandurbar",
+      "slug": "nandurbar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nanjangud",
+      "slug": "nanjangud",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narasannapeta",
+      "slug": "narasannapeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narasaraopet",
+      "slug": "narasaraopet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narayanpet",
+      "slug": "narayanpet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narnaul",
+      "slug": "narnaul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narsampet",
+      "slug": "narsampet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narsapur",
+      "slug": "narsapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Narsipatnam",
+      "slug": "narsipatnam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nashik",
+      "slug": "nashik",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nashirabad",
+      "slug": "nashirabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nava Raipur",
+      "slug": "nava-raipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Navi Mumbai",
+      "slug": "navi-mumbai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Navsari",
+      "slug": "navsari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nawalgarh",
+      "slug": "nawalgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nawanshahr",
+      "slug": "nawanshahr",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nawapara",
+      "slug": "nawapara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nazirpur",
+      "slug": "nazirpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Neelapalle",
+      "slug": "neelapalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Neemuch",
+      "slug": "neemuch",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nekkonda",
+      "slug": "nekkonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nelakondapally",
+      "slug": "nelakondapally",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nellimarla",
+      "slug": "nellimarla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nellore",
+      "slug": "nellore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nichlaul",
+      "slug": "nichlaul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nidadavolu",
+      "slug": "nidadavolu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nimbahera",
+      "slug": "nimbahera",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nindra",
+      "slug": "nindra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nirjuli",
+      "slug": "nirjuli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nirmal",
+      "slug": "nirmal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nizamabad",
+      "slug": "nizamabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "North Paravur",
+      "slug": "north-paravur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nurpur",
+      "slug": "nurpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Nuziveedu",
+      "slug": "nuziveedu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Omalur",
+      "slug": "omalur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ongole",
+      "slug": "ongole",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ottapalam",
+      "slug": "ottapalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "P Dharmavaram",
+      "slug": "p-dharmavaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Padampur",
+      "slug": "padampur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pala",
+      "slug": "pala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palakkad",
+      "slug": "palakkad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palakol",
+      "slug": "palakol",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palakollu",
+      "slug": "palakollu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palakonda",
+      "slug": "palakonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palamaner",
+      "slug": "palamaner",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palampur",
+      "slug": "palampur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palani",
+      "slug": "palani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palej",
+      "slug": "palej",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palghar",
+      "slug": "palghar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pali",
+      "slug": "pali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palitana",
+      "slug": "palitana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palladam",
+      "slug": "palladam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pallipalayam",
+      "slug": "pallipalayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pallipattu",
+      "slug": "pallipattu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palluruthy",
+      "slug": "palluruthy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palvancha",
+      "slug": "palvancha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Palwal",
+      "slug": "palwal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pamarru",
+      "slug": "pamarru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pamidi",
+      "slug": "pamidi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pamur",
+      "slug": "pamur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Panachamoodu",
+      "slug": "panachamoodu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Panchkula",
+      "slug": "panchkula",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pandalam",
+      "slug": "pandalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pandavapura",
+      "slug": "pandavapura",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pandikkad",
+      "slug": "pandikkad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Panipat",
+      "slug": "panipat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Panruti",
+      "slug": "panruti",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pantnagar",
+      "slug": "pantnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Paralakhemundi",
+      "slug": "paralakhemundi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Paramathivelur",
+      "slug": "paramathivelur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Parawada",
+      "slug": "parawada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Parigi",
+      "slug": "parigi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Parkal",
+      "slug": "parkal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Parvathipuram",
+      "slug": "parvathipuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Patan",
+      "slug": "patan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Patan Chhattisgarh",
+      "slug": "patan-chhattisgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pathankot",
+      "slug": "pathankot",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pathapatnam",
+      "slug": "pathapatnam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Patiala",
+      "slug": "patiala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Patna",
+      "slug": "patna",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Patran",
+      "slug": "patran",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Patratu",
+      "slug": "patratu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pattambi",
+      "slug": "pattambi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Payakaraopeta",
+      "slug": "payakaraopeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Payyanur",
+      "slug": "payyanur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pedakurapadu",
+      "slug": "pedakurapadu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pedana",
+      "slug": "pedana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pedanandipadu",
+      "slug": "pedanandipadu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Peddapalli",
+      "slug": "peddapalli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Peddapuram",
+      "slug": "peddapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pen",
+      "slug": "pen",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pendra",
+      "slug": "pendra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pendurthi",
+      "slug": "pendurthi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Penuganchiprolu",
+      "slug": "penuganchiprolu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Penugonda",
+      "slug": "penugonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Penumuru",
+      "slug": "penumuru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Perambra",
+      "slug": "perambra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Peravurani",
+      "slug": "peravurani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Peringottukara",
+      "slug": "peringottukara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Perinthalmanna",
+      "slug": "perinthalmanna",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pernambut",
+      "slug": "pernambut",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Perundalaiyur",
+      "slug": "perundalaiyur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Perundurai",
+      "slug": "perundurai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Petlad",
+      "slug": "petlad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Piduguralla",
+      "slug": "piduguralla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pilani",
+      "slug": "pilani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pileru",
+      "slug": "pileru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pilibhit",
+      "slug": "pilibhit",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pilkhuwa",
+      "slug": "pilkhuwa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pinjore",
+      "slug": "pinjore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pipariya",
+      "slug": "pipariya",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pithampur",
+      "slug": "pithampur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pithapuram",
+      "slug": "pithapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Podili",
+      "slug": "podili",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pollachi",
+      "slug": "pollachi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ponda",
+      "slug": "ponda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ponduru",
+      "slug": "ponduru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ponnamaravathi",
+      "slug": "ponnamaravathi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ponnani",
+      "slug": "ponnani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ponneri",
+      "slug": "ponneri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ponnur",
+      "slug": "ponnur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Port Blair",
+      "slug": "port-blair",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pratapgarh (Uttar Pradesh)",
+      "slug": "pratapgarh-uttar-pradesh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Proddatur",
+      "slug": "proddatur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Puducherry",
+      "slug": "puducherry",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pudukkottai",
+      "slug": "pudukkottai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pulivendula",
+      "slug": "pulivendula",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Puliyankudi",
+      "slug": "puliyankudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Pune",
+      "slug": "pune",
+      "slug_confidence": "verified_sample"
+    },
+    {
+      "display_name": "Punjai Puliampatti",
+      "slug": "punjai-puliampatti",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Puri",
+      "slug": "puri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Purnia",
+      "slug": "purnia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "PutturAP",
+      "slug": "putturap",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rabkavi",
+      "slug": "rabkavi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Raebareli",
+      "slug": "raebareli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rahuri",
+      "slug": "rahuri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Raichur",
+      "slug": "raichur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Raiganj",
+      "slug": "raiganj",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Railway Koduru",
+      "slug": "railway-koduru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Raipur",
+      "slug": "raipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Raisinghnagar",
+      "slug": "raisinghnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajahmundry",
+      "slug": "rajahmundry",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajam",
+      "slug": "rajam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajampet",
+      "slug": "rajampet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajapalayam",
+      "slug": "rajapalayam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajkot",
+      "slug": "rajkot",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajnandgaon",
+      "slug": "rajnandgaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rajpipla",
+      "slug": "rajpipla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ramabhadrapuram",
+      "slug": "ramabhadrapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ramachandrapuram",
+      "slug": "ramachandrapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ramayampet",
+      "slug": "ramayampet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ramgarh",
+      "slug": "ramgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ramnagar",
+      "slug": "ramnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rampur",
+      "slug": "rampur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ranaghat",
+      "slug": "ranaghat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ranastalam",
+      "slug": "ranastalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ranchi",
+      "slug": "ranchi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ranebennur",
+      "slug": "ranebennur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ranipet",
+      "slug": "ranipet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ranjangaon",
+      "slug": "ranjangaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rapur",
+      "slug": "rapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rasipuram",
+      "slug": "rasipuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rath",
+      "slug": "rath",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ratlam",
+      "slug": "ratlam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ravulapalem",
+      "slug": "ravulapalem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Raxaul",
+      "slug": "raxaul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rayagada",
+      "slug": "rayagada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Razole",
+      "slug": "razole",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Repalle",
+      "slug": "repalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rewa",
+      "slug": "rewa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rewari",
+      "slug": "rewari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rishikesh",
+      "slug": "rishikesh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Roorkee",
+      "slug": "roorkee",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ropar",
+      "slug": "ropar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rourkela",
+      "slug": "rourkela",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rudrapur",
+      "slug": "rudrapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Rupnagar",
+      "slug": "rupnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sadasivpet",
+      "slug": "sadasivpet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Safidon",
+      "slug": "safidon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sagwara",
+      "slug": "sagwara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Saharanpur",
+      "slug": "saharanpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Saharsa",
+      "slug": "saharsa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sahjanwa",
+      "slug": "sahjanwa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Salem",
+      "slug": "salem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Saligram",
+      "slug": "saligram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Salur",
+      "slug": "salur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Saluru",
+      "slug": "saluru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Samalkota",
+      "slug": "samalkota",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Samastipur",
+      "slug": "samastipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sambhal",
+      "slug": "sambhal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sanand",
+      "slug": "sanand",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sangamner",
+      "slug": "sangamner",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sangareddi",
+      "slug": "sangareddi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sangaria",
+      "slug": "sangaria",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sangrur",
+      "slug": "sangrur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sankarankovil",
+      "slug": "sankarankovil",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sankeshwar",
+      "slug": "sankeshwar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sardulgarh",
+      "slug": "sardulgarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sarni",
+      "slug": "sarni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sasaram",
+      "slug": "sasaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sathankulam",
+      "slug": "sathankulam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sathupalli",
+      "slug": "sathupalli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sathupally",
+      "slug": "sathupally",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sathuvachari",
+      "slug": "sathuvachari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sathyamangalam",
+      "slug": "sathyamangalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Satna",
+      "slug": "satna",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sattenapalle",
+      "slug": "sattenapalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Satyavedu",
+      "slug": "satyavedu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Secunderabad",
+      "slug": "secunderabad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sehore",
+      "slug": "sehore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Seoni",
+      "slug": "seoni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sethiyathope",
+      "slug": "sethiyathope",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shadnagar",
+      "slug": "shadnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shahada",
+      "slug": "shahada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shahdol",
+      "slug": "shahdol",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shajapur",
+      "slug": "shajapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shillong",
+      "slug": "shillong",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shimla",
+      "slug": "shimla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shirpur",
+      "slug": "shirpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shivamogga",
+      "slug": "shivamogga",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shivpuri",
+      "slug": "shivpuri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sholinghur",
+      "slug": "sholinghur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Shrirampur",
+      "slug": "shrirampur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Siddipet",
+      "slug": "siddipet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sikar",
+      "slug": "sikar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Silchar",
+      "slug": "silchar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Siliguri",
+      "slug": "siliguri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Silvassa",
+      "slug": "silvassa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sindhudurg",
+      "slug": "sindhudurg",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Singarayakonda",
+      "slug": "singarayakonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Singrauli",
+      "slug": "singrauli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sinnar",
+      "slug": "sinnar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sircilla",
+      "slug": "sircilla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sirkali",
+      "slug": "sirkali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sirpur Kagaznagar",
+      "slug": "sirpur-kagaznagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sirsa",
+      "slug": "sirsa",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Siruvalur",
+      "slug": "siruvalur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sitapur",
+      "slug": "sitapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Solan",
+      "slug": "solan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Somandepalle",
+      "slug": "somandepalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Somanur",
+      "slug": "somanur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sonari",
+      "slug": "sonari",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sonipat",
+      "slug": "sonipat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Srikakulam",
+      "slug": "srikakulam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Srikalahasti",
+      "slug": "srikalahasti",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Srinagar",
+      "slug": "srinagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Srivaikuntam",
+      "slug": "srivaikuntam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sugauli",
+      "slug": "sugauli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sujangarh",
+      "slug": "sujangarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sukma",
+      "slug": "sukma",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sullurpeta",
+      "slug": "sullurpeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sultan Bathery",
+      "slug": "sultan-bathery",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sultanpur",
+      "slug": "sultanpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sulur",
+      "slug": "sulur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sunam",
+      "slug": "sunam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Sundargarh",
+      "slug": "sundargarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Supaul",
+      "slug": "supaul",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Surandai",
+      "slug": "surandai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Surat",
+      "slug": "surat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Surendranagar",
+      "slug": "surendranagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Suryapet",
+      "slug": "suryapet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tadepalligudem",
+      "slug": "tadepalligudem",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tadikalapudi",
+      "slug": "tadikalapudi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tadipatri",
+      "slug": "tadipatri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Talwandi Bhai",
+      "slug": "talwandi-bhai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tanda",
+      "slug": "tanda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tandur",
+      "slug": "tandur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tanguturu",
+      "slug": "tanguturu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tanuku",
+      "slug": "tanuku",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tatipaka",
+      "slug": "tatipaka",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tekkali",
+      "slug": "tekkali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tenali",
+      "slug": "tenali",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tenkasi",
+      "slug": "tenkasi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tezpur",
+      "slug": "tezpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thalassery",
+      "slug": "thalassery",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thalikulam",
+      "slug": "thalikulam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thane",
+      "slug": "thane",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thanipadi",
+      "slug": "thanipadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thanjavur",
+      "slug": "thanjavur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thavanampalle",
+      "slug": "thavanampalle",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thirunageswaram",
+      "slug": "thirunageswaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruppathur",
+      "slug": "thiruppathur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruthani",
+      "slug": "thiruthani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruthuraipoondi",
+      "slug": "thiruthuraipoondi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruvalangadu",
+      "slug": "thiruvalangadu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruvalla",
+      "slug": "thiruvalla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruvallur",
+      "slug": "thiruvallur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruvananthapuram",
+      "slug": "trivandrum",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruvannamalai",
+      "slug": "thiruvannamalai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thiruvarur",
+      "slug": "thiruvarur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thorrur",
+      "slug": "thorrur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Thrissur",
+      "slug": "thrissur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tindivanam",
+      "slug": "tindivanam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tinsukia",
+      "slug": "tinsukia",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tiruchendur",
+      "slug": "tiruchendur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tiruchengode",
+      "slug": "tiruchengode",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tirukoilur",
+      "slug": "tirukoilur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tirunelveli",
+      "slug": "tirunelveli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tirupati",
+      "slug": "tirupati",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tirupur",
+      "slug": "tirupur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tirur",
+      "slug": "tirur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tiruvuru",
+      "slug": "tiruvuru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Titagarh",
+      "slug": "titagarh",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tohana",
+      "slug": "tohana",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tonk",
+      "slug": "tonk",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tumakuru",
+      "slug": "tumakuru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tumkur",
+      "slug": "tumkur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tundla",
+      "slug": "tundla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tuni",
+      "slug": "tuni",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Tuticorin",
+      "slug": "tuticorin",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Udaipur",
+      "slug": "udaipur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Udumalaippettai",
+      "slug": "udumalaippettai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Udumalpet",
+      "slug": "udumalpet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ujhani",
+      "slug": "ujhani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ujjain",
+      "slug": "ujjain",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ulhasnagar",
+      "slug": "ulhasnagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ulundurpet",
+      "slug": "ulundurpet",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Umbergaon",
+      "slug": "umbergaon",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Umreth",
+      "slug": "umreth",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Una",
+      "slug": "una",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Una (Gujarat)",
+      "slug": "una-gujarat",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Undavalli",
+      "slug": "undavalli",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Unnao",
+      "slug": "unnao",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Uppada",
+      "slug": "uppada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Uthangarai",
+      "slug": "uthangarai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Uthukottai",
+      "slug": "uthukottai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vadakara",
+      "slug": "vadakara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vadakkencherry",
+      "slug": "vadakkencherry",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vadalur",
+      "slug": "vadalur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vadipatti",
+      "slug": "vadipatti",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vadodara",
+      "slug": "vadodara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vaitheeswarankoil",
+      "slug": "vaitheeswarankoil",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Valanchery",
+      "slug": "valanchery",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Valapadi",
+      "slug": "valapadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Valigonda",
+      "slug": "valigonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Valsad",
+      "slug": "valsad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vandavasi",
+      "slug": "vandavasi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vaniyambadi",
+      "slug": "vaniyambadi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vapi",
+      "slug": "vapi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Varadium",
+      "slug": "varadium",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Varanasi",
+      "slug": "varanasi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vardhanapeta",
+      "slug": "vardhanapeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Varkala",
+      "slug": "varkala",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vasai",
+      "slug": "vasai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Velangi",
+      "slug": "velangi",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Velanthavalam",
+      "slug": "velanthavalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vellakoil",
+      "slug": "vellakoil",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vellichanthai",
+      "slug": "vellichanthai",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vellore",
+      "slug": "vellore",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vemulawada",
+      "slug": "vemulawada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Venkatagiri",
+      "slug": "venkatagiri",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Venkatapuram",
+      "slug": "venkatapuram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Veraval",
+      "slug": "veraval",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vettaikaranpudur",
+      "slug": "vettaikaranpudur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vidisha",
+      "slug": "vidisha",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vijapur",
+      "slug": "vijapur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vijayamangalam",
+      "slug": "vijayamangalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vijayapura",
+      "slug": "vijayapura",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vijayawada",
+      "slug": "vijayawada",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vinjamur",
+      "slug": "vinjamur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vinukonda",
+      "slug": "vinukonda",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Virudhachalam",
+      "slug": "virudhachalam",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Visakhapatnam",
+      "slug": "vizag",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vissannapeta",
+      "slug": "vissannapeta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vizianagaram",
+      "slug": "vizianagaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vrindavan",
+      "slug": "vrindavan",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vuyyuru",
+      "slug": "vuyyuru",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Vyara",
+      "slug": "vyara",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Wadakkancherry",
+      "slug": "wadakkancherry",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Wanaparthy",
+      "slug": "wanaparthy",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Wandoor",
+      "slug": "wandoor",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Wani",
+      "slug": "wani",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Warangal",
+      "slug": "warangal",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Warora",
+      "slug": "warora",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Washim",
+      "slug": "washim",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Wayanad",
+      "slug": "wayanad",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Wyra",
+      "slug": "wyra",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yadagirigutta",
+      "slug": "yadagirigutta",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yamunanagar",
+      "slug": "yamunanagar",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yelamanchili",
+      "slug": "yelamanchili",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yeleswaram",
+      "slug": "yeleswaram",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yellandu",
+      "slug": "yellandu",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yemmiganur",
+      "slug": "yemmiganur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Yerraguntla",
+      "slug": "yerraguntla",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Zirakpur",
+      "slug": "zirakpur",
+      "slug_confidence": "inferred_from_selector_label"
+    },
+    {
+      "display_name": "Ziro",
+      "slug": "ziro",
+      "slug_confidence": "inferred_from_selector_label"
+    }
+  ]
+}

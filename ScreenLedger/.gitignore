@@ -1,0 +1,9 @@
+# Large provider response bodies are deliberately discarded and must never be committed.
+/collector/**/raw/
+# Local Python environments, caches, and in-progress SQLite journals.
+**/.venv/
+**/__pycache__/
+*.py[cod]
+*.sqlite-wal
+*.sqlite-shm
+/collector/collector_data/smart_collector.sqlite

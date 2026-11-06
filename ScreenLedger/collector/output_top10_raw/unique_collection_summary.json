@@ -1,0 +1,15 @@
+{
+  "source_cities": 10,
+  "raw_show_rows": 4353,
+  "unique_shows": 4353,
+  "duplicates_removed": 0,
+  "total_seats": 964033,
+  "assumed_booked_seats": 294499,
+  "assumed_occupancy_pct": 30.55,
+  "priced_shows": 4352,
+  "unpriced_shows": 1,
+  "known_priced_gross_inr": 150920190.24,
+  "estimated_gross_inr": null,
+  "method": "Assume every unavailable seat, including blocked/held, is booked; multiply category-wise by advertised ticket price.",
+  "warning": "Not actual sales or verified box-office collection; only latest snapshot per unique screening is counted."
+}

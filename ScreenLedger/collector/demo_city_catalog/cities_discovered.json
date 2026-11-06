@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Delhi NCR",
+    "slug": "delhi-ncr",
+    "city_id": "demo-003",
+    "state": "Delhi",
+    "latitude": "",
+    "longitude": "",
+    "source": "saved_json_city_catalog",
+    "source_path": "root.cities[2]",
+    "confidence": "source_slug",
+    "checked_at_utc": "2026-11-06T15:37:35+00:00"
+  },
+  {
+    "name": "Kolkata",
+    "slug": "kolkata",
+    "city_id": "demo-002",
+    "state": "West Bengal",
+    "latitude": "",
+    "longitude": "",
+    "source": "saved_json_city_catalog",
+    "source_path": "root.cities[1]",
+    "confidence": "source_slug",
+    "checked_at_utc": "2026-11-06T15:37:35+00:00"
+  },
+  {
+    "name": "Mumbai",
+    "slug": "mumbai",
+    "city_id": "demo-001",
+    "state": "Maharashtra",
+    "latitude": "",
+    "longitude": "",
+    "source": "saved_json_city_catalog",
+    "source_path": "root.cities[0]",
+    "confidence": "source_slug",
+    "checked_at_utc": "2026-11-06T15:37:35+00:00"
+  }
+]

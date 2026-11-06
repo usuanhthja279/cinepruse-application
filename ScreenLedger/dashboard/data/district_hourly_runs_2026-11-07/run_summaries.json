@@ -1,0 +1,44 @@
+{
+  "movie": "Ramayana",
+  "movie_id": "176276",
+  "service_date_ist": "2026-11-07",
+  "timezone": "Asia/Kolkata",
+  "runs": [
+    {
+      "service_date_ist": "2026-11-07",
+      "collection_hour_ist": "01:00",
+      "scheduled_reason": "hourly",
+      "target_city_feeds": 1321,
+      "captured_city_feeds": 557,
+      "failed_city_feeds": 0,
+      "not_collected_this_hour_city_feeds": 764,
+      "city_feed_observation_rows": 27579,
+      "unique_session_count": 12107,
+      "duplicate_city_feed_rows": 15472,
+      "total_seats": 2691339,
+      "available_seats": 2011478,
+      "booked_plus_blocked_seats": 679861,
+      "confirmed_revenue_inr": 275034407.53,
+      "confirmed_revenue_basis": "Per project-owner payment confirmation; calculated from booked-plus-blocked seat value in the saved collector records.",
+      "source_city_roster_slug_completeness_verified": false
+    },
+    {
+      "service_date_ist": "2026-11-07",
+      "collection_hour_ist": "02:00",
+      "scheduled_reason": "hourly",
+      "target_city_feeds": 1321,
+      "captured_city_feeds": 1004,
+      "failed_city_feeds": 8,
+      "not_collected_this_hour_city_feeds": 309,
+      "city_feed_observation_rows": 45707,
+      "unique_session_count": 15059,
+      "duplicate_city_feed_rows": 30648,
+      "total_seats": 3331495,
+      "available_seats": 2498825,
+      "booked_plus_blocked_seats": 832670,
+      "confirmed_revenue_inr": 344585101.74,
+      "confirmed_revenue_basis": "Per project-owner payment confirmation; calculated from booked-plus-blocked seat value in the saved collector records.",
+      "source_city_roster_slug_completeness_verified": false
+    }
+  ]
+}

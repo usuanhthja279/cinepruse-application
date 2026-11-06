@@ -1,0 +1,42 @@
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 58510)
+Traceback (most recent call last):
+  File "E:\Projects\screenledger\collector\live_dashboard_server.py", line 282, in api
+    self.send_json(show_page(conn, day, city, page, page_size, search))
+  File "E:\Projects\screenledger\collector\live_dashboard_server.py", line 258, in send_json
+    self.wfile.write(body)
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "E:\Projects\screenledger\collector\live_dashboard_server.py", line 249, in __init__
+    super().__init__(*args, directory=str(ROOT), **kwargs)
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+  File "E:\Projects\screenledger\collector\live_dashboard_server.py", line 319, in do_GET
+    self.api(parsed.path, parse_qs(parsed.query))
+  File "E:\Projects\screenledger\collector\live_dashboard_server.py", line 312, in api
+    self.send_json({"error": str(exc)}, 400)
+  File "E:\Projects\screenledger\collector\live_dashboard_server.py", line 257, in send_json
+    self.end_headers()
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 538, in end_headers
+    self.flush_headers()
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 542, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "C:\Users\usuan\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+----------------------------------------

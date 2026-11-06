@@ -1,0 +1,22 @@
+{
+  "cities": [
+    {
+      "id": "demo-001",
+      "name": "Mumbai",
+      "slug": "mumbai",
+      "state": "Maharashtra"
+    },
+    {
+      "id": "demo-002",
+      "name": "Kolkata",
+      "slug": "kolkata",
+      "state": "West Bengal"
+    },
+    {
+      "id": "demo-003",
+      "name": "Delhi NCR",
+      "slug": "delhi-ncr",
+      "state": "Delhi"
+    }
+  ]
+}

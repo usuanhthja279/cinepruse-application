@@ -1,0 +1,46 @@
+{
+  "parallel_workers": 5,
+  "target_date_ist": "2026-11-07",
+  "results": [
+    {
+      "city": "mumbai",
+      "actual_city": "mumbai",
+      "http_and_body_seconds": 2.119,
+      "parse_seconds": 1.045,
+      "shows_returned": 762,
+      "snapshot_utc": "2026-11-06T19:13:52+00:00"
+    },
+    {
+      "city": "delhi-ncr",
+      "actual_city": "delhi-ncr",
+      "http_and_body_seconds": 3.278,
+      "parse_seconds": 0.694,
+      "shows_returned": 758,
+      "snapshot_utc": "2026-11-06T19:13:53+00:00"
+    },
+    {
+      "city": "bengaluru",
+      "actual_city": "bengaluru",
+      "http_and_body_seconds": 1.895,
+      "parse_seconds": 0.186,
+      "shows_returned": 280,
+      "snapshot_utc": "2026-11-06T19:13:52+00:00"
+    },
+    {
+      "city": "hyderabad",
+      "actual_city": "hyderabad",
+      "http_and_body_seconds": 1.543,
+      "parse_seconds": 0.182,
+      "shows_returned": 263,
+      "snapshot_utc": "2026-11-06T19:13:52+00:00"
+    },
+    {
+      "city": "chennai",
+      "actual_city": "chennai",
+      "http_and_body_seconds": 1.747,
+      "parse_seconds": 0.13,
+      "shows_returned": 145,
+      "snapshot_utc": "2026-11-06T19:13:52+00:00"
+    }
+  ]
+}

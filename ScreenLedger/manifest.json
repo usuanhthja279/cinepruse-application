@@ -1,0 +1,329 @@
+{
+  "package": "ScreenLedger consolidated v5 midnight handoff",
+  "target_service_date_ist": "2026-11-07",
+  "live_collector_verified": false,
+  "official_goi_geojson_embedded": false,
+  "test_status": "15 unit tests passed, offline only",
+  "files": [
+    {
+      "path": "CHANGELOG_V5.md",
+      "size_bytes": 1553,
+      "sha256": "410bfb62b674d71df6fc146a3539cd9ada4f413cddf541f37a3577f39439efc1"
+    },
+    {
+      "path": "README_START_HERE.md",
+      "size_bytes": 5908,
+      "sha256": "5ebb34e393559f4f4f9da91f56b53aa41fd495707c2506e65bd0677669f605ed"
+    },
+    {
+      "path": "collector/.gitignore",
+      "size_bytes": 98,
+      "sha256": "ad59aa23fa89652820c9b5f6bdd68f447a05e60d523455ef287e61411a234612"
+    },
+    {
+      "path": "collector/CODEX_CITY_DISCOVERY_PROMPT.md",
+      "size_bytes": 7383,
+      "sha256": "d2020f1dd8e7ba7cbd42dd6119926b4fd3b5067bc9269e7f27b60977a14462dc"
+    },
+    {
+      "path": "collector/GET_STATUS.ps1",
+      "size_bytes": 256,
+      "sha256": "2ed6921e9a481fd8d795a39ffc7974ce12eb293edaa5db1c1e32ce42fdb11e43"
+    },
+    {
+      "path": "collector/README.md",
+      "size_bytes": 7177,
+      "sha256": "4c797d9e31acaa9fbc1d1862a6e63fec80729c72dc6cb3130f18be0d8bceaf19"
+    },
+    {
+      "path": "collector/RUN_OFFLINE_TEST.ps1",
+      "size_bytes": 704,
+      "sha256": "a79737544877aaef6026a3149cfd8a291a5f518265a20e98d0fba6e78ae33fcc"
+    },
+    {
+      "path": "collector/SMART_COLLECTOR_README.md",
+      "size_bytes": 2393,
+      "sha256": "7afc7a68c1a43b4629c09c2626d0631e8c2c0539f9167c1a6f3391fdb348b37c"
+    },
+    {
+      "path": "collector/START_AT_MIDNIGHT.ps1",
+      "size_bytes": 1378,
+      "sha256": "94680d91f7ac2970a0af87ad0823dbbb44f81ebeca0115256b42a778dc5e55eb"
+    },
+    {
+      "path": "collector/__pycache__/city_catalog.cpython-313.pyc",
+      "size_bytes": 10995,
+      "sha256": "94fd64d87c2c85936a4ccd40dffccacafd6e97a2de0dbadb975750d3af4d1878"
+    },
+    {
+      "path": "collector/__pycache__/district_extractor.cpython-313.pyc",
+      "size_bytes": 33241,
+      "sha256": "ba809bc035a7d02f206e512db54bdb1fdd6ba028bdfc091ecd27ba0499fd86c5"
+    },
+    {
+      "path": "collector/__pycache__/smart_collector.cpython-313.pyc",
+      "size_bytes": 25513,
+      "sha256": "a5e5c030c749ea1c03cf942167f5e82b238bdb19b15abb01f64d85a063655a05"
+    },
+    {
+      "path": "collector/build_city_candidates.py",
+      "size_bytes": 13680,
+      "sha256": "d65e33f229f0178db324cd6f6a6f0ad8e146197beb91380a7dfb4997987e51bc"
+    },
+    {
+      "path": "collector/cities_500_candidates.csv",
+      "size_bytes": 28108,
+      "sha256": "3b83bbaab5627325d83b82672dd1e19f6d8b7f7a45372dc602ef0c7434829f73"
+    },
+    {
+      "path": "collector/city_catalog.py",
+      "size_bytes": 7516,
+      "sha256": "057408fbe94bdd2b3da55e651f9bf1a8f340a34e11683c39bf485e8b7cad1e87"
+    },
+    {
+      "path": "collector/collector_status.py",
+      "size_bytes": 4328,
+      "sha256": "aa25045a4d76f81e9e958e842dd4f74d93e72da639866da11852c6084ad697a5"
+    },
+    {
+      "path": "collector/demo_city_catalog/cities_discovered.csv",
+      "size_bytes": 439,
+      "sha256": "91d78961f9ee8b450f87b37b42d7c2196137368c7a5c7cd0b2aa7b0640f5b97d"
+    },
+    {
+      "path": "collector/demo_city_catalog/cities_discovered.json",
+      "size_bytes": 934,
+      "sha256": "2e2db7237bbafb3aac86dc37046bdbc452275e733d36c0f896e74ab3ce121a3a"
+    },
+    {
+      "path": "collector/demo_city_catalog/city_discovery_report.json",
+      "size_bytes": 445,
+      "sha256": "fa79bddcf2fa02e3ebe1dfa6ec5399d542b852de7e448b45c0f79213f398d689"
+    },
+    {
+      "path": "collector/district_extractor.py",
+      "size_bytes": 25220,
+      "sha256": "7612198999a6930f264abf5572d4b14be0ed9cb487b54e213bf85acc78185a13"
+    },
+    {
+      "path": "collector/fixtures/ramayana_kolkata_2026-11-06.html",
+      "size_bytes": 1616694,
+      "sha256": "b92e9667cab52b1729eeee3f960ac05af4fea8f26838aabb8e3bf19ac38bcb9d"
+    },
+    {
+      "path": "collector/fixtures/sample_authorized_city_export.json",
+      "size_bytes": 275,
+      "sha256": "d642e66d16404f1bad5182058e0c749a49e435439b5cfd491361a691b9e6719c"
+    },
+    {
+      "path": "collector/output/city_results.csv",
+      "size_bytes": 470,
+      "sha256": "21b6c7d6c58cf66dbc82118b675b3c437eaa0d79a0506e23c4eeba5f7ffc4c24"
+    },
+    {
+      "path": "collector/output/metadata.json",
+      "size_bytes": 1412,
+      "sha256": "fb95841058e94bf02d07fff0099472ddb9fe2c3f9ee18add7a06c31601bfc270"
+    },
+    {
+      "path": "collector/output/seat_categories.csv",
+      "size_bytes": 90185,
+      "sha256": "e7b21558402cb27140354da00fb05a20608bf746946a8ea5a553036fb7a4ad9e"
+    },
+    {
+      "path": "collector/output/shows.csv",
+      "size_bytes": 69891,
+      "sha256": "95929bfca1429e1dfb22cd69aff24fd2ff7b34557901802dd5ae877706910240"
+    },
+    {
+      "path": "collector/output/snapshots.json",
+      "size_bytes": 460849,
+      "sha256": "8476dbf8f9e5b2895e0337257ad8caef493c5b46fe96eb44108c7d26f2d951e5"
+    },
+    {
+      "path": "collector/output/unique_collection_summary.json",
+      "size_bytes": 563,
+      "sha256": "9f3197d7d9804eab1413c78a05f5c51590a6dbe37faa4b47f8e687898c93e986"
+    },
+    {
+      "path": "collector/output/unique_seat_categories.csv",
+      "size_bytes": 90185,
+      "sha256": "82b9f939e5ccd007832987d7e644a2e2d4b37a5c316a4ac9ed786af249ad2376"
+    },
+    {
+      "path": "collector/output/unique_shows.csv",
+      "size_bytes": 69891,
+      "sha256": "95929bfca1429e1dfb22cd69aff24fd2ff7b34557901802dd5ae877706910240"
+    },
+    {
+      "path": "collector/requirements.txt",
+      "size_bytes": 57,
+      "sha256": "631d9899172d3ef543734ffe43ec8d0836ecb2cbb51692087f69284261468ccc"
+    },
+    {
+      "path": "collector/smart_collector.py",
+      "size_bytes": 18637,
+      "sha256": "d7c53320c7896992708a391e7b4a0668d20d34e3df89230c9f1bd2eaa51cf441"
+    },
+    {
+      "path": "collector/tests/__pycache__/test_extractor.cpython-313.pyc",
+      "size_bytes": 8444,
+      "sha256": "f250a30709d6cde9f1abe13cd3d06c68a6c41f27772ea8d8d506c6ef5bf1e6c1"
+    },
+    {
+      "path": "collector/tests/__pycache__/test_smart_collector.cpython-313.pyc",
+      "size_bytes": 9380,
+      "sha256": "dd31979a1c8e527634476ec27f1ec95c4db35b8148ab3679cf5084304052af97"
+    },
+    {
+      "path": "collector/tests/test_extractor.py",
+      "size_bytes": 4369,
+      "sha256": "2a1253e325f5d92cf195ba828aea373c2a6baab6c09c86b1f5e8539bc8fcc87d"
+    },
+    {
+      "path": "collector/tests/test_smart_collector.py",
+      "size_bytes": 4960,
+      "sha256": "a1aaaafa5855642f96d9327e60d4236561b1ca1da9812ce1ddc9e60158abe011"
+    },
+    {
+      "path": "dashboard/CODEX_INDIA_MAP_V3_HANDOFF.md",
+      "size_bytes": 4868,
+      "sha256": "2a82a5f320e55bb04efe5e90ec4dfb5293f9f2fdab755a843cc38c101add3916"
+    },
+    {
+      "path": "dashboard/MAP_SOURCE_AND_RELEASE_CHECKLIST.md",
+      "size_bytes": 3332,
+      "sha256": "50842c563ee0d89e9ada1f896a0217fc90153f4fa21523c3f505da2547318fe6"
+    },
+    {
+      "path": "dashboard/README.md",
+      "size_bytes": 5001,
+      "sha256": "593f0db814be5bfc532104615e1df09a468396db6fe768a17ecc17f4162e6a20"
+    },
+    {
+      "path": "dashboard/fetch_and_embed_soi_map.py",
+      "size_bytes": 13756,
+      "sha256": "a0400f9b6437651e625caf4d7683726247e32ca3c409b0b0905d79ff8dd3c7a3"
+    },
+    {
+      "path": "dashboard/index.html",
+      "size_bytes": 120940,
+      "sha256": "835c87c473648135dee68e1c7f07ac867eaf0ac330130fa825aef0505aaca0ee"
+    },
+    {
+      "path": "dashboard/verified_snapshot.json",
+      "size_bytes": 45596,
+      "sha256": "f294a05e5e15588e13596078726c850a97c09ec36cef77594e83f7de65ddc321"
+    },
+    {
+      "path": "documentation/CODEX_CITY_DISCOVERY_PROMPT.md",
+      "size_bytes": 7383,
+      "sha256": "d2020f1dd8e7ba7cbd42dd6119926b4fd3b5067bc9269e7f27b60977a14462dc"
+    },
+    {
+      "path": "documentation/CODEX_MASTER_PROMPT.md",
+      "size_bytes": 6894,
+      "sha256": "302f35bee6e5855d03c5e845b61f7b5b077911ce06a3c383bb34b42e0752f813"
+    },
+    {
+      "path": "documentation/CODEX_SCHEDULER_REVIEW_PROMPT.md",
+      "size_bytes": 1902,
+      "sha256": "d44c2815e64bc10dd5e20662e9e22c970f2518967c46c2426e7218128098ac77"
+    },
+    {
+      "path": "documentation/CODEX_UI_AND_GIS_PROMPT.md",
+      "size_bytes": 1940,
+      "sha256": "f9a10b0aa1c5ee8e3baded636565a94901775608b305780348f60f5e1d17eb23"
+    },
+    {
+      "path": "documentation/OPERATIONS_2026_11_07.md",
+      "size_bytes": 4834,
+      "sha256": "ed6b6bec472945e54faf7911e61fe46f6190a193caa6536c3256066ef9af214d"
+    },
+    {
+      "path": "documentation/PHASE_PLAN_AND_DATA_RULES.md",
+      "size_bytes": 9583,
+      "sha256": "92f38b548026680a0341ca9444d49b9d89590a392b0628fc5d0dabd858b802e2"
+    },
+    {
+      "path": "evidence/saved_fixture_showtime_plan_2026-11-06.json",
+      "size_bytes": 31500,
+      "sha256": "d97bf51be56f30b2763e9fdf99a87010f6accf9749ba056217684d4fc1b06c69"
+    },
+    {
+      "path": "evidence/test_results.txt",
+      "size_bytes": 1754,
+      "sha256": "b86953b7b05ffce8e74c87a45b8e9df4478bd5605aea998b8d1fcbb90c0b02dc"
+    },
+    {
+      "path": "legacy_archives/cinepulse_mvp.zip",
+      "size_bytes": 21798,
+      "sha256": "2938b199613a36e5019fcbeffa55e0d87d9869c6f56b4028aaab9b345256ea1e"
+    },
+    {
+      "path": "legacy_archives/district_movie_extractor.zip",
+      "size_bytes": 260868,
+      "sha256": "095e8aa2623232f6806c70cbd088fac7a51a532505393d7c87673d728368ea49"
+    },
+    {
+      "path": "legacy_archives/district_movie_extractor_v2.zip",
+      "size_bytes": 302304,
+      "sha256": "78e221bd7d5d3df4e71a929f8d5a04d588fe94302ec9f0c66650e018ce881ecc"
+    },
+    {
+      "path": "legacy_archives/district_movie_first_v2.zip",
+      "size_bytes": 1010194,
+      "sha256": "4923e12b31fe195781fc47087bdbd6add0c23504dbb6172e8584e2a67551d9ff"
+    },
+    {
+      "path": "legacy_archives/district_movie_state_drilldown_v3.zip",
+      "size_bytes": 1969542,
+      "sha256": "d68c2254bdbe6eca10da5764dcfe71da3e42806199f6b22b594cf26c22a1dacd"
+    },
+    {
+      "path": "legacy_archives/district_official_geometry_v4.zip",
+      "size_bytes": 48442,
+      "sha256": "0cb5a96e46a5fa99a313a6da374ff09b22d15dd9ef7ce00b6202dd2eb079ac82"
+    },
+    {
+      "path": "legacy_archives/district_screenledger_design_prototype.zip",
+      "size_bytes": 1080768,
+      "sha256": "c894700175b2a0e2a7018ad35f266651a4fbdcc9a2f912f7afe2147aadc97b64"
+    },
+    {
+      "path": "previews/desktop_map_preview_v3.png",
+      "size_bytes": 298975,
+      "sha256": "a21b502e2883de20fd8a36f3b04187cb608844096f5da32cd820d15a6e538f84"
+    },
+    {
+      "path": "previews/desktop_preview.png",
+      "size_bytes": 484728,
+      "sha256": "8563a36fcd1fcd4d9de55d203dbb8a242ca8a8274f5e9291e497961081a4e12c"
+    },
+    {
+      "path": "previews/desktop_state_view_v3.png",
+      "size_bytes": 207944,
+      "sha256": "74650b8004c4f7674c63502a562750ce32209d6ec1338b4f933edad8fe47ee62"
+    },
+    {
+      "path": "previews/mobile_map_preview_v3.png",
+      "size_bytes": 127014,
+      "sha256": "d06eca4197f5e782e7908972c0f7d99daecd4110636f934b204dbf98e4af9066"
+    },
+    {
+      "path": "previews/mobile_preview.png",
+      "size_bytes": 295811,
+      "sha256": "82ae531f2ddd5abefa756850186c8790ad1a778612e7764e12effd5539792b2e"
+    },
+    {
+      "path": "previews/mobile_state_view_v3.png",
+      "size_bytes": 99887,
+      "sha256": "2f0b38be6bc96b2ea2d722da288370eeee4f31f9646d3e4a149a7de220ae4735"
+    },
+    {
+      "path": "previews/state_desktop_preview.png",
+      "size_bytes": 230312,
+      "sha256": "6c174dd33774354843442909040404f297b54bf6e94e8050ce03260338916917"
+    }
+  ]
+}

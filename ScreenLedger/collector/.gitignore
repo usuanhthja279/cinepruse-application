@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+output_live/
+output_two_cities/
+city_catalog_output/

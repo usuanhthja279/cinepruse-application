@@ -1,0 +1,30 @@
+{
+  "feature_count": 36,
+  "state_count": 36,
+  "north_bounds": {
+    "Jammu and Kashmir": [
+      73.39606003102485,
+      32.276221531778354,
+      76.78093270528299,
+      35.13006754916304
+    ],
+    "Ladakh": [
+      72.51276256297156,
+      32.33569358964259,
+      80.34508361201426,
+      37.0883417738344
+    ]
+  },
+  "unmatched_count": 0,
+  "declared_source_url": "https://nwdp.nwic.gov.in/dataset/dd960900-34cc-4486-a95c-83200d2f2c7b/resource/f039e721-132c-4a24-9e5e-07af03064b4d/download/state_nwic_geojson.zip",
+  "acquisition_method": "local_supplied_archive_unverified_origin",
+  "dataset_page": "https://nwdp.nwic.gov.in/dataset/state-boundary",
+  "cartographic_reference": "https://surveyofindia.gov.in/pages/political-map-of-india",
+  "archive_file": "state_nwic_geojson.zip",
+  "archive_sha256": "a932ea29e7afd0fea1e1068f3beeeadb760e6b2baae9783f5822bbefd4224ebd",
+  "zip_entry": "state_NWIC.GeoJSON",
+  "run_utc": "2026-11-06T18:24:10.870979+00:00",
+  "verified_2026_border_against_political_map": false,
+  "redistribution_rights_verified": false,
+  "origin_certified_by_this_tool": false
+}

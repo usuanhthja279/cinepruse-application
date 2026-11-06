@@ -1,0 +1,800 @@
+{
+  "mode": "OFFLINE_FIXTURE_ONLY",
+  "target_date_ist": "2026-11-06",
+  "baseline_at_ist": "2026-11-06T20:26:56+05:30",
+  "target_shows": 99,
+  "pre_show_jobs": [
+    {
+      "session_key": "1102583:2952:17691:OB675E:2026-11-06T15:05:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Cinemas, Maheshtala",
+      "show_start_ist": "2026-11-06T20:35:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T20:30:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1101366:2683:5615:OB675E:2026-11-06T15:15:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Rathindra Multiplex, Kolkata",
+      "show_start_ist": "2026-11-06T20:45:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T20:40:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1024333:3:20064:OB675E:2026-11-06T15:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : Downtown Mall, Salt Lake",
+      "show_start_ist": "2026-11-06T20:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T20:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102189:2775:23006:OBE015:2026-11-06T15:30:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Baruipur Show House, Baruipur",
+      "show_start_ist": "2026-11-06T21:00:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T20:55:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102203:2775:12550:OB675E:2026-11-06T15:30:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Platina Mall, Howrah",
+      "show_start_ist": "2026-11-06T21:00:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T20:55:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102571:2951:13105:OB675E:2026-11-06T15:30:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Ajanta Cinema, Behala",
+      "show_start_ist": "2026-11-06T21:00:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T20:55:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102463:2775:1625:OB675E:2026-11-06T15:45:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Triveni Mall, Serampore",
+      "show_start_ist": "2026-11-06T21:15:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:10:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1041:335:8304:OBE015:2026-11-06T16:15:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Lake Mall, Rashbehari, Kolkata",
+      "show_start_ist": "2026-11-06T21:45:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:40:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "148:335:7205:OBE015:2026-11-06T16:15:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "show_start_ist": "2026-11-06T21:45:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:40:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020713:1707:101319:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Metropolis Mall, Hiland Park, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020717:1707:151652:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020719:1707:113893:OB675E:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre, Saltlake, kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020721:2624:96836:OB675E:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Mall, Elgin Road, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020722:2624:94804:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Swabhumi, Maulana Azad Sarani, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020724:1707:98852:OB675E:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre II, Rajarhat, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020727:1707:145380:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020732:2624:53816:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020735:1707:27965:OB675E:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020736:1707:23421:OB675E:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Manisquare, Mani Square Mall, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1022262:1707:21733:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Avani River Side Mall, Howrah, Kolkata",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1024333:3:20060:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : Downtown Mall, Salt Lake",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1029337:1707:62028:OB675E:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Rangoli Mall, Belur, Howrah",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "12939:3:51341:OBE015:2026-11-06T16:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : The Terminus, New Town",
+      "show_start_ist": "2026-11-06T21:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1101366:2683:5579:OB675E:2026-11-06T16:30:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Rathindra Multiplex, Kolkata",
+      "show_start_ist": "2026-11-06T22:00:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T21:55:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102209:2775:43274:OB675E:2026-11-06T16:50:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+      "show_start_ist": "2026-11-06T22:20:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:15:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102583:2952:17637:OBE015:2026-11-06T16:50:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Cinemas, Maheshtala",
+      "show_start_ist": "2026-11-06T22:20:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:15:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020717:1707:151955:OBE015:2026-11-06T16:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "show_start_ist": "2026-11-06T22:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020727:1707:145913:OBE015:2026-11-06T16:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
+      "show_start_ist": "2026-11-06T22:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020735:1707:28188:OB675E:2026-11-06T16:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
+      "show_start_ist": "2026-11-06T22:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "12939:3:51337:OB675E:2026-11-06T16:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : The Terminus, New Town",
+      "show_start_ist": "2026-11-06T22:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102200:2775:8693:OB675E:2026-11-06T17:00:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "show_start_ist": "2026-11-06T22:30:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:25:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102203:2775:12546:OB675E:2026-11-06T17:00:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Platina Mall, Howrah",
+      "show_start_ist": "2026-11-06T22:30:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:25:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102580:2952:50376:OBE015:2026-11-06T17:00:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Cinemas, Suncity Mall, Barasat",
+      "show_start_ist": "2026-11-06T22:30:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:25:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102571:2951:13075:OBE015:2026-11-06T17:15:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Ajanta Cinema, Behala",
+      "show_start_ist": "2026-11-06T22:45:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:40:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020717:1707:151950:OB675E:2026-11-06T17:20:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "show_start_ist": "2026-11-06T22:50:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:45:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "148:335:7633:OBE015:2026-11-06T17:20:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "show_start_ist": "2026-11-06T22:50:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:45:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020713:1707:100926:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Metropolis Mall, Hiland Park, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020716:2624:42091:OB675E:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Hind, Ganesh Chandra Avenue, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020717:1707:151353:OBE0G5:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020719:1707:113711:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre, Saltlake, kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020721:2624:96655:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Mall, Elgin Road, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020722:2624:94444:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Swabhumi, Maulana Azad Sarani, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020724:1707:98670:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre II, Rajarhat, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020727:1707:145299:OBE0G9:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020732:2624:53557:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020733:2624:20229:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Metro, Jawaharlal Nehru Road, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020735:1707:27732:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020736:1707:23233:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Manisquare, Mani Square Mall, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1022262:1707:21343:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Avani River Side Mall, Howrah, Kolkata",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1024333:3:19592:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : Downtown Mall, Salt Lake",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1029337:1707:61773:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Rangoli Mall, Belur, Howrah",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102209:2775:43284:OB675E:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102463:2775:1621:OB675E:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Triveni Mall, Serampore",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "12939:3:50896:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : The Terminus, New Town",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "3621:3:29312:OBE015:2026-11-06T17:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : Aurbindo Mall, Howrah",
+      "show_start_ist": "2026-11-06T22:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1101366:2683:5597:OBE015:2026-11-06T17:30:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Rathindra Multiplex, Kolkata",
+      "show_start_ist": "2026-11-06T23:00:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:55:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102580:2952:50464:OB675E:2026-11-06T17:30:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Cinemas, Suncity Mall, Barasat",
+      "show_start_ist": "2026-11-06T23:00:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T22:55:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1041:335:8300:OB675E:2026-11-06T17:35:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Lake Mall, Rashbehari, Kolkata",
+      "show_start_ist": "2026-11-06T23:05:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:00:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102200:2775:8698:OB675E:2026-11-06T17:40:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "show_start_ist": "2026-11-06T23:10:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:05:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020727:1707:145918:OBE015:2026-11-06T17:45:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
+      "show_start_ist": "2026-11-06T23:15:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:10:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020732:2624:53901:OB675E:2026-11-06T17:45:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+      "show_start_ist": "2026-11-06T23:15:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:10:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102584:2952:11834:OBE015:2026-11-06T17:45:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Globe Cinemas, New Market, Kolkata",
+      "show_start_ist": "2026-11-06T23:15:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:10:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020713:1707:101299:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Metropolis Mall, Hiland Park, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020717:1707:151945:OBE015:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020719:1707:114076:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre, Saltlake, kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020721:2624:97006:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Mall, Elgin Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020722:2624:94632:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Swabhumi, Maulana Azad Sarani, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020724:1707:99034:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre II, Rajarhat, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020727:1707:145635:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020735:1707:28183:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020736:1707:23617:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Manisquare, Mani Square Mall, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1022262:1707:21714:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Avani River Side Mall, Howrah, Kolkata",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "12939:3:51346:OB675E:2026-11-06T17:55:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : The Terminus, New Town",
+      "show_start_ist": "2026-11-06T23:25:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:20:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102463:2775:1635:OBE015:2026-11-06T18:00:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Triveni Mall, Serampore",
+      "show_start_ist": "2026-11-06T23:30:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:25:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102580:2952:50371:OBE015:2026-11-06T18:00:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SSR Cinemas, Suncity Mall, Barasat",
+      "show_start_ist": "2026-11-06T23:30:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:25:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1041:335:7964:OBE015:2026-11-06T18:05:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Lake Mall, Rashbehari, Kolkata",
+      "show_start_ist": "2026-11-06T23:35:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:30:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "148:335:7201:OBE015:2026-11-06T18:05:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:35:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:30:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102200:2775:8689:OBE015:2026-11-06T18:15:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "show_start_ist": "2026-11-06T23:45:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:40:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020713:1707:100941:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Metropolis Mall, Hiland Park, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020716:2624:41934:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Hind, Ganesh Chandra Avenue, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020717:1707:151338:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020719:1707:113706:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre, Saltlake, kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020721:2624:96660:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Mall, Elgin Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020722:2624:94429:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Swabhumi, Maulana Azad Sarani, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020724:1707:98675:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX City Centre II, Rajarhat, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020727:1707:145290:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020732:2624:53537:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020733:2624:20047:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Metro, Jawaharlal Nehru Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020735:1707:27717:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1020736:1707:23238:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Manisquare, Mani Square Mall, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1022262:1707:21338:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "PVR Avani River Side Mall, Howrah, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1024333:3:19597:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : Downtown Mall, Salt Lake",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1029337:1707:61758:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "INOX Forum Rangoli Mall, Belur, Howrah",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1041:335:8220:OB675E:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Lake Mall, Rashbehari, Kolkata",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102203:2775:12541:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Platina Mall, Howrah",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "1102209:2775:43279:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "12939:3:50901:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : The Terminus, New Town",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "3621:3:29126:OBE015:2026-11-06T18:25:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Miraj Cinemas : Aurbindo Mall, Howrah",
+      "show_start_ist": "2026-11-06T23:55:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:50:00+05:30",
+      "planning_status": "future"
+    },
+    {
+      "session_key": "148:335:7451:OB675E:2026-11-06T18:29:rtb7dmwvuo",
+      "city": "kolkata",
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "show_start_ist": "2026-11-06T23:59:00+05:30",
+      "pre_show_scan_ist": "2026-11-06T23:54:00+05:30",
+      "planning_status": "future"
+    }
+  ]
+}

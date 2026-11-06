@@ -1,0 +1,60 @@
+# ScreenLedger — Official India State Geometry Integration (v4)
+
+The ScreenLedger movie-first dashboard now includes a **local automatic downloader and validated geometry embedder**, using only the Government of India National Water Data Portal's Survey of India state-boundary GeoJSON archive. It preserves the state/city/cinema drilldowns from v3.
+
+**Current package status:** This delivery **does not contain the actual official polygon coordinates**: the source URL was verified on the official government website, but this execution environment could not resolve the government's download host. The 36-region index still works, and the map area intentionally remains blank until the government file is fetched. Do not claim the north boundary has already been verified.
+
+## Get the official state boundaries into the HTML
+
+On Windows PowerShell, unzip this package, `cd` into the folder, then run:
+
+```powershell
+py -3 fetch_and_embed_soi_map.py
+```
+
+The script downloads the official `state_NWIC_GeoJSON.zip`, validates its structure and all 36 state/UT identifiers (including separate Jammu and Kashmir and Ladakh), hashes the archive, and **overwrites `index.html` with the extracted GeoJSON embedded inside**. Open the HTML in Chrome or Edge; the state polygons should now be available immediately without relying on cross-origin browser requests. The script produces `soi_geometry_provenance.json` and keeps the original ZIP for audit. You can rerun it safely after an upstream update.
+
+If Python cannot access the government ZIP directly, download the **GeoJSON ZIP** from [Government state-boundary dataset](https://nwdp.nwic.gov.in/dataset/state-boundary) using your normal browser, then run:
+
+```powershell
+py -3 fetch_and_embed_soi_map.py --archive "C:\Users\YOUR_USER\Downloads\state_NWIC_GeoJSON.zip"
+```
+
+The local-archive mode records its origin as **unverified local input**, so the SHA-256 attests to exactly which file you embedded but does not prove who published it.
+
+## Boundaries and source requirements
+
+- Primary source: [NWIC state boundary dataset, producer shown as Survey of India](https://nwdp.nwic.gov.in/dataset/state-boundary)
+- Exact resource: [state_NWIC_GeoJSON.zip](https://nwdp.nwic.gov.in/dataset/dd960900-34cc-4486-a95c-83200d2f2c7b/resource/f039e721-132c-4a24-9e5e-07af03064b4d/download/state_nwic_geojson.zip)
+- Cartographic reference: [Survey of India Political Map, English 13th Edition/2026](https://surveyofindia.gov.in/pages/political-map-of-india)
+- Source copyright policies: [National Water Data Portal](https://nwdp.nwic.gov.in/footer/copyrightPolicy) and [Survey of India](https://surveyofindia.gov.in/pages/public-awareness)
+
+**Validation scope:** file-format checks, named state/UT coverage, finite geographic coordinates, geographic bounding-box sanity checks, and basic north-region presence. These tests **do not prove** that the political border matches the 2026 Survey of India political map. Compare the India outline, Ladakh, and Jammu and Kashmir against the official map before public deployment. Do not patch disputed or missing polygons from an unofficial global dataset.
+
+The NWIC resource currently displays a `Other (Open)` license classification; its portal copyright policy generally permits accurate reuse with prominent attribution, but excludes separately identified third-party copyrighted material. A different Survey of India 1:15M outline product explicitly restricts commercial usage. **Do not assume commercial redistribution rights for every government GIS asset are identical**; confirm reuse of the particular government state-boundary data for your intended deployment.
+
+## Dashboard data rules
+
+This is still a prototype, not a collector. The November 6 Kolkata-area sample has 117 shows, 29 cinemas, 27,663 seats, 7,202 unavailable (booked *plus blocked*) and ₹39,48,610 as a proxy for seat value—not confirmed ticket-sale receipts. The November 7 national replay is simulated, and the last-hour signal is not verifiable from the single saved snapshot. Empty states and cities remain **Not collected**, not zero.
+
+## Open the live collector ledger
+
+The live District collector view is available at `live.html` when the local API is running. From PowerShell in `collector/`, run:
+
+```powershell
+.\START_LIVE_DASHBOARD.ps1
+```
+
+Then open `http://127.0.0.1:8765/dashboard/live.html`. The page reads the collector database through a local read-only API, lists all city targets and captured screening rows with paging, and deduplicates national session totals by `session_key`. City-feed rows can overlap, so per-city totals should not be added to produce the national total. Revenue is labeled **Confirmed revenue** per the project owner's payment confirmation; the database itself stores seat and listed-price fields, not payment receipts. The page displays the project owner's confirmation provenance and incomplete listed-price coverage.
+
+## Files
+
+- `index.html`: responsive movie catalog, India map region picker, state → district/city → cinema dashboard.
+- `fetch_and_embed_soi_map.py`: official NWIC ZIP download, JSON normalization, checks, SHA-256 audit, offline HTML embedding.
+- `verified_snapshot.json`: unchanged Kolkata extracted reference metrics.
+- `CODEX_INDIA_MAP_V3_HANDOFF.md`: previous v3 implementation roadmap.
+- `MAP_SOURCE_AND_RELEASE_CHECKLIST.md`: provenance and acceptance checklist.
+
+### Known test scope
+
+The acquisition script passed local parsing/embedding tests using **temporary synthetic polygons** (these fixtures were deleted and are not included). A real end-to-end government download and browser geometry rendering could **not** be tested inside this environment because external DNS and headless browser navigation were blocked. The geometry is therefore **not yet installed** in this ZIP.

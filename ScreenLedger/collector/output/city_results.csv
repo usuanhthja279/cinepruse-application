@@ -1,0 +1,2 @@
+﻿snapshot_utc,source_city,actual_city,movie_id,movie_name,cinemas_with_shows,shows,seat_categories,total_seats_across_shows,available_seats_across_shows,unavailable_seats_across_shows,unavailable_pct,assumed_booked_seats_across_shows,assumed_occupancy_pct,priced_show_count,unpriced_show_count,known_priced_gross_inr,estimated_gross_inr
+2026-11-06T15:38:19+00:00,kolkata,kolkata,176276,Ramayana,29,117,410,27663,20461,7202,26.03,7202,26.03,117,0,3948610.0,3948610.0

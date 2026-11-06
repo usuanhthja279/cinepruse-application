@@ -1,0 +1,9 @@
+{
+  "source_file": "/mnt/data/district_movie_extractor/fixtures/sample_authorized_city_export.json",
+  "discovered": 3,
+  "unique_cities": 3,
+  "source_slugs": 3,
+  "inferred_slugs": 0,
+  "complete_official_roster_verified": false,
+  "note": "Saved-file discovery only. A page's links or exported subset cannot prove all supported District cities were captured. Obtain a complete authorized official catalog with total count for verification."
+}

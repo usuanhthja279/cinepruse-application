@@ -1,0 +1,28 @@
+{
+  "source": "District public movie pages",
+  "checked_at_utc": "2026-11-06T19:05:36+00:00",
+  "comparison": [
+    {
+      "requested_slug": "delhi-ncr",
+      "source_city": "delhi-ncr",
+      "actual_city": "delhi-ncr",
+      "movie": "Ramayana",
+      "movie_id": "176276",
+      "show_count_target_date": 758,
+      "cinemas_target_date": 50,
+      "snapshot_utc": "2026-11-06T19:05:25+00:00"
+    },
+    {
+      "requested_slug": "new-delhi",
+      "source_city": "delhi-ncr",
+      "actual_city": "delhi-ncr",
+      "movie": "Ramayana",
+      "movie_id": "176276",
+      "show_count_target_date": 736,
+      "cinemas_target_date": 50,
+      "snapshot_utc": "2026-11-06T19:05:36+00:00"
+    }
+  ],
+  "same_city_identity": true,
+  "same_target_date_sessions": false
+}

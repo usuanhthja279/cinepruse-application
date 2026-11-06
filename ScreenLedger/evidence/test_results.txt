@@ -1,0 +1,20 @@
+test_500_candidate_uniq (test_extractor.ExtractorTests.test_500_candidate_uniq) ... ok
+test_acropolis_first_session (test_extractor.ExtractorTests.test_acropolis_first_session) ... ok
+test_catalog_example (test_extractor.ExtractorTests.test_catalog_example) ... ok
+test_city_links_are_partial_and_movie_html_is_not_a_city_list (test_extractor.ExtractorTests.test_city_links_are_partial_and_movie_html_is_not_a_city_list) ... ok
+test_counts (test_extractor.ExtractorTests.test_counts) ... ok
+test_duplicate_city_snapshot_is_not_double_counted (test_extractor.ExtractorTests.test_duplicate_city_snapshot_is_not_double_counted) ... ok
+test_url (test_extractor.ExtractorTests.test_url) ... ok
+test_1235_show_gets_1230_scan (test_smart_collector.SmartCollectorTests.test_1235_show_gets_1230_scan) ... ok
+test_expired_show_missed_no_false_zero (test_smart_collector.SmartCollectorTests.test_expired_show_missed_no_false_zero) ... ok
+test_last_hour_net_change_not_sales (test_smart_collector.SmartCollectorTests.test_last_hour_net_change_not_sales) ... ok
+test_late_discovery_not_fake_on_time_scan (test_smart_collector.SmartCollectorTests.test_late_discovery_not_fake_on_time_scan) ... ok
+test_other_dates_not_counted (test_smart_collector.SmartCollectorTests.test_other_dates_not_counted) ... ok
+test_persist_before_and_after_pre_show_scan (test_smart_collector.SmartCollectorTests.test_persist_before_and_after_pre_show_scan) ... ok
+test_redirect_not_counted (test_smart_collector.SmartCollectorTests.test_redirect_not_counted) ... ok
+test_resume_state_survives_reopening (test_smart_collector.SmartCollectorTests.test_resume_state_survives_reopening) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.237s
+
+OK

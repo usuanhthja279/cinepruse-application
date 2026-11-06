@@ -1,0 +1,4 @@
+﻿name,slug,city_id,state,latitude,longitude,source,source_path,confidence,checked_at_utc
+Delhi NCR,delhi-ncr,demo-003,Delhi,,,saved_json_city_catalog,root.cities[2],source_slug,2026-11-06T15:37:35+00:00
+Kolkata,kolkata,demo-002,West Bengal,,,saved_json_city_catalog,root.cities[1],source_slug,2026-11-06T15:37:35+00:00
+Mumbai,mumbai,demo-001,Maharashtra,,,saved_json_city_catalog,root.cities[0],source_slug,2026-11-06T15:37:35+00:00
