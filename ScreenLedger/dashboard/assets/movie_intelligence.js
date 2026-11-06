@@ -2,7 +2,7 @@
 
 const ROOT = "data/district_hourly_runs_2026-11-07/";
 const $ = id => document.getElementById(id);
-const app = { summaries: null, delta: null, mapping: [], coverage: [], provenance: null, geo: null, sessionsByRun: {}, sessionPage: 0 };
+const app = { summaries: null, comparisons: [], mapping: [], coverage: [], provenance: null, geo: null, sessionsByRun: {}, sessionPage: 0 };
 const number = value => Number(value || 0).toLocaleString("en-IN");
 const money = value => value == null || value === "" ? "Unavailable" : `₹${(Number(value) / 1e7).toFixed(2)} crore`;
 const pct = value => `${(Number(value) * 100).toFixed(1)}%`;
@@ -20,20 +20,21 @@ const runs = () => app.summaries.runs;
 const selected = () => runs()[Math.max(0, Number($("runSelect").value))];
 
 function render() {
-  if (!app.summaries || !app.delta) return;
-  const run=selected(), c=app.delta.comparison, coverage=c.coverage || app.delta.coverage;
+  if (!app.summaries) return;
+  const run=selected(), runIndex=Math.max(0,Number($("runSelect").value)), comparison=app.comparisons[runIndex-1], c=comparison?.comparison;
   const total=run.target_city_feeds, cap=run.captured_city_feeds;
   $("overviewMetrics").innerHTML = tile("Booked + blocked seats",number(run.booked_plus_blocked_seats),"Per owner-confirmed revenue basis",true)+tile("Confirmed revenue",money(run.confirmed_revenue_inr),"Payment confirmation supplied by project owner")+tile("Unique screenings",number(run.unique_session_count),"Deduplicated session records")+tile("Feed coverage",`${number(cap)} / ${number(total)}`,`${number(run.failed_city_feeds)} failed · ${number(run.not_collected_this_hour_city_feeds)} not collected`);
-  $("deltaMetrics").innerHTML = tile("Matched future sessions",number(c.matched_future_session_count),"Captured about one hour apart")+tile("Seats newly booked or blocked",`+${number(c.seat_change.positive_booked_plus_blocked_seats)}`,"Matched sessions only",true)+tile("Released / corrected seats",`−${number(c.seat_change.released_or_corrected_seats)}`,"Shown separately from increases")+tile("Net matched seat change",`${c.seat_change.net_booked_plus_blocked_seat_change>=0?"+":""}${number(c.seat_change.net_booked_plus_blocked_seat_change)}`,`${number(c.new_session_count)} new sessions; ${number(c.disappeared_session_count)} disappeared`);
+  $("deltaMetrics").innerHTML = c?tile("Matched future sessions",number(c.matched_future_session_count),`${c.previous_hour_ist} → ${c.current_hour_ist} IST`)+tile("Tickets sold · matched shows",`+${number(c.seat_change.positive_booked_plus_blocked_seats)}`,"Booked + blocked seat increases",true)+tile("Released / corrected seats",`−${number(c.seat_change.released_or_corrected_seats)}`,"Shown separately from increases")+tile("Net matched seat change",`${c.seat_change.net_booked_plus_blocked_seat_change>=0?"+":""}${number(c.seat_change.net_booked_plus_blocked_seat_change)}`,`${number(c.new_session_count)} new sessions; ${number(c.disappeared_session_count)} disappeared`):tile("Hourly comparison","Not available","The first snapshot has no previous run.")+tile("Tickets sold · matched shows","—","Requires a preceding capture")+tile("Released / corrected seats","—","Requires a preceding capture")+tile("Net matched seat change","—","Requires a preceding capture");
   $("coverageTitle").textContent=pct(cap/total);$("coverageFill").style.width=pct(cap/total);$("captured").textContent=`${number(cap)} / ${number(total)}`;$("missing").textContent=number(run.not_collected_this_hour_city_feeds);$("failed").textContent=number(run.failed_city_feeds);
   $("movieMetrics").innerHTML=tile("Booked + blocked seats",number(run.booked_plus_blocked_seats),"Current captured snapshot",true)+tile("Confirmed revenue",money(run.confirmed_revenue_inr),"Per owner payment confirmation")+tile("Total seats",number(run.total_seats),"Across deduplicated screenings")+tile("Unique shows",number(run.unique_session_count),"Coverage-dependent count");
   const ratio=run.total_seats?run.booked_plus_blocked_seats/run.total_seats:0;$("occupancyFill").style.width=pct(ratio);$("bookedLabel").textContent=`${number(run.booked_plus_blocked_seats)} booked + blocked`;$("availableLabel").textContent=`${number(run.available_seats)} available`;$("snapshotTime").textContent=`${run.collection_hour_ist} IST · ${run.service_date_ist}`;
   $("healthMetrics").innerHTML=tile("Captured feeds",number(cap),`of ${number(total)} targets`,true)+tile("Not collected",number(run.not_collected_this_hour_city_feeds),"Unknown coverage, not zero shows")+tile("Failed feeds",number(run.failed_city_feeds),"Failures are separate from empty show lists")+tile("Duplicate feed rows",number(run.duplicate_city_feed_rows),"Removed from unique session count");
+  $("healthRows").innerHTML=runs().map(r=>`<tr><td>${esc(r.collection_hour_ist)}</td><td>${number(r.captured_city_feeds)}</td><td>${pct(r.captured_city_feeds/r.target_city_feeds)}</td><td>${number(r.failed_city_feeds)}</td><td>${number(r.not_collected_this_hour_city_feeds)}</td><td>${number(r.unique_session_count)}</td></tr>`).join("");
   $("hourRows").innerHTML=runs().map(r=>`<tr><td>${esc(r.collection_hour_ist)} IST</td><td>${number(r.unique_session_count)}</td><td>${number(r.booked_plus_blocked_seats)}</td><td>${money(r.confirmed_revenue_inr)}</td><td>${number(r.captured_city_feeds)} / ${number(r.target_city_feeds)}</td></tr>`).join("");
-  const rev=c.confirmed_revenue_change_inr;
-  $("comparisonNote").textContent=`${number(c.matched_future_session_count)} sessions matched on venue, showtime and capacity over ${c.capture_interval_minutes.min}–${c.capture_interval_minutes.max} minutes. Confirmed revenue change is unavailable because ${number(rev.incomplete_pricing_session_count)} matched sessions have incomplete pricing. The raw snapshot totals are not a last-hour sales delta; city-feed coverage changed.`;
-  const heights=runs().map(r=>r.unique_session_count),max=Math.max(...heights,1);
-  $("bars").innerHTML=runs().map(r=>`<div class="bar-item"><div class="column a" style="height:${Math.max(5,r.unique_session_count/max*170)}px"><span>${(r.unique_session_count/1000).toFixed(1)}k</span></div><div class="column b" style="height:${Math.max(5,r.booked_plus_blocked_seats/Math.max(...runs().map(x=>x.booked_plus_blocked_seats))*170)}px"><span>${(r.booked_plus_blocked_seats/1000).toFixed(0)}k</span></div></div>`).join("");
+  if(c){const rev=c.confirmed_revenue_change_inr;$("comparisonNote").textContent=`${number(c.matched_future_session_count)} shows matched on venue, showtime and capacity over ${c.capture_interval_minutes.min}–${c.capture_interval_minutes.max} minutes. ${number(c.new_session_count)} new and ${number(c.disappeared_session_count)} disappeared shows are kept out of the sold-ticket change. Confirmed revenue change is unavailable because ${number(rev.incomplete_pricing_session_count)} matched shows have incomplete pricing.`;}else{$("comparisonNote").textContent="This is the first saved snapshot. Ticket-change comparisons begin with the next hourly capture.";}
+  const available=app.comparisons.filter(Boolean),max=Math.max(1,...available.flatMap(x=>[x.comparison.seat_change.positive_booked_plus_blocked_seats,x.comparison.seat_change.released_or_corrected_seats]));
+  $("bars").innerHTML=available.map(envelope=>{const c=envelope.comparison;const width=Math.max(18,Math.floor(100/available.length)-5);return `<div class="bar-item" style="width:${width}%;flex-shrink:0"><div class="column a" style="height:${Math.max(5,c.seat_change.positive_booked_plus_blocked_seats/max*170)}px"><span>+${number(c.seat_change.positive_booked_plus_blocked_seats)}</span></div><div class="column b" style="height:${Math.max(5,c.seat_change.released_or_corrected_seats/max*170)}px"><span>−${number(c.seat_change.released_or_corrected_seats)}</span></div></div>`;}).join("")||'<div class="empty">Hourly matched comparisons are not available yet.</div>';
+  $("barLabels").innerHTML=available.map(x=>`<span>${esc(x.comparison.previous_hour_ist)} → ${esc(x.comparison.current_hour_ist)}</span>`).join("");
   renderSessions();
 }
 
@@ -90,12 +91,12 @@ async function init(){
  try{
   const [summary,delta,mapping,coverage,provenance]=await Promise.all([
    fetch(`${ROOT}run_summaries.json`).then(r=>r.json()),
-   fetch(`${ROOT}matched_delta_2026-11-07_0100_0200.json`).then(r=>r.json()),
+   Promise.all(["0100_0200","0200_0300","0300_0400"].map(pair=>fetch(`${ROOT}matched_delta_2026-11-07_${pair}.json`).then(r=>r.ok?r.json():null).catch(()=>null))),
    fetch("data/city_state_mapping_2026-11-07.csv").then(r=>r.text()),
    fetch(`${ROOT}city_coverage_2026-11-07_0200_IST.csv`).then(r=>r.text()),
    fetch("data/city_state_mapping_2026-11-07.provenance.json").then(r=>r.json())
   ]);
-  app.summaries=summary;app.delta=delta;app.mapping=csvRows(mapping);app.coverage=csvRows(coverage);app.provenance=provenance;
+  app.summaries=summary;app.comparisons=delta;app.mapping=csvRows(mapping);app.coverage=csvRows(coverage);app.provenance=provenance;
   $("runSelect").innerHTML=summary.runs.map((r,i)=>`<option value="${i}">${esc(r.collection_hour_ist)} IST snapshot</option>`).join("");$("runSelect").value=String(summary.runs.length-1);
   render();renderMovies();
   const statuses=provenance.status_counts||{};const mapped=(statuses.matched_exact_2011_town_name||0)+(statuses.matched_exact_2011_settlement_name||0)+(statuses.matched_curated_city_state||0);$("mappingCoverage").textContent=`City-selector state reference: ${number(mapped)} of ${number(provenance.selector_labels)} labels assigned; ${number(statuses.ambiguous_multiple_states||0)} ambiguous and ${number(statuses.unmatched||0)} unmatched. Not a cinema-to-state map.`;

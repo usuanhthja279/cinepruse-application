@@ -39,6 +39,42 @@
       "confirmed_revenue_inr": 344585101.74,
       "confirmed_revenue_basis": "Per project-owner payment confirmation; calculated from booked-plus-blocked seat value in the saved collector records.",
       "source_city_roster_slug_completeness_verified": false
+    },
+    {
+      "service_date_ist": "2026-11-07",
+      "collection_hour_ist": "03:00",
+      "scheduled_reason": "hourly",
+      "target_city_feeds": 1321,
+      "captured_city_feeds": 1010,
+      "failed_city_feeds": 2,
+      "not_collected_this_hour_city_feeds": 309,
+      "city_feed_observation_rows": 45810,
+      "unique_session_count": 15069,
+      "duplicate_city_feed_rows": 30741,
+      "total_seats": 3338451,
+      "available_seats": 2502762,
+      "booked_plus_blocked_seats": 835689,
+      "confirmed_revenue_inr": 345941200.58,
+      "confirmed_revenue_basis": "Per project-owner payment confirmation; calculated from booked-plus-blocked seat value in the saved collector records.",
+      "source_city_roster_slug_completeness_verified": false
+    },
+    {
+      "service_date_ist": "2026-11-07",
+      "collection_hour_ist": "04:00",
+      "scheduled_reason": "hourly",
+      "target_city_feeds": 1321,
+      "captured_city_feeds": 1011,
+      "failed_city_feeds": 1,
+      "not_collected_this_hour_city_feeds": 309,
+      "city_feed_observation_rows": 45833,
+      "unique_session_count": 15082,
+      "duplicate_city_feed_rows": 30751,
+      "total_seats": 3341721,
+      "available_seats": 2504255,
+      "booked_plus_blocked_seats": 837466,
+      "confirmed_revenue_inr": 346607596.58,
+      "confirmed_revenue_basis": "Per project-owner payment confirmation; calculated from booked-plus-blocked seat value in the saved collector records.",
+      "source_city_roster_slug_completeness_verified": false
     }
   ]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the 1 a.m. and 2 a.m. District hourly capture windows for review/publication.
+"""Export the 1 a.m. through 4 a.m. District hourly capture windows.
 
 Exports parsed collector data only. Raw HTML, the collector database, and error
 payloads are intentionally excluded. Each hourly window uses the latest successful
@@ -181,7 +181,7 @@ def main() -> None:
     conn = sqlite3.connect(f"file:{DB_PATH.resolve().as_posix()}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     try:
-        summaries = [export_hour(conn, targets, hour) for hour in (1, 2)]
+        summaries = [export_hour(conn, targets, hour) for hour in (1, 2, 3, 4)]
     finally:
         conn.close()
     OUT.mkdir(parents=True, exist_ok=True)
