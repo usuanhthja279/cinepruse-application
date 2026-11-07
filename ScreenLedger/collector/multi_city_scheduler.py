@@ -40,6 +40,13 @@ def advance_slots(now: datetime, first_day: date) -> list[tuple[date, datetime]]
     return result
 
 
+def urgent_worker_limit(due_city_count: int, pool_size: int = 5) -> int:
+    """Borrow idle pool capacity for due pre-show bursts; never grow the pool."""
+    if due_city_count <= 0:
+        return 0
+    return min(max(1, pool_size), due_city_count)
+
+
 def classify_failure(exc: Exception) -> tuple[bool, str]:
     """Return whether a failure is plausibly transient and a stable category."""
     if isinstance(exc, requests.Timeout):
@@ -105,17 +112,52 @@ def refresh_baseline_statuses(db, targets: list[dict], movie_id: str,
 
 def write_verified_roster(store: Path, targets: list[dict], movie_id: str,
                           target_date: date, db) -> dict:
-    verified = [target for target in targets
-                if state_get(db, baseline_key(movie_id, target_date, target["slug"])) == "ok"]
+    latest_with_listings={row["city"] for row in db.execute("""SELECT c.city FROM captures c
+        JOIN (SELECT city,MAX(id) id FROM captures WHERE movie_id=? AND service_date_ist=?
+              AND status='ok' GROUP BY city) latest ON latest.id=c.id
+        WHERE c.show_count>0""",(str(movie_id),target_date.isoformat())).fetchall()}
+    verified = [target for target in targets if target["slug"] in latest_with_listings]
     report = {"service_date": target_date.isoformat(), "movie_id": str(movie_id),
               "verified_city_count": len(verified), "initial_target_count": len(targets),
               "source_completeness_verified": False,
-              "note": "Only cities with a successful validated capture are included. "
+              "note": "Only cities whose latest successful service-date capture listed shows are included. "
                       "This is an operational allowlist, not proof the selector roster is complete.",
               "cities": verified}
     path = store / "city_targets_verified.json"
     path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     return report
+
+
+def advance_roster_path(store: Path, movie_id: str, service_day: date) -> Path:
+    return store / f"city_targets_advance_{movie_id}_{service_day.isoformat()}.json"
+
+
+def load_advance_targets(store: Path, movie_id: str, service_day: date,
+                         all_targets: list[dict]) -> list[dict]:
+    """Use all selector cities until the first advance sweep is complete."""
+    path=advance_roster_path(store,movie_id,service_day)
+    if not path.exists():return all_targets
+    try:
+        payload=json.loads(path.read_text(encoding="utf-8"))
+        return payload.get("cities",[])
+    except (OSError,ValueError,TypeError):
+        return all_targets
+
+
+def write_advance_roster(store: Path, db, targets: list[dict], movie_id: str,
+                         service_day: date, slot: datetime) -> dict:
+    rows=db.execute("""SELECT city,show_count FROM (
+        SELECT city,show_count,ROW_NUMBER() OVER(PARTITION BY city ORDER BY id DESC) rn
+        FROM captures WHERE movie_id=? AND service_date_ist=? AND reason='advance' AND status='ok'
+        ) WHERE rn=1 AND show_count>0""",(str(movie_id),service_day.isoformat())).fetchall()
+    present={row["city"] for row in rows}
+    cities=[target for target in targets if target["slug"] in present]
+    payload={"movie_id":str(movie_id),"service_date":service_day.isoformat(),
+             "initial_slot_ist":slot.isoformat(),"initial_target_count":len(targets),
+             "cities_with_listings":len(cities),"cities":cities}
+    advance_roster_path(store,movie_id,service_day).write_text(
+        json.dumps(payload,indent=2,ensure_ascii=False),encoding="utf-8")
+    return payload
 
 
 class Tee:
@@ -290,6 +332,8 @@ def main() -> int:
                         if reason != "pre_show":
                             slot = datetime.now(IST).replace(minute=0, second=0, microsecond=0)
                             state_set(db, f"multi_hourly:{args.movie_id}:{target_date}:{city}", slot.isoformat())
+                            if state_get(db,f"multi_initial_complete:{args.movie_id}:{target_date}")=="1":
+                                verified_report=write_verified_roster(args.store,targets,args.movie_id,target_date,db)
                         retry_prefix = "multi_final_retry" if reason == "pre_show" else "multi_retry"
                         retry_key = f"{retry_prefix}:{args.movie_id}:{target_date}:{city}"
                         retry_count_key = f"{retry_prefix}_count:{args.movie_id}:{target_date}:{city}"
@@ -354,18 +398,41 @@ def main() -> int:
                     time.sleep(1)
                     continue
 
-                # Keep one worker free so due T-5 scans never queue behind the hourly sweep.
+                # After the first full scan for each future service date, retain
+                # only cities whose successful response actually listed shows.
+                for service_day, advance_slot in advance_slots(now, first_day):
+                    roster_path=advance_roster_path(args.store,args.movie_id,service_day)
+                    cycle_targets=load_advance_targets(args.store,args.movie_id,service_day,targets)
+                    cycle_done=all(
+                        (last:=state_get(db,f"multi_advance:{args.movie_id}:{service_day}:{target['slug']}"))
+                        and parse_local(last)>=advance_slot for target in cycle_targets)
+                    if cycle_done:
+                        roster=write_advance_roster(args.store,db,cycle_targets,args.movie_id,service_day,advance_slot)
+                        print(f"ADVANCE SWEEP COMPLETE: {roster['cities_with_listings']} of "
+                              f"{roster['initial_target_count']} current targets have listings for {service_day}; "
+                              "later scans use the refreshed service-date roster.",flush=True)
+
+                # Due pre-show scans have priority. A single city uses one worker;
+                # simultaneous cities borrow idle pool slots up to the fixed pool
+                # ceiling. Routine sweeps pause until the urgent backlog drains.
                 due_rows = db.execute("""SELECT DISTINCT city FROM final_jobs
                     WHERE movie_id=? AND status='pending' AND target_utc<=? AND substr(show_datetime_ist,1,10)=?
                     ORDER BY city""", (str(args.movie_id), now.astimezone(UTC).isoformat(), target_date.isoformat())).fetchall()
+                eligible_due = []
                 for row in due_rows:
                     city = row["city"]
                     final_retry_key = f"multi_final_retry:{args.movie_id}:{target_date}:{city}"
                     final_retry_at = state_get(db, final_retry_key)
                     if final_retry_at and parse_local(final_retry_at) > now:
                         continue
-                    if city in busy_final_cities or sum(r == "pre_show" for _, r in running.values()) >= 1:
+                    if city in busy_final_cities:
                         continue
+                    eligible_due.append(city)
+                pre_show_active = sum(r == "pre_show" for _, r in running.values())
+                urgent_limit = urgent_worker_limit(len(eligible_due), pool_size=5)
+                slots_available = max(0, 5 - len(running))
+                pre_show_to_start = min(max(0, urgent_limit - pre_show_active), slots_available)
+                for city in eligible_due[:pre_show_to_start]:
                     worker_values = vars(args).copy()
                     worker_values.update(city=city, date=target_date.isoformat(),
                                          acknowledge_permission=True, final_minutes=5)
@@ -374,11 +441,11 @@ def main() -> int:
                     running[f] = (city, "pre_show")
                     busy_final_cities.add(city)
                     print(f"[{now.isoformat(timespec='seconds')}] PRIORITY T-5 scan queued: {city}", flush=True)
-                    break
 
                 # Refill at most four hourly slots. Each city is due once per local hour.
                 hourly_active = sum(reason != "pre_show" for _, reason in running.values())
-                if hourly_active < 4:
+                urgent_backlog = bool(eligible_due) or pre_show_active > 0
+                if hourly_active < 4 and not urgent_backlog:
                     slot = now.replace(minute=0, second=0, microsecond=0)
                     for target in active_targets:
                         city = target["slug"]
@@ -407,9 +474,10 @@ def main() -> int:
                         if hourly_active >= 4:
                             break
                 # Advance sweeps borrow idle scan workers; the fifth remains reserved for T-5.
-                if initial_complete and hourly_active < 4:
+                if hourly_active < 4 and not urgent_backlog:
                     for service_day, advance_slot in advance_slots(now, first_day):
-                        for target in active_targets:
+                        advance_targets=load_advance_targets(args.store,args.movie_id,service_day,targets)
+                        for target in advance_targets:
                             city = target["slug"]
                             key = f"multi_advance:{args.movie_id}:{service_day}:{city}"
                             last = state_get(db, key)

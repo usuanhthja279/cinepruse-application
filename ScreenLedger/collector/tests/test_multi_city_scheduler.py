@@ -6,11 +6,30 @@ import unittest
 
 import requests
 
-from multi_city_scheduler import classify_failure, fail_due_pre_show_jobs, advance_slots
+from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs, advance_slots,
+                                 urgent_worker_limit,load_advance_targets,write_advance_roster)
 from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_pre_show_bursts_borrow_workers_within_fixed_pool(self):
+        self.assertEqual([urgent_worker_limit(n) for n in range(6)],[0,1,2,3,4,5])
+        self.assertEqual(urgent_worker_limit(50),5)
+
+    def test_advance_roster_starts_full_then_keeps_cities_with_listings(self):
+        from datetime import date
+        with tempfile.TemporaryDirectory() as temp:
+            store=Path(temp);db=open_db(store/'collector.sqlite');day=date(2026,11,8)
+            targets=[{'slug':'alpha'},{'slug':'beta'},{'slug':'gamma'}]
+            self.assertEqual(load_advance_targets(store,'176276',day,targets),targets)
+            db.executemany("INSERT INTO captures(movie_id,city,observed_at_utc,reason,status,show_count,service_date_ist) VALUES(?,?,?,?,?,?,?)",[
+                ('176276','alpha','2026-11-08T00:20:00+00:00','advance','ok',4,day.isoformat()),
+                ('176276','beta','2026-11-08T00:20:00+00:00','advance','ok',0,day.isoformat()),
+                ('176276','gamma','2026-11-08T00:20:00+00:00','advance','error',None,day.isoformat())])
+            roster=write_advance_roster(store,db,targets,'176276',day,datetime(2026,11,8,5,50,tzinfo=IST))
+            self.assertEqual(roster['cities_with_listings'],1)
+            self.assertEqual([t['slug'] for t in load_advance_targets(store,'176276',day,targets)],['alpha'])
+            db.close()
     def test_advance_schedule_today_and_midnight_reset(self):
         from datetime import date
         first = date(2026, 11, 7)
