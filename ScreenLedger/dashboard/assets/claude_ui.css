@@ -115,3 +115,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Keep long comparison histories scrollable within their chart instead of widening the page. */
+.bars { justify-content: flex-start; overflow-x: auto; overscroll-behavior-inline: contain; }
+.bar-labels { justify-content: flex-start; gap: 18px; overflow-x: auto; overscroll-behavior-inline: contain; white-space: nowrap; }
+
