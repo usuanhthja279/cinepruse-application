@@ -1,5 +1,11 @@
 # ScreenLedger — Official India State Geometry Integration (v4)
 
+## Movie Intelligence UI v2
+
+The dashboard follows the supplied Claude visual reference: warm light mode, plum dark mode, Fraunces/Manrope typography, and responsive rounded panels. It has five routes: Overview, Pulse, Map, Shows, and Capture engine. The theme toggle follows the operating-system preference on first visit and remembers the user's choice. The Shows route contains the saved hourly screening explorer; advance service-date captures remain a separate table in Pulse.
+
+The reference HTML's embedded demo dataset is not used. Hourly figures are loaded from the committed JSON/CSV snapshots. The currently committed November 7 data has six capture windows (00:00–05:00 IST); availability and failures are reported separately. Matched-session movement is shown only when eligible sessions exist, so the 00:00→01:00 interval appears as unavailable because its saved comparison has no matched future sessions.
+
 ## Current Movie Intelligence data flow (November 2026)
 
 The Movie Intelligence prototype combines two data paths:
@@ -48,7 +54,9 @@ The NWIC resource currently displays a `Other (Open)` license classification; it
 
 ## Dashboard data rules
 
-This is still a prototype, not a collector. The November 6 Kolkata-area sample has 117 shows, 29 cinemas, 27,663 seats, 7,202 unavailable (booked *plus blocked*) and ₹39,48,610 as a proxy for seat value—not confirmed ticket-sale receipts. The November 7 national replay is simulated, and the last-hour signal is not verifiable from the single saved snapshot. Empty states and cities remain **Not collected**, not zero.
+The dashboard is backed by committed District hourly exports for November 7 and by the local read-only API for service-date captures. It does not use a simulated November 7 national replay. The saved run summary is the source of truth for hourly values; the newest manifest chooses the available export set. Future service dates are selected by the show date, not capture date.
+
+Unavailable seats are counted as booked plus blocked under the project owner's accounting assumption, and the dashboard uses the project's confirmed-revenue label per the owner's separate payment confirmation. District inventory fields alone do not contain payment events. Rows with incomplete price details remain identified as such. Failed and uncollected feeds are unknown coverage, never zero shows. City feeds overlap, so national totals are deduplicated by session key. The map is limited to selector-label coverage; state cinema or revenue totals are not inferred from city names.
 
 ## Open the live collector ledger
 
@@ -62,11 +70,14 @@ Then open `http://127.0.0.1:8765/dashboard/live.html`. The page reads the collec
 
 ## Files
 
-- `index.html`: responsive movie catalog, India map region picker, state → district/city → cinema dashboard.
-- `fetch_and_embed_soi_map.py`: official NWIC ZIP download, JSON normalization, checks, SHA-256 audit, offline HTML embedding.
+- `index.html`: Movie Intelligence dashboard with Overview, Pulse, Map, Shows, and Capture engine routes.
+- `assets/claude_ui.css`: reference-aligned responsive light/dark theme, typography, and focus/motion treatment.
+- `fetch_and_embed_soi_map.py`: official NWIC ZIP download, JSON normalization, checks, and offline geometry embedding.
 - `verified_snapshot.json`: unchanged Kolkata extracted reference metrics.
 - `CODEX_INDIA_MAP_V3_HANDOFF.md`: previous v3 implementation roadmap.
 - `MAP_SOURCE_AND_RELEASE_CHECKLIST.md`: provenance and acceptance checklist.
+- `documentation/CLAUDE_UI_INTEGRATION_PLAN.md`: audit, component/data lineage, API contract, and test plan.
+- `documentation/CLAUDE_UI_IMPLEMENTATION_REPORT.md`: implementation scope, data limits, and verification notes.
 
 ### Known test scope
 

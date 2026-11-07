@@ -3,6 +3,7 @@
 let ROOT = "data/district_hourly_runs_2026-11-07/";
 let snapshotDate = "2026-11-07";
 const $ = id => document.getElementById(id);
+let drawerPreviousFocus = null;
 const app = { summaries: null, comparisons: [], mapping: [], coverage: [], provenance: null, geo: null, sessionsByRun: {}, sessionPage: 0, advanceDates: [], advancePage: 1, advanceQuery: "" };
 const number = value => Number(value || 0).toLocaleString("en-IN");
 const money = value => value == null || value === "" ? "Unavailable" : `₹${(Number(value) / 1e7).toFixed(2)} crore`;
@@ -22,18 +23,26 @@ const selected = () => runs()[Math.max(0, Number($("runSelect").value))];
 
 function render() {
   if (!app.summaries) return;
-  const run=selected(), runIndex=Math.max(0,Number($("runSelect").value)), comparison=app.comparisons[runIndex-1], c=comparison?.comparison;
+  const run=selected(), runIndex=Math.max(0,Number($("runSelect").value)), comparison=app.comparisons[runIndex-1], c=comparison?.comparison, hasComparable=!!c&&c.matched_future_session_count>0;
   const total=run.target_city_feeds, cap=run.captured_city_feeds;
   $("overviewMetrics").innerHTML = tile("Booked + blocked seats",number(run.booked_plus_blocked_seats),"Per owner-confirmed revenue basis",true)+tile("Confirmed revenue",money(run.confirmed_revenue_inr),"Payment confirmation supplied by project owner")+tile("Unique screenings",number(run.unique_session_count),"Deduplicated session records")+tile("Feed coverage",`${number(cap)} / ${number(total)}`,`${number(run.failed_city_feeds)} failed · ${number(run.not_collected_this_hour_city_feeds)} not collected`);
-  $("deltaMetrics").innerHTML = c?tile("Matched future sessions",number(c.matched_future_session_count),`${c.previous_hour_ist} → ${c.current_hour_ist} IST`)+tile("Tickets sold · matched shows",`+${number(c.seat_change.positive_booked_plus_blocked_seats)}`,"Booked + blocked seat increases",true)+tile("Released / corrected seats",`−${number(c.seat_change.released_or_corrected_seats)}`,"Shown separately from increases")+tile("Net matched seat change",`${c.seat_change.net_booked_plus_blocked_seat_change>=0?"+":""}${number(c.seat_change.net_booked_plus_blocked_seat_change)}`,`${number(c.new_session_count)} new sessions; ${number(c.disappeared_session_count)} disappeared`):tile("Hourly comparison","Not available","The first snapshot has no previous run.")+tile("Tickets sold · matched shows","—","Requires a preceding capture")+tile("Released / corrected seats","—","Requires a preceding capture")+tile("Net matched seat change","—","Requires a preceding capture");
+  $("deltaMetrics").innerHTML = hasComparable?tile("Matched future sessions",number(c.matched_future_session_count),`${c.previous_hour_ist} → ${c.current_hour_ist} IST`)+tile("Tickets sold · matched shows",`+${number(c.seat_change.positive_booked_plus_blocked_seats)}`,"Booked + blocked seat increases",true)+tile("Released / corrected seats",`−${number(c.seat_change.released_or_corrected_seats)}`,"Shown separately from increases")+tile("Net matched seat change",`${c.seat_change.net_booked_plus_blocked_seat_change>=0?"+":""}${number(c.seat_change.net_booked_plus_blocked_seat_change)}`,`${number(c.new_session_count)} new sessions; ${number(c.disappeared_session_count)} disappeared`):tile("Hourly comparison","Not available","The first snapshot has no previous run.")+tile("Tickets sold · matched shows","—","Requires a preceding capture")+tile("Released / corrected seats","—","Requires a preceding capture")+tile("Net matched seat change","—","Requires a preceding capture");
   $("coverageTitle").textContent=pct(cap/total);$("coverageFill").style.width=pct(cap/total);$("captured").textContent=`${number(cap)} / ${number(total)}`;$("missing").textContent=number(run.not_collected_this_hour_city_feeds);$("failed").textContent=number(run.failed_city_feeds);
   $("movieMetrics").innerHTML=tile("Booked + blocked seats",number(run.booked_plus_blocked_seats),"Current captured snapshot",true)+tile("Confirmed revenue",money(run.confirmed_revenue_inr),"Per owner payment confirmation")+tile("Total seats",number(run.total_seats),"Across deduplicated screenings")+tile("Unique shows",number(run.unique_session_count),"Coverage-dependent count");
+  $("pulseComparisonStatus").textContent=hasComparable?`${c.previous_hour_ist} → ${c.current_hour_ist} IST · matched`:"Awaiting comparable captures";
+  $("pulseBookedIncrease").textContent=hasComparable?`+${number(c.seat_change.positive_booked_plus_blocked_seats)}`:"—";
+  $("pulseMatchedCount").textContent=hasComparable?number(c.matched_future_session_count):"—";
+  $("pulseReleasedSeats").textContent=hasComparable?`−${number(c.seat_change.released_or_corrected_seats)}`:"—";
+  $("pulseNetChange").textContent=hasComparable?`${c.seat_change.net_booked_plus_blocked_seat_change>=0?"+":""}${number(c.seat_change.net_booked_plus_blocked_seat_change)}`:"—";
+  const revenueDelta=hasComparable?c.confirmed_revenue_change_inr:null;
+  $("pulseRevenueChange").textContent=revenueDelta?.available?money(revenueDelta.value):"—";
+  $("pulseComparisonNote").textContent=hasComparable?`${number(c.new_session_count)} new and ${number(c.disappeared_session_count)} disappeared shows are excluded from the matched change. ${revenueDelta?.available?"Revenue change is available for this matched set.":"Revenue change is unavailable because matched pricing is incomplete or not comparable."}`:"This capture has no eligible matched sessions; ticket and revenue changes are not reported as zero.";
   const ratio=run.total_seats?run.booked_plus_blocked_seats/run.total_seats:0;$("occupancyFill").style.width=pct(ratio);$("bookedLabel").textContent=`${number(run.booked_plus_blocked_seats)} booked + blocked`;$("availableLabel").textContent=`${number(run.available_seats)} available`;$("snapshotTime").textContent=`${run.collection_hour_ist} IST · ${run.service_date_ist}`;
   $("healthMetrics").innerHTML=tile("Captured feeds",number(cap),`of ${number(total)} targets`,true)+tile("Not collected",number(run.not_collected_this_hour_city_feeds),"Unknown coverage, not zero shows")+tile("Failed feeds",number(run.failed_city_feeds),"Failures are separate from empty show lists")+tile("Duplicate feed rows",number(run.duplicate_city_feed_rows),"Removed from unique session count");
   $("healthRows").innerHTML=runs().map(r=>`<tr><td>${esc(r.collection_hour_ist)}</td><td>${number(r.captured_city_feeds)}</td><td>${pct(r.captured_city_feeds/r.target_city_feeds)}</td><td>${number(r.failed_city_feeds)}</td><td>${number(r.not_collected_this_hour_city_feeds)}</td><td>${number(r.unique_session_count)}</td></tr>`).join("");
   $("hourRows").innerHTML=runs().map(r=>`<tr><td>${esc(r.collection_hour_ist)} IST</td><td>${number(r.unique_session_count)}</td><td>${number(r.booked_plus_blocked_seats)}</td><td>${money(r.confirmed_revenue_inr)}</td><td>${number(r.captured_city_feeds)} / ${number(r.target_city_feeds)}</td></tr>`).join("");
-  if(c){const rev=c.confirmed_revenue_change_inr;$("comparisonNote").textContent=`${number(c.matched_future_session_count)} shows matched on venue, showtime and capacity over ${c.capture_interval_minutes.min}–${c.capture_interval_minutes.max} minutes. ${number(c.new_session_count)} new and ${number(c.disappeared_session_count)} disappeared shows are kept out of the sold-ticket change. Confirmed revenue change is unavailable because ${number(rev.incomplete_pricing_session_count)} matched shows have incomplete pricing.`;}else{$("comparisonNote").textContent="This is the first saved snapshot. Ticket-change comparisons begin with the next hourly capture.";}
-  const available=app.comparisons.filter(Boolean),max=Math.max(1,...available.flatMap(x=>[x.comparison.seat_change.positive_booked_plus_blocked_seats,x.comparison.seat_change.released_or_corrected_seats]));
+  if(hasComparable){const rev=c.confirmed_revenue_change_inr;$("comparisonNote").textContent=`${number(c.matched_future_session_count)} shows matched on venue, showtime and capacity over ${c.capture_interval_minutes.min}–${c.capture_interval_minutes.max} minutes. ${number(c.new_session_count)} new and ${number(c.disappeared_session_count)} disappeared shows are kept out of the sold-ticket change. Confirmed revenue change is unavailable because ${number(rev.incomplete_pricing_session_count)} matched shows have incomplete pricing.`;}else{$("comparisonNote").textContent="This is the first saved snapshot. Ticket-change comparisons begin with the next hourly capture.";}
+  const available=app.comparisons.filter(x=>x?.comparison?.matched_future_session_count>0),max=Math.max(1,...available.flatMap(x=>[x.comparison.seat_change.positive_booked_plus_blocked_seats,x.comparison.seat_change.released_or_corrected_seats]));
   $("bars").innerHTML=available.map(envelope=>{const c=envelope.comparison;const width=Math.max(18,Math.floor(100/available.length)-5);return `<div class="bar-item" style="width:${width}%;flex-shrink:0"><div class="column a" style="height:${Math.max(5,c.seat_change.positive_booked_plus_blocked_seats/max*170)}px"><span>+${number(c.seat_change.positive_booked_plus_blocked_seats)}</span></div><div class="column b" style="height:${Math.max(5,c.seat_change.released_or_corrected_seats/max*170)}px"><span>−${number(c.seat_change.released_or_corrected_seats)}</span></div></div>`;}).join("")||'<div class="empty">Hourly matched comparisons are not available yet.</div>';
   $("barLabels").innerHTML=available.map(x=>`<span>${esc(x.comparison.previous_hour_ist)} → ${esc(x.comparison.current_hour_ist)}</span>`).join("");
   renderSessions();
@@ -42,8 +51,10 @@ function render() {
 function navigate(view) {
   document.querySelectorAll(".view").forEach(node=>node.classList.toggle("active",node.id===view));
   document.querySelectorAll(".nav").forEach(node=>node.classList.toggle("active",node.dataset.view===view));
-  $("breadcrumb").textContent=({overview:"Overview",movie:"Movie analytics",geo:"India explorer",health:"Collector health"})[view];
-  if(view==="geo") loadMap(); if(view==="movie") loadSessions(); window.scrollTo({top:0,behavior:"smooth"});
+  const labels={overview:"Overview",movie:"Pulse",geo:"Map",shows:"Shows",health:"Capture engine"};
+  $("breadcrumb").textContent=labels[view]||"Overview";
+  document.querySelectorAll("[data-view]").forEach(node=>{if(node.dataset.view===view)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");});
+  if(view==="geo") loadMap(); if(view==="shows") loadSessions(); window.scrollTo({top:0,behavior:"smooth"});
 }
 document.querySelectorAll("[data-view]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));
@@ -51,7 +62,7 @@ $("advanceDateSelect").addEventListener("change",()=>{app.advancePage=1;loadAdva
 $("advanceSearch").addEventListener("input",()=>{app.advanceQuery=$("advanceSearch").value.trim();app.advancePage=1;loadAdvanceShows();});
 $("advancePrev").addEventListener("click",()=>{app.advancePage=Math.max(1,app.advancePage-1);loadAdvanceShows();});
 $("advanceNext").addEventListener("click",()=>{app.advancePage++;loadAdvanceShows();});
-$("runSelect").addEventListener("change",()=>{app.sessionPage=0;render();loadCoverageForSelected();if($("movie").classList.contains("active"))loadSessions();});
+$("runSelect").addEventListener("change",()=>{app.sessionPage=0;render();loadCoverageForSelected();if($("shows").classList.contains("active"))loadSessions();});
 async function loadCoverageForSelected(){if(!app.summaries)return;const run=selected();const hour=run.collection_hour_ist.replace(":","");try{const response=await fetch(`${ROOT}city_coverage_${snapshotDate}_${hour}_IST.csv?refresh=${Date.now()}`);if(response.ok)app.coverage=csvRows(await response.text());}catch{} }
 
 const apiJson=async path=>{const response=await fetch(path,{cache:"no-store"});if(!response.ok)throw new Error("Live data service returned "+response.status);return response.json();};
@@ -106,13 +117,15 @@ $("sessionSearch").addEventListener("input",()=>{app.sessionPage=0;renderSession
 
 const norm = value => String(value||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g," ").trim();
 const stateKey = value => {let key=norm(value);if(key.includes("andaman nicobar"))return "andaman and nicobar islands";if(key.includes("arunanchal")||key.includes("arunachal"))return "arunachal pradesh";if(key.includes("dadra")&&key.includes("daman"))return "dadra and nagar haveli and daman and diu";return key;};
-function cityRowsForState(state){return app.mapping.filter(r=>r.mapping_status==="matched_exact_2011_location_name"&&stateKey(r.state_or_ut)===stateKey(state));}
+const VERIFIED_CITY_MAPPING_STATUSES=new Set(["matched_exact_2011_town_name","matched_exact_2011_settlement_name","matched_curated_city_state"]);
+function cityRowsForState(state){return app.mapping.filter(r=>VERIFIED_CITY_MAPPING_STATUSES.has(r.mapping_status)&&stateKey(r.state_or_ut)===stateKey(state));}
 function coverageForCity(row){const key=norm(row.display_label),slug=norm(row.display_label).replace(/\s+/g,"-");return app.coverage.find(c=>norm(c.display_name)===key||norm(c.city_slug)===norm(slug));}
-function openState(state){$("modalTitle").textContent=state;const cities=cityRowsForState(state);const counts={captured:0,failed:0,not:0};for(const row of cities){const c=coverageForCity(row);if(c?.capture_status==="captured")counts.captured++;else if(c?.capture_status==="failed")counts.failed++;else counts.not++;}
+function openState(state){drawerPreviousFocus=document.activeElement;$("modalTitle").textContent=state;const cities=cityRowsForState(state);const counts={captured:0,failed:0,not:0};for(const row of cities){const c=coverageForCity(row);if(c?.capture_status==="captured")counts.captured++;else if(c?.capture_status==="failed")counts.failed++;else counts.not++;}
   $("modalCities").innerHTML=cities.length?cities.map(row=>{const c=coverageForCity(row),status=c?.capture_status||"not mapped in this run";return `<div class="cityitem"><strong>${esc(row.display_label)}</strong><small>${esc(status)}${c?.show_count?` · ${number(c.show_count)} feed rows`:""}</small></div>`}).join(""):`<div class="empty" style="grid-column:1/-1">No unambiguous Census town-name matches in this selector snapshot.</div>`;
   $("cityMessage").textContent=`Selector-label coverage only: ${number(cities.length)} mapped labels, ${number(counts.captured)} captured, ${number(counts.failed)} failed, ${number(counts.not)} not captured or not matched. These labels do not locate individual cinemas; state bookings, occupancy and revenue are not assigned.`;
   $("stateModal").classList.add("open");$("closeModal").focus();document.querySelectorAll("#indiaMap path").forEach(path=>path.classList.toggle("selected",path.dataset.name===state));
 }
+function closeState(){if(!$("stateModal").classList.contains("open"))return;$("stateModal").classList.remove("open");if(drawerPreviousFocus?.isConnected)drawerPreviousFocus.focus();}
 function loadMap(){if(app.geo)return;fetch("assets/india_state_map_simplified.geojson").then(r=>{if(!r.ok)throw new Error("Map asset could not be loaded");return r.json()}).then(geo=>{app.geo=geo;drawMap();}).catch(e=>{$("geoStatus").textContent=`Map unavailable: ${e.message}`;});}
 function drawMap(){
  const svg=$("indiaMap"),NS="http://www.w3.org/2000/svg",bounds=[67.3,6.0,98.2,38.0],scale=Math.min(638/(bounds[2]-bounds[0]),620/(bounds[3]-bounds[1]));
@@ -123,7 +136,16 @@ function drawMap(){
  renderStates(); $("geoStatus").textContent="Simplified state and union-territory geometry loaded from the package display asset. Political-border authenticity has not been independently certified.";
 }
 function renderStates(){if(!app.geo)return;const query=$("stateSearch").value.toLowerCase();const names=app.geo.features.map(f=>f.properties.name).sort((a,b)=>a.localeCompare(b));$("stateResults").innerHTML=names.filter(name=>name.toLowerCase().includes(query)).map(name=>`<button class="regionlink" data-state="${esc(name)}">${esc(name)} <small>Open selector-feed coverage</small></button>`).join("")||'<div class="empty">No state found.</div>';document.querySelectorAll("[data-state]").forEach(node=>node.addEventListener("click",()=>openState(node.dataset.state)));}
-$("stateSearch").addEventListener("input",renderStates);$("closeModal").addEventListener("click",()=>$("stateModal").classList.remove("open"));$("stateModal").addEventListener("click",event=>{if(event.target===$("stateModal"))$("stateModal").classList.remove("open")});document.addEventListener("keydown",event=>{if(event.key==="Escape")$("stateModal").classList.remove("open")});
+$("stateSearch").addEventListener("input",renderStates);$("closeModal").addEventListener("click",closeState);$("stateModal").addEventListener("click",event=>{if(event.target===$("stateModal"))closeState();});document.addEventListener("keydown",event=>{if(event.key==="Escape")closeState();if(event.key==="Tab"&&$("stateModal").classList.contains("open")){const items=[...$("stateModal").querySelectorAll("button,[href],[tabindex]:not([tabindex='-1'])")].filter(node=>!node.disabled);if(!items.length)return;const first=items[0],last=items[items.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
+
+
+function initTheme(){
+ const root=document.documentElement,button=$("themeToggle");let saved=null;try{saved=localStorage.getItem("screenledger-theme");}catch{}
+ const theme=saved|| (window.matchMedia?.("(prefers-color-scheme: dark)").matches?"dark":"light");root.dataset.theme=theme;
+ const update=()=>{const dark=root.dataset.theme==="dark";button.textContent=dark?"☼":"◐";button.setAttribute("aria-label",dark?"Switch to light theme":"Switch to dark theme");button.title=dark?"Switch to light theme":"Switch to dark theme";};
+ update();button.addEventListener("click",()=>{root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem("screenledger-theme",root.dataset.theme);}catch{}update();});
+}
+initTheme();
 
 let loadedSnapshotVersion = "";
 let snapshotRefreshRunning = false;
