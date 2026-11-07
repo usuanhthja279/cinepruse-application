@@ -26,15 +26,47 @@ IST = ZoneInfo("Asia/Kolkata")
 UTC = timezone.utc
 _LEDGER_CACHE = {}
 _LEDGER_LOCK = threading.Lock()
+_SUMMARY_CACHE = {}
+_CACHE_REFRESHING = set()
+
+def capture_watermark(conn, day):
+    row=conn.execute("SELECT COALESCE(MAX(id),0) FROM captures WHERE movie_id=? AND service_date_ist=?",(MOVIE_ID,day.isoformat())).fetchone()
+    return int(row[0])
+
+def _refresh_cached(kind, day, watermark):
+    try:
+        conn=db_connect()
+        value=day_ledger(conn,day,MOVIE_ID) if kind=="ledger" else summary(conn,day)
+        conn.close()
+        with _LEDGER_LOCK:
+            cache=_LEDGER_CACHE if kind=="ledger" else _SUMMARY_CACHE
+            cache[day]=(watermark,value)
+    except Exception:
+        pass
+    finally:
+        with _LEDGER_LOCK:_CACHE_REFRESHING.discard((kind,day))
+
+def _cached(conn,day,kind):
+    watermark=capture_watermark(conn,day)
+    with _LEDGER_LOCK:
+        cache=_LEDGER_CACHE if kind=="ledger" else _SUMMARY_CACHE
+        item=cache.get(day)
+        if item and item[0]==watermark:return item[1]
+        if item:
+            if (kind,day) not in _CACHE_REFRESHING:
+                _CACHE_REFRESHING.add((kind,day));threading.Thread(target=_refresh_cached,args=(kind,day,watermark),daemon=True).start()
+            return item[1]
+    value=day_ledger(conn,day,MOVIE_ID) if kind=="ledger" else summary(conn,day)
+    with _LEDGER_LOCK:
+        cache=_LEDGER_CACHE if kind=="ledger" else _SUMMARY_CACHE
+        cache[day]=(watermark,value)
+    return value
 
 def cached_day_ledger(conn, day):
-    with _LEDGER_LOCK:
-        cached = _LEDGER_CACHE.get(day)
-        if cached and monotonic_time.monotonic() - cached[0] < 300:
-            return cached[1]
-        value = day_ledger(conn, day, MOVIE_ID)
-        _LEDGER_CACHE[day] = (monotonic_time.monotonic(), value)
-        return value
+    return _cached(conn,day,"ledger")
+
+def cached_summary(conn,day):
+    return _cached(conn,day,"summary")
 
 REVENUE_CONFIRMATION = "Payment confirmation reviewed and confirmed by the project owner."
 
@@ -105,9 +137,14 @@ def latest_capture_cte() -> str:
           ))
         )
     ), ranked AS (
+        -- Rank successes independently so a failed retry cannot erase good data.
         SELECT c.*, ROW_NUMBER() OVER(PARTITION BY c.city ORDER BY c.id DESC) AS rn
         FROM service_captures c
-    ), latest_city AS (SELECT * FROM ranked WHERE rn=1)"""
+        WHERE c.status='ok'
+    ), latest_city AS (SELECT * FROM ranked WHERE rn=1), latest_attempt_ranked AS (
+        SELECT c.*, ROW_NUMBER() OVER(PARTITION BY c.city ORDER BY c.id DESC) AS rn
+        FROM service_captures c
+    ), latest_attempt AS (SELECT * FROM latest_attempt_ranked WHERE rn=1)"""
 
 
 def capture_args(day: date) -> tuple[str, ...]:
@@ -143,6 +180,9 @@ def city_rows(conn: sqlite3.Connection, day: date) -> list[dict]:
         FROM latest_city ORDER BY city
     """, capture_args(day)).fetchall()
     captures = {row["city"]: dict(row) for row in rows}
+    attempts = {row["city"]: dict(row) for row in conn.execute(latest_capture_cte() + """
+        SELECT city,status,error,observed_at_utc FROM latest_attempt
+    """, capture_args(day)).fetchall()}
     revenue_by_city = {row["city"]: row["revenue"] for row in conn.execute(latest_capture_cte() + """
         SELECT c.city, SUM(o.estimated_gross_inr) AS revenue
         FROM latest_city c LEFT JOIN observations o ON o.capture_id=c.id
@@ -154,7 +194,8 @@ def city_rows(conn: sqlite3.Connection, day: date) -> list[dict]:
         slug = target.get("slug", "")
         latest = captures.get(slug)
         good = latest if latest and latest["status"] == "ok" else None
-        error = latest if latest and latest["status"] == "error" else None
+        attempt = attempts.get(slug)
+        error = attempt if not good and attempt and attempt["status"] == "error" else None
         raw_url = raw_page_url(good.get("raw_path")) if good else None
         result.append({
             "display_name": target.get("display_name", slug),
@@ -341,7 +382,7 @@ class Handler(SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(body)
             elif path == "/api/live/summary":
-                self.send_json(summary(conn, day))
+                self.send_json(cached_summary(conn, day))
             elif path == "/api/live/cities":
                 rows = city_rows(conn, day)
                 search = query.get("q", [""])[0].strip().lower()

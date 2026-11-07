@@ -74,6 +74,7 @@ CREATE TABLE IF NOT EXISTS observations (
     PRIMARY KEY(capture_id, session_key)
 );
 CREATE INDEX IF NOT EXISTS idx_observations_lookup ON observations(movie_id,city,session_key,capture_id);
+CREATE INDEX IF NOT EXISTS idx_observations_service_day ON observations(movie_id,substr(show_datetime_ist,1,10),session_key,capture_id);
 
 CREATE TABLE IF NOT EXISTS cinema_location_observations (
     capture_id INTEGER NOT NULL REFERENCES captures(id),
@@ -108,6 +109,8 @@ def open_db(path: Path) -> sqlite3.Connection:
                 raise
     conn.execute("CREATE INDEX IF NOT EXISTS idx_captures_service_date "
                  "ON captures(movie_id,service_date_ist,city,id)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_observations_service_day "
+                 "ON observations(movie_id,substr(show_datetime_ist,1,10),session_key,capture_id)")
     return conn
 
 def state_get(conn: sqlite3.Connection, key: str) -> str | None:

@@ -69,6 +69,8 @@ class ServiceDateDashboardTests(unittest.TestCase):
         self.assertEqual(by_city["mumbai"]["service_date"], "2026-11-09")
 
     def test_future_summary_and_sessions_deduplicate_overlapping_city_feeds(self):
+        # A failed retry must not hide the last successful service-date capture.
+        self._capture(5, "mumbai", "2026-11-07T10:00:00+00:00", "2026-11-09", "error")
         with patch.object(dashboard, "load_targets", return_value=self.targets):
             result = dashboard.summary(self.conn, date(2026, 11, 9))
             page = dashboard.show_page(self.conn, date(2026, 11, 9), "all", 1, 100, "")
@@ -88,16 +90,16 @@ class ServiceDateDashboardTests(unittest.TestCase):
         self.assertEqual(next(row for row in future if row["slug"] == "mumbai")["status"], "captured")
         self.assertEqual(next(row for row in today if row["slug"] == "mumbai")["status"], "captured")
 
-    def test_day_cache_is_per_date_and_expires_after_five_minutes(self):
-        with patch.object(dashboard,"_LEDGER_CACHE",{}), patch.object(dashboard,"day_ledger",side_effect=lambda conn,day,movie:{"service_date":day.isoformat()}) as build, patch.object(dashboard.monotonic_time,"monotonic",side_effect=[0,10,10,301,301]):
+    def test_day_cache_is_per_date_and_invalidates_only_when_that_date_changes(self):
+        with patch.object(dashboard,"_LEDGER_CACHE",{}), patch.object(dashboard,"_SUMMARY_CACHE",{}), patch.object(dashboard,"_CACHE_REFRESHING",set()), patch.object(dashboard,"capture_watermark",side_effect=[4,4,9,9]), patch.object(dashboard,"day_ledger",side_effect=lambda conn,day,movie:{"service_date":day.isoformat()}) as build:
             first=dashboard.cached_day_ledger(self.conn,date(2026,11,7))
             again=dashboard.cached_day_ledger(self.conn,date(2026,11,7))
             advance=dashboard.cached_day_ledger(self.conn,date(2026,11,8))
-            refreshed=dashboard.cached_day_ledger(self.conn,date(2026,11,7))
+            advance_again=dashboard.cached_day_ledger(self.conn,date(2026,11,8))
         self.assertEqual(first,again)
         self.assertEqual(advance["service_date"],"2026-11-08")
-        self.assertEqual(refreshed["service_date"],"2026-11-07")
-        self.assertEqual(build.call_count,3)
+        self.assertEqual(advance_again,advance)
+        self.assertEqual(build.call_count,2)
 
     def test_available_dates_includes_future_service_date(self):
         dates = dashboard.available_service_dates(self.conn)
