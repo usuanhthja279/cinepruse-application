@@ -26,5 +26,8 @@
   "run_utc": "2026-11-06T18:24:10.870979+00:00",
   "verified_2026_border_against_political_map": false,
   "redistribution_rights_verified": false,
-  "origin_certified_by_this_tool": false
+  "origin_certified_by_this_tool": false,
+  "official_archive_checksum_match": true,
+  "official_archive_checksum_verified_utc": "2026-11-07T15:21:32.287687+00:00",
+  "simplified_geometry_sample_check": "3359 of 3359 sampled vertices matched the official archive on a 100m grid; not a complete or visual boundary verification"
 }

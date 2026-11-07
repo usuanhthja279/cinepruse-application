@@ -1,0 +1,192 @@
+{
+  "local_archive_sha256": "a932ea29e7afd0fea1e1068f3beeeadb760e6b2baae9783f5822bbefd4224ebd",
+  "official_archive_sha256": "a932ea29e7afd0fea1e1068f3beeeadb760e6b2baae9783f5822bbefd4224ebd",
+  "archive_match": true,
+  "feature_count": 36,
+  "sampled_points": 3359,
+  "matching_points": 3359,
+  "sampling_method": "At most 100 evenly spaced simplified vertices per state; projected to EPSG:7755 and compared to official vertices in adjacent 100 metre grid cells.",
+  "limitation": "Sampling does not prove every boundary vertex or replace a human visual comparison with the official political map.",
+  "states": [
+    {
+      "state_code": "AN",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "AP",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "AR",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "AS",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "BR",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "CG",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "CH",
+      "sampled": 10,
+      "matched": 10
+    },
+    {
+      "state_code": "DH",
+      "sampled": 75,
+      "matched": 75
+    },
+    {
+      "state_code": "DL",
+      "sampled": 44,
+      "matched": 44
+    },
+    {
+      "state_code": "GA",
+      "sampled": 69,
+      "matched": 69
+    },
+    {
+      "state_code": "GJ",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "HP",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "HR",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "JH",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "JK",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "KA",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "KL",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "LD",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "LK",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "MH",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "ML",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "MN",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "MP",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "MZ",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "NL",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "OD",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "PB",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "PY",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "RJ",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "SK",
+      "sampled": 61,
+      "matched": 61
+    },
+    {
+      "state_code": "TN",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "TR",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "TS",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "UK",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "UP",
+      "sampled": 100,
+      "matched": 100
+    },
+    {
+      "state_code": "WB",
+      "sampled": 100,
+      "matched": 100
+    }
+  ]
+}

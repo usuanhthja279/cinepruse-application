@@ -42,7 +42,7 @@ class ClaudeUiContractTests(unittest.TestCase):
         self.assertIn('"shows","Shows"', js)
         self.assertIn('"engine","Capture engine"', js)
         self.assertIn("/api/live/day-ledger", js)
-        self.assertIn("inferred cinema location", js)
+        self.assertIn("District cinema location", js)
         self.assertIn("Unassigned cinemas", js)
 
     def test_theme_and_small_viewport_support(self):

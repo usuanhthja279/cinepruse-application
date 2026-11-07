@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sqlite3
 import sys
 import time
@@ -73,6 +74,15 @@ CREATE TABLE IF NOT EXISTS observations (
     PRIMARY KEY(capture_id, session_key)
 );
 CREATE INDEX IF NOT EXISTS idx_observations_lookup ON observations(movie_id,city,session_key,capture_id);
+
+CREATE TABLE IF NOT EXISTS cinema_location_observations (
+    capture_id INTEGER NOT NULL REFERENCES captures(id),
+    cinema_id TEXT NOT NULL, cinema_name TEXT, address TEXT,
+    latitude REAL, longitude REAL, source_url TEXT, observed_at_utc TEXT NOT NULL,
+    PRIMARY KEY(capture_id,cinema_id,cinema_name,address,latitude,longitude)
+);
+CREATE INDEX IF NOT EXISTS idx_cinema_locations_id ON cinema_location_observations(cinema_id);
+
 CREATE TABLE IF NOT EXISTS final_jobs (
     movie_id TEXT NOT NULL, city TEXT NOT NULL, session_key TEXT NOT NULL,
     show_datetime_ist TEXT NOT NULL, target_utc TEXT NOT NULL,
@@ -109,6 +119,13 @@ def state_set(conn: sqlite3.Connection, key: str, value: str) -> None:
                  "ON CONFLICT(key) DO UPDATE SET value=excluded.value", (key, value))
     conn.commit()
 
+def location_coordinate(value, limit):
+    try:
+        number=float(value)
+        return number if math.isfinite(number) and -limit<=number<=limit else None
+    except (TypeError,ValueError,OverflowError):
+        return None
+
 def record_snapshot(conn: sqlite3.Connection, snapshot: dict, observed_at: datetime,
                     reason: str, target_date: date, raw_path: str | None = None,
                     requested_at: datetime | None = None, final_minutes: int = 5) -> int:
@@ -128,11 +145,25 @@ def record_snapshot(conn: sqlite3.Connection, snapshot: dict, observed_at: datet
             (str(meta["movie_id"]),requested,actual,to_utc_iso(observed_at),reason,
              to_utc_iso(requested_at) if requested_at else None,"ok",len(shows),raw_path,target_date.isoformat()))
         capture_id = cur.lastrowid
+        seen_cinemas = set()
         for show in shows:
             start = show_start(show)
             if not start or start.date() != target_date:
                 continue
             key = show["session_key"]
+            cinema_id = str(show.get("cinema_id") or "").strip()
+            address=show.get("cinema_address")
+            if address is not None and not isinstance(address,str):
+                address=json.dumps(address,ensure_ascii=False,default=str)
+            latitude=location_coordinate(show.get("latitude"),90)
+            longitude=location_coordinate(show.get("longitude"),180)
+            name=show.get("cinema_name") or ""
+            if not isinstance(name,str):name=str(name)
+            venue=(cinema_id,name,address,latitude,longitude)
+            if cinema_id and venue not in seen_cinemas and (address or latitude is not None or longitude is not None):
+                conn.execute("INSERT OR IGNORE INTO cinema_location_observations VALUES (?,?,?,?,?,?,?,?)",
+                    (capture_id,cinema_id,name,address,latitude,longitude,meta.get("source_url"),to_utc_iso(observed_at)))
+                seen_cinemas.add(venue)
             conn.execute(
                 "INSERT INTO observations VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
                 (capture_id,str(meta["movie_id"]),requested,key,

@@ -88,6 +88,17 @@ class ServiceDateDashboardTests(unittest.TestCase):
         self.assertEqual(next(row for row in future if row["slug"] == "mumbai")["status"], "captured")
         self.assertEqual(next(row for row in today if row["slug"] == "mumbai")["status"], "captured")
 
+    def test_day_cache_is_per_date_and_expires_after_five_minutes(self):
+        with patch.object(dashboard,"_LEDGER_CACHE",{}), patch.object(dashboard,"day_ledger",side_effect=lambda conn,day,movie:{"service_date":day.isoformat()}) as build, patch.object(dashboard.monotonic_time,"monotonic",side_effect=[0,10,10,301,301]):
+            first=dashboard.cached_day_ledger(self.conn,date(2026,11,7))
+            again=dashboard.cached_day_ledger(self.conn,date(2026,11,7))
+            advance=dashboard.cached_day_ledger(self.conn,date(2026,11,8))
+            refreshed=dashboard.cached_day_ledger(self.conn,date(2026,11,7))
+        self.assertEqual(first,again)
+        self.assertEqual(advance["service_date"],"2026-11-08")
+        self.assertEqual(refreshed["service_date"],"2026-11-07")
+        self.assertEqual(build.call_count,3)
+
     def test_available_dates_includes_future_service_date(self):
         dates = dashboard.available_service_dates(self.conn)
         self.assertEqual(dates[0]["service_date"], "2026-11-09")

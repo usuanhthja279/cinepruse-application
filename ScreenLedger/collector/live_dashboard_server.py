@@ -329,7 +329,7 @@ class Handler(SimpleHTTPRequestHandler):
             elif path == "/api/live/cinema-mapping.csv":
                 report = cached_day_ledger(conn, day)["cinema_mapping"]
                 output = StringIO()
-                writer = csv.DictWriter(output, fieldnames=["cinema_id","cinema_names","state_or_ut","candidate_states","matched_city_names","status","source"])
+                writer = csv.DictWriter(output, fieldnames=["cinema_id","cinema_names","state_or_ut","candidate_states","matched_city_names","status","source","source_url","secondary_source_url","notes","address","latitude","longitude","observed_at_utc"])
                 writer.writeheader()
                 writer.writerows(report)
                 body = output.getvalue().encode("utf-8-sig")
