@@ -41,9 +41,9 @@ class ClaudeUiContractTests(unittest.TestCase):
         self.assertIn('"map","Map"', js)
         self.assertIn('"shows","Shows"', js)
         self.assertIn('"engine","Capture engine"', js)
-        self.assertIn("matched_exact_2011_town_name", js)
-        self.assertIn("matched_exact_2011_settlement_name", js)
-        self.assertIn("matched_curated_city_state", js)
+        self.assertIn("/api/live/day-ledger", js)
+        self.assertIn("inferred cinema location", js)
+        self.assertIn("Unassigned cinemas", js)
 
     def test_theme_and_small_viewport_support(self):
         css = (ROOT / "assets" / "claude_ui.css").read_text(encoding="utf-8")

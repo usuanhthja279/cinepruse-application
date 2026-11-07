@@ -5,12 +5,15 @@ from __future__ import annotations
 import csv
 import json
 import sqlite3
+import threading
+import time as monotonic_time
 from datetime import date, datetime, time, timedelta, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from io import StringIO
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlsplit
 from zoneinfo import ZoneInfo
+from day_ledger import day_ledger
 
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTOR = Path(__file__).resolve().parent
@@ -21,6 +24,18 @@ VERIFIED_PATH = DATA / "city_targets_verified.json"
 MOVIE_ID = "176276"
 IST = ZoneInfo("Asia/Kolkata")
 UTC = timezone.utc
+_LEDGER_CACHE = {}
+_LEDGER_LOCK = threading.Lock()
+
+def cached_day_ledger(conn, day):
+    with _LEDGER_LOCK:
+        cached = _LEDGER_CACHE.get(day)
+        if cached and monotonic_time.monotonic() - cached[0] < 300:
+            return cached[1]
+        value = day_ledger(conn, day, MOVIE_ID)
+        _LEDGER_CACHE[day] = (monotonic_time.monotonic(), value)
+        return value
+
 REVENUE_CONFIRMATION = "Payment confirmation reviewed and confirmed by the project owner."
 
 
@@ -309,6 +324,22 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             if path == "/api/live/dates":
                 self.send_json({"dates": available_service_dates(conn)})
+            elif path == "/api/live/day-ledger":
+                self.send_json(cached_day_ledger(conn, day))
+            elif path == "/api/live/cinema-mapping.csv":
+                report = cached_day_ledger(conn, day)["cinema_mapping"]
+                output = StringIO()
+                writer = csv.DictWriter(output, fieldnames=["cinema_id","cinema_names","state_or_ut","candidate_states","matched_city_names","status","source"])
+                writer.writeheader()
+                writer.writerows(report)
+                body = output.getvalue().encode("utf-8-sig")
+                self.send_response(200)
+                self.send_header("Content-Type", "text/csv; charset=utf-8")
+                self.send_header("Content-Disposition", f'attachment; filename="cinema_mapping_{day}.csv"')
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
+                self.wfile.write(body)
             elif path == "/api/live/summary":
                 self.send_json(summary(conn, day))
             elif path == "/api/live/cities":
