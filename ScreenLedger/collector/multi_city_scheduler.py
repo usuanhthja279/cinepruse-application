@@ -26,6 +26,20 @@ from district_extractor import slugify_city
 from smart_collector import IST, UTC, open_db, parse_local, scan, state_get, state_set
 
 
+def advance_slots(now: datetime, first_day: date) -> list[tuple[date, datetime]]:
+    """Return the latest due advance slot for each of the next three service dates."""
+    now = now.astimezone(IST)
+    result = []
+    for offset, interval, minute in ((1, 2, 20), (2, 3, 35), (3, 3, 35)):
+        first_hour = 13 if now.date() == first_day else 0
+        first = now.replace(hour=first_hour, minute=minute, second=0, microsecond=0)
+        if now < first:
+            continue
+        elapsed = int((now - first).total_seconds() // (interval * 3600))
+        result.append((now.date() + timedelta(days=offset), first + timedelta(hours=interval * elapsed)))
+    return result
+
+
 def classify_failure(exc: Exception) -> tuple[bool, str]:
     """Return whether a failure is plausibly transient and a stable category."""
     if isinstance(exc, requests.Timeout):
@@ -162,6 +176,7 @@ def main() -> int:
     p.add_argument("--acknowledge-permission", action="store_true")
     args = p.parse_args()
     target_date = date.fromisoformat(args.date)
+    first_day = target_date
     if args.workers != 5:
         p.error("This run reserves four hourly workers and one pre-show worker; workers must be 5")
     targets, report = city_targets(args.cities)
@@ -206,8 +221,19 @@ def main() -> int:
         try:
             while datetime.now(IST) < start:
                 time.sleep(min(1, (start - datetime.now(IST)).total_seconds()))
-            while datetime.now(IST) < end:
+            while True:
                 now = datetime.now(IST)
+                if now.date() != target_date and not running:
+                    target_date = now.date()
+                    if verified_report is not None:
+                        db.executemany("INSERT INTO kv_state(key,value) VALUES (?,?) "
+                                       "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+                                       [(baseline_key(args.movie_id, target_date, item["slug"]), "ok")
+                                        for item in verified_report["cities"]])
+                        db.commit()
+                        state_set(db, f"multi_initial_complete:{args.movie_id}:{target_date}", "1")
+                        verified_report = None
+                rollover_pending = now.date() != target_date
                 initial_complete_key = f"multi_initial_complete:{args.movie_id}:{target_date}"
                 initial_complete = state_get(db, initial_complete_key) == "1"
                 if not initial_complete and all(
@@ -232,6 +258,26 @@ def main() -> int:
                     if not future.done():
                         continue
                     city, reason = running.pop(future)
+                    if reason.startswith("advance|"):
+                        _, service_day, slot_text = reason.split("|", 2)
+                        key = f"multi_advance:{args.movie_id}:{service_day}:{city}"
+                        retry_key = f"{key}:retry"
+                        try:
+                            future.result()
+                            state_set(db, key, slot_text)
+                            db.execute("DELETE FROM kv_state WHERE key=?", (retry_key,))
+                            db.commit()
+                            print(f"Advance capture completed: {city}, {service_day}, slot {slot_text}", flush=True)
+                        except Exception as exc:
+                            retryable, category = classify_failure(exc)
+                            if retryable and not state_get(db, retry_key):
+                                state_set(db, retry_key, (now + timedelta(seconds=args.retry_seconds)).isoformat())
+                            else:
+                                state_set(db, key, slot_text)
+                                db.execute("DELETE FROM kv_state WHERE key=?", (retry_key,))
+                                db.commit()
+                            print(f"Advance capture failed: {city}, {service_day} [{category}]: {exc}", file=sys.stderr, flush=True)
+                        continue
                     if reason != "pre_show":
                         dashboard_dirty = True
                     if reason == "pre_show":
@@ -271,6 +317,9 @@ def main() -> int:
                         elif retryable:
                             retry_counts["exhausted"] += 1
                             disposition = "retry limit reached; waiting for next hourly cycle"
+                            if reason != "pre_show":
+                                state_set(db, f"multi_hourly:{args.movie_id}:{target_date}:{city}",
+                                          now.replace(minute=0, second=0, microsecond=0).isoformat())
                             db.execute("DELETE FROM kv_state WHERE key IN (?,?)", (retry_key, retry_count_key))
                             db.commit()
                             if reason == "pre_show":
@@ -282,6 +331,9 @@ def main() -> int:
                         else:
                             retry_counts["permanent"] += 1
                             disposition = "not retryable; check city slug or source response"
+                            if reason != "pre_show":
+                                state_set(db, f"multi_hourly:{args.movie_id}:{target_date}:{city}",
+                                          now.replace(minute=0, second=0, microsecond=0).isoformat())
                             db.execute("DELETE FROM kv_state WHERE key IN (?,?)", (retry_key, retry_count_key))
                             db.commit()
                             if reason == "pre_show":
@@ -298,10 +350,14 @@ def main() -> int:
                     print("District access restriction detected; stopping all new requests.", file=sys.stderr, flush=True)
                     break
 
+                if rollover_pending:
+                    time.sleep(1)
+                    continue
+
                 # Keep one worker free so due T-5 scans never queue behind the hourly sweep.
                 due_rows = db.execute("""SELECT DISTINCT city FROM final_jobs
-                    WHERE movie_id=? AND status='pending' AND target_utc<=?
-                    ORDER BY city""", (str(args.movie_id), now.astimezone(UTC).isoformat())).fetchall()
+                    WHERE movie_id=? AND status='pending' AND target_utc<=? AND substr(show_datetime_ist,1,10)=?
+                    ORDER BY city""", (str(args.movie_id), now.astimezone(UTC).isoformat(), target_date.isoformat())).fetchall()
                 for row in due_rows:
                     city = row["city"]
                     final_retry_key = f"multi_final_retry:{args.movie_id}:{target_date}:{city}"
@@ -348,6 +404,30 @@ def main() -> int:
                         hourly_active += 1
                         print(f"[{now.isoformat(timespec='seconds')}] {reason} scan queued: {city} "
                               f"({hourly_active}/4 hourly workers)", flush=True)
+                        if hourly_active >= 4:
+                            break
+                # Advance sweeps borrow idle scan workers; the fifth remains reserved for T-5.
+                if initial_complete and hourly_active < 4:
+                    for service_day, advance_slot in advance_slots(now, first_day):
+                        for target in active_targets:
+                            city = target["slug"]
+                            key = f"multi_advance:{args.movie_id}:{service_day}:{city}"
+                            last = state_get(db, key)
+                            retry_at = state_get(db, f"{key}:retry")
+                            if last and parse_local(last) >= advance_slot:
+                                continue
+                            if retry_at and parse_local(retry_at) > now:
+                                continue
+                            if any(c == city for c, _ in running.values()):
+                                continue
+                            worker_values = vars(args).copy()
+                            worker_values.update(city=city, date=service_day.isoformat(),
+                                                 acknowledge_permission=True, final_minutes=5)
+                            f = pool.submit(_scan_new_connection, SimpleNamespace(**worker_values), "advance", args.store)
+                            running[f] = (city, f"advance|{service_day}|{advance_slot.isoformat()}")
+                            hourly_active += 1
+                            if hourly_active >= 4:
+                                break
                         if hourly_active >= 4:
                             break
                 time.sleep(1)

@@ -6,11 +6,22 @@ import unittest
 
 import requests
 
-from multi_city_scheduler import classify_failure, fail_due_pre_show_jobs
+from multi_city_scheduler import classify_failure, fail_due_pre_show_jobs, advance_slots
 from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_advance_schedule_today_and_midnight_reset(self):
+        from datetime import date
+        first = date(2026, 11, 7)
+        self.assertEqual(advance_slots(datetime(2026, 11, 7, 13, 19, tzinfo=IST), first), [])
+        at_1320 = advance_slots(datetime(2026, 11, 7, 13, 20, tzinfo=IST), first)
+        self.assertEqual([(d.isoformat(), s.strftime('%H:%M')) for d, s in at_1320], [('2026-11-08', '13:20')])
+        at_1335 = advance_slots(datetime(2026, 11, 7, 13, 35, tzinfo=IST), first)
+        self.assertEqual([s.strftime('%H:%M') for _, s in at_1335], ['13:20', '13:35', '13:35'])
+        after_midnight = advance_slots(datetime(2026, 11, 8, 0, 35, tzinfo=IST), first)
+        self.assertEqual([(d.isoformat(), s.strftime('%H:%M')) for d, s in after_midnight],
+                         [('2026-11-09', '00:20'), ('2026-11-10', '00:35'), ('2026-11-11', '00:35')])
     def test_permanent_pre_show_failure_settles_only_due_jobs_for_that_city(self):
         with tempfile.TemporaryDirectory() as temp:
             db = open_db(Path(temp) / "collector.sqlite")
