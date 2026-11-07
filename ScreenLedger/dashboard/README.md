@@ -1,5 +1,18 @@
 # ScreenLedger — Official India State Geometry Integration (v4)
 
+## Current Movie Intelligence data flow (November 2026)
+
+The Movie Intelligence prototype combines two data paths:
+
+- The saved hourly history, comparisons, and city coverage load from the published JSON/CSV files under `dashboard/data/`.
+- The **Advance booking captures** panel reads the local read-only API at `/api/live/dates`, `/api/live/summary?date=YYYY-MM-DD`, `/api/live/cities?date=YYYY-MM-DD`, and `/api/live/shows?date=YYYY-MM-DD`. It selects by **service date** (the show date being monitored), so a capture made on November 7 for November 9 appears under November 9. Search and paging query deduplicated screening rows from the same API.
+
+Start the local API and static dashboard from PowerShell in `collector/` using `.\START_LIVE_DASHBOARD.ps1`, then open `http://127.0.0.1:8765/dashboard/index.html`. Advance captures refresh every five minutes alongside hourly history. The local database must be writable by the collector once so it can add `captures.service_date_ist`; this migration is automatic and adds an index. The dashboard API itself is read-only.
+
+New successful and failed collector attempts both store `service_date_ist`. For older captures without that field, the API infers a date only from successful observations that all belong to one show date; it uses the collection day for legacy failures. Empty legacy advance captures cannot be reliably assigned to a future date and are left out of that date’s coverage. Failed and uncollected city feeds remain unknown, not zero shows. City feeds overlap, so show and seat totals are deduplicated by session key. Revenue uses the project owner’s confirmed payment basis; listings with incomplete pricing are counted separately.
+
+`collector/tests/test_service_date_dashboard.py` covers capture-day versus show-date selection, legacy inference, coverage failures, and cross-city session deduplication. Run the full collector suite from `collector/` with `python -m unittest discover -s tests -v`.
+
 The ScreenLedger movie-first dashboard now includes a **local automatic downloader and validated geometry embedder**, using only the Government of India National Water Data Portal's Survey of India state-boundary GeoJSON archive. It preserves the state/city/cinema drilldowns from v3.
 
 **Current package status:** This delivery **does not contain the actual official polygon coordinates**: the source URL was verified on the official government website, but this execution environment could not resolve the government's download host. The 36-region index still works, and the map area intentionally remains blank until the government file is fetched. Do not claim the north boundary has already been verified.

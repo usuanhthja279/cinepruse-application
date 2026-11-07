@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS captures (
     movie_id TEXT NOT NULL, city TEXT NOT NULL, actual_city TEXT,
     observed_at_utc TEXT NOT NULL, reason TEXT NOT NULL,
     requested_at_utc TEXT, status TEXT NOT NULL, show_count INTEGER,
-    raw_path TEXT, error TEXT
+    raw_path TEXT, error TEXT, service_date_ist TEXT
 );
 CREATE TABLE IF NOT EXISTS observations (
     capture_id INTEGER NOT NULL REFERENCES captures(id),
@@ -89,6 +89,15 @@ def open_db(path: Path) -> sqlite3.Connection:
     conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    if "service_date_ist" not in {row[1] for row in conn.execute("PRAGMA table_info(captures)")}:
+        try:
+            conn.execute("ALTER TABLE captures ADD COLUMN service_date_ist TEXT")
+        except sqlite3.OperationalError as exc:
+            # Multiple scheduler workers can open the DB together during first migration.
+            if "duplicate column name" not in str(exc).lower():
+                raise
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_captures_service_date "
+                 "ON captures(movie_id,service_date_ist,city,id)")
     return conn
 
 def state_get(conn: sqlite3.Connection, key: str) -> str | None:
@@ -115,9 +124,9 @@ def record_snapshot(conn: sqlite3.Connection, snapshot: dict, observed_at: datet
     with conn:
         cur = conn.execute(
             "INSERT INTO captures(movie_id,city,actual_city,observed_at_utc,reason,"
-            "requested_at_utc,status,show_count,raw_path) VALUES (?,?,?,?,?,?,?,?,?)",
+            "requested_at_utc,status,show_count,raw_path,service_date_ist) VALUES (?,?,?,?,?,?,?,?,?,?)",
             (str(meta["movie_id"]),requested,actual,to_utc_iso(observed_at),reason,
-             to_utc_iso(requested_at) if requested_at else None,"ok",len(shows),raw_path))
+             to_utc_iso(requested_at) if requested_at else None,"ok",len(shows),raw_path,target_date.isoformat()))
         capture_id = cur.lastrowid
         for show in shows:
             start = show_start(show)
@@ -230,10 +239,10 @@ def last_hour_proxy(conn: sqlite3.Connection, movie_id: str, city: str,
             "label":"Net change in unavailable seats (proxy; may include holds/blocks)"}
 
 def log_error(conn: sqlite3.Connection, movie_id: str, city: str,
-              now: datetime, reason: str, msg: str) -> None:
+              now: datetime, reason: str, msg: str, service_date: str | None = None) -> None:
     with conn:
-        conn.execute("INSERT INTO captures(movie_id,city,observed_at_utc,reason,status,error) "
-                     "VALUES(?,?,?,?,?,?)", (movie_id,city,to_utc_iso(now),reason,"error",msg))
+        conn.execute("INSERT INTO captures(movie_id,city,observed_at_utc,reason,status,error,service_date_ist) "
+                     "VALUES(?,?,?,?,?,?,?)", (movie_id,city,to_utc_iso(now),reason,"error",msg,service_date))
 
 def scan(conn: sqlite3.Connection, args, now: datetime, reason: str, store: Path) -> int:
     if not args.acknowledge_permission:
@@ -253,7 +262,7 @@ def scan(conn: sqlite3.Connection, args, now: datetime, reason: str, store: Path
               f"{len([s for s in parsed['shows'] if s['show_date_ist']==args.date])} target-date shows",flush=True)
         return cid
     except Exception as exc:
-        log_error(conn,str(args.movie_id),args.city,datetime.now(UTC),reason,str(exc))
+        log_error(conn,str(args.movie_id),args.city,datetime.now(UTC),reason,str(exc),args.date)
         raise
 
 def run_loop(args) -> int:

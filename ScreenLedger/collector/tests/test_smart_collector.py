@@ -1,4 +1,5 @@
 import sys
+import sqlite3
 import tempfile
 import unittest
 from copy import deepcopy
@@ -27,6 +28,24 @@ def fixture(unavailable=40, at='2026-11-07T00:00:00+05:30',
     }
 
 class SmartCollectorTests(unittest.TestCase):
+    def test_existing_capture_database_is_migrated_for_service_date(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'legacy.sqlite'
+            conn = sqlite3.connect(path)
+            conn.execute('''CREATE TABLE captures (
+                id INTEGER PRIMARY KEY AUTOINCREMENT, movie_id TEXT NOT NULL, city TEXT NOT NULL,
+                actual_city TEXT, observed_at_utc TEXT NOT NULL, reason TEXT NOT NULL,
+                requested_at_utc TEXT, status TEXT NOT NULL, show_count INTEGER,
+                raw_path TEXT, error TEXT)''')
+            conn.commit()
+            conn.close()
+            migrated = open_db(path)
+            columns = {row[1] for row in migrated.execute('PRAGMA table_info(captures)')}
+            indexes = {row[1] for row in migrated.execute('PRAGMA index_list(captures)')}
+            migrated.close()
+        self.assertIn('service_date_ist', columns)
+        self.assertIn('idx_captures_service_date', indexes)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.dbpath = Path(self.temp.name)/'snap.sqlite'
@@ -54,6 +73,8 @@ class SmartCollectorTests(unittest.TestCase):
         self.assertEqual(self.db.execute('SELECT status FROM final_jobs').fetchone()['status'],'captured')
         self.assertEqual(self.db.execute('SELECT count(*) n FROM observations').fetchone()['n'],2)
         self.assertEqual(self.db.execute('SELECT count(*) n FROM captures').fetchone()['n'],2)
+        self.assertEqual(self.db.execute('SELECT DISTINCT service_date_ist FROM captures').fetchone()[0],
+                         '2026-11-07')
 
     def test_late_discovery_not_fake_on_time_scan(self):
         record_snapshot(self.db,fixture(30),parse_local('2026-11-07T00:31:00'),'late_baseline',self.day)

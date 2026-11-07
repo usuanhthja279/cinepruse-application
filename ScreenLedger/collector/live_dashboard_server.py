@@ -76,40 +76,70 @@ def load_targets() -> list[dict]:
 
 
 def latest_capture_cte() -> str:
-    return """WITH ranked AS (
+    return """WITH service_captures AS (
+        SELECT c.* FROM captures c
+        WHERE c.movie_id=? AND (
+          c.service_date_ist=?
+          OR (c.service_date_ist IS NULL AND (
+            (c.status='error' AND c.observed_at_utc>=? AND c.observed_at_utc<?)
+            OR (c.status='ok'
+                AND EXISTS (SELECT 1 FROM observations o WHERE o.capture_id=c.id
+                            AND substr(o.show_datetime_ist,1,10)=?)
+                AND NOT EXISTS (SELECT 1 FROM observations o WHERE o.capture_id=c.id
+                                AND substr(o.show_datetime_ist,1,10)<>?))
+          ))
+        )
+    ), ranked AS (
         SELECT c.*, ROW_NUMBER() OVER(PARTITION BY c.city ORDER BY c.id DESC) AS rn
-        FROM captures c
-        WHERE c.movie_id=? AND c.observed_at_utc>=? AND c.observed_at_utc<?
-          AND c.status='ok'
+        FROM service_captures c
     ), latest_city AS (SELECT * FROM ranked WHERE rn=1)"""
+
+
+def capture_args(day: date) -> tuple[str, ...]:
+    start, end = date_bounds(day)
+    return (MOVIE_ID, day.isoformat(), start, end, day.isoformat(), day.isoformat())
+
+
+def available_service_dates(conn: sqlite3.Connection) -> list[dict]:
+    """List explicitly assigned and safely inferable historical service dates."""
+    rows = conn.execute("""SELECT service_date_ist AS service_date,COUNT(*) AS captures,
+        SUM(CASE WHEN status='ok' THEN 1 ELSE 0 END) AS successful_captures,
+        SUM(CASE WHEN status='error' THEN 1 ELSE 0 END) AS failed_captures,
+        MAX(observed_at_utc) AS last_capture_utc
+        FROM captures WHERE movie_id=? AND service_date_ist IS NOT NULL
+        GROUP BY service_date_ist""", (MOVIE_ID,)).fetchall()
+    results = [dict(row) for row in rows]
+    known = {row["service_date"] for row in results}
+    legacy = conn.execute("""SELECT substr(o.show_datetime_ist,1,10) AS service_date,
+        COUNT(DISTINCT c.id) AS captures,
+        COUNT(DISTINCT CASE WHEN c.status='ok' THEN c.id END) AS successful_captures,
+        0 AS failed_captures,MAX(c.observed_at_utc) AS last_capture_utc
+        FROM observations o JOIN captures c ON c.id=o.capture_id
+        WHERE c.movie_id=? AND c.service_date_ist IS NULL
+        GROUP BY substr(o.show_datetime_ist,1,10)""", (MOVIE_ID,)).fetchall()
+    results.extend(dict(row) for row in legacy if row["service_date"] not in known)
+    return sorted(results, key=lambda row: row["service_date"], reverse=True)
 
 
 def city_rows(conn: sqlite3.Connection, day: date) -> list[dict]:
     targets = load_targets()
-    start, end = date_bounds(day)
     rows = conn.execute(latest_capture_cte() + """
-        SELECT id,city,actual_city,observed_at_utc,reason,show_count,raw_path
+        SELECT id,city,actual_city,observed_at_utc,reason,show_count,raw_path,status,error
         FROM latest_city ORDER BY city
-    """, (MOVIE_ID, start, end)).fetchall()
+    """, capture_args(day)).fetchall()
     captures = {row["city"]: dict(row) for row in rows}
-    latest_errors = conn.execute("""SELECT city,error,observed_at_utc FROM (
-        SELECT city,error,observed_at_utc,
-               ROW_NUMBER() OVER(PARTITION BY city ORDER BY id DESC) rn
-        FROM captures WHERE movie_id=? AND observed_at_utc>=? AND observed_at_utc<?
-          AND status='error'
-    ) WHERE rn=1""", (MOVIE_ID, start, end)).fetchall()
-    errors = {row["city"]: dict(row) for row in latest_errors}
     revenue_by_city = {row["city"]: row["revenue"] for row in conn.execute(latest_capture_cte() + """
         SELECT c.city, SUM(o.estimated_gross_inr) AS revenue
         FROM latest_city c LEFT JOIN observations o ON o.capture_id=c.id
           AND substr(o.show_datetime_ist,1,10)=?
-        GROUP BY c.city
-    """, (MOVIE_ID, start, end, day.isoformat())).fetchall()}
+        WHERE c.status='ok' GROUP BY c.city
+    """, capture_args(day) + (day.isoformat(),)).fetchall()}
     result = []
     for target in targets:
         slug = target.get("slug", "")
-        good = captures.get(slug)
-        error = errors.get(slug)
+        latest = captures.get(slug)
+        good = latest if latest and latest["status"] == "ok" else None
+        error = latest if latest and latest["status"] == "error" else None
         raw_url = raw_page_url(good.get("raw_path")) if good else None
         result.append({
             "display_name": target.get("display_name", slug),
@@ -120,6 +150,7 @@ def city_rows(conn: sqlite3.Connection, day: date) -> list[dict]:
             "show_count": good.get("show_count") if good else None,
             "captured_at_utc": good.get("observed_at_utc") if good else None,
             "capture_reason": good.get("reason") if good else None,
+            "service_date": day.isoformat() if latest else None,
             "confirmed_revenue_inr": revenue_by_city.get(slug) if good else None,
             "latest_error": error.get("error") if error else None,
             "raw_page_url": raw_url,
@@ -128,9 +159,8 @@ def city_rows(conn: sqlite3.Connection, day: date) -> list[dict]:
 
 
 def session_cte(day: date, city: str | None = None) -> tuple[str, tuple]:
-    start, end = date_bounds(day)
     city_clause = " AND o.city=?" if city and city != "all" else ""
-    args: tuple = (MOVIE_ID, start, end, MOVIE_ID, day.isoformat())
+    args: tuple = capture_args(day) + (MOVIE_ID, day.isoformat())
     if city and city != "all":
         args += (city,)
     cte = latest_capture_cte() + """
@@ -142,8 +172,8 @@ def session_cte(day: date, city: str | None = None) -> tuple[str, tuple]:
                ROW_NUMBER() OVER(PARTITION BY o.session_key ORDER BY c.observed_at_utc DESC,c.id DESC) AS rn,
                COUNT(*) OVER(PARTITION BY o.session_key) AS feed_count
         FROM observations o JOIN latest_city c ON c.id=o.capture_id
-        WHERE o.movie_id=? AND substr(o.show_datetime_ist,1,10)=?""" + city_clause + " )"
-    return cte, (MOVIE_ID, start, end, MOVIE_ID, day.isoformat()) + ((city,) if city and city != "all" else ())
+        WHERE c.status='ok' AND o.movie_id=? AND substr(o.show_datetime_ist,1,10)=?""" + city_clause + " )"
+    return cte, args
 
 
 def session_dict(row: sqlite3.Row) -> dict:
@@ -261,7 +291,9 @@ class Handler(SimpleHTTPRequestHandler):
         day = date.fromisoformat(query.get("date", [default_date().isoformat()])[0])
         conn = db_connect()
         try:
-            if path == "/api/live/summary":
+            if path == "/api/live/dates":
+                self.send_json({"dates": available_service_dates(conn)})
+            elif path == "/api/live/summary":
                 self.send_json(summary(conn, day))
             elif path == "/api/live/cities":
                 rows = city_rows(conn, day)

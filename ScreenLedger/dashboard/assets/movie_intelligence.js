@@ -3,7 +3,7 @@
 let ROOT = "data/district_hourly_runs_2026-11-07/";
 let snapshotDate = "2026-11-07";
 const $ = id => document.getElementById(id);
-const app = { summaries: null, comparisons: [], mapping: [], coverage: [], provenance: null, geo: null, sessionsByRun: {}, sessionPage: 0 };
+const app = { summaries: null, comparisons: [], mapping: [], coverage: [], provenance: null, geo: null, sessionsByRun: {}, sessionPage: 0, advanceDates: [], advancePage: 1, advanceQuery: "" };
 const number = value => Number(value || 0).toLocaleString("en-IN");
 const money = value => value == null || value === "" ? "Unavailable" : `₹${(Number(value) / 1e7).toFixed(2)} crore`;
 const pct = value => `${(Number(value) * 100).toFixed(1)}%`;
@@ -47,8 +47,44 @@ function navigate(view) {
 }
 document.querySelectorAll("[data-view]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));
+$("advanceDateSelect").addEventListener("change",()=>{app.advancePage=1;loadAdvanceData();});
+$("advanceSearch").addEventListener("input",()=>{app.advanceQuery=$("advanceSearch").value.trim();app.advancePage=1;loadAdvanceShows();});
+$("advancePrev").addEventListener("click",()=>{app.advancePage=Math.max(1,app.advancePage-1);loadAdvanceShows();});
+$("advanceNext").addEventListener("click",()=>{app.advancePage++;loadAdvanceShows();});
 $("runSelect").addEventListener("change",()=>{app.sessionPage=0;render();loadCoverageForSelected();if($("movie").classList.contains("active"))loadSessions();});
 async function loadCoverageForSelected(){if(!app.summaries)return;const run=selected();const hour=run.collection_hour_ist.replace(":","");try{const response=await fetch(`${ROOT}city_coverage_${snapshotDate}_${hour}_IST.csv?refresh=${Date.now()}`);if(response.ok)app.coverage=csvRows(await response.text());}catch{} }
+
+const apiJson=async path=>{const response=await fetch(path,{cache:"no-store"});if(!response.ok)throw new Error("Live data service returned "+response.status);return response.json();};
+async function loadAdvanceDates(){
+ try{
+  const payload=await apiJson("/api/live/dates?refresh="+Date.now()),dates=payload.dates||[],select=$("advanceDateSelect"),previous=select.value,wasFollowingLatest=!previous||previous===app.advanceDates[0]?.service_date;
+  app.advanceDates=dates;select.innerHTML=dates.map(row=>"<option value=\""+esc(row.service_date)+"\">"+esc(new Date(row.service_date+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"}))+" · "+number(row.successful_captures)+" captures</option>").join("")||'<option value="">No service dates available</option>';
+  select.value=wasFollowingLatest?(dates[0]?.service_date||""):(dates.some(row=>row.service_date===previous)?previous:(dates[0]?.service_date||""));
+  if(!dates.length){$("advanceMetrics").innerHTML='<div class="empty" style="grid-column:1/-1">No service-date captures are available yet.</div>';$("advanceRows").innerHTML='<tr><td colspan="9">No future-date captures have been recorded.</td></tr>';return;}
+  await loadAdvanceData();
+ }catch(error){$("advanceMetrics").innerHTML='<div class="empty" style="grid-column:1/-1">Live advance data is unavailable: '+esc(error.message)+'. Open this prototype through the local ScreenLedger dashboard service.</div>';$("advanceNote").textContent="The saved hourly prototype remains available; live service-date captures require the local API.";}
+}
+async function loadAdvanceData(){
+ const day=$("advanceDateSelect").value;if(!day)return;
+ try{
+  const data=await apiJson("/api/live/summary?date="+encodeURIComponent(day));
+  const captured=data.captured_city_feeds||0,failed=data.failed_city_feeds||0,unknown=data.not_collected_city_feeds||0,total=data.target_city_feeds||0;
+  $("advanceMetrics").innerHTML=tile("Unique screenings",number(data.unique_sessions),number(data.city_feed_show_rows)+" city-feed rows · duplicates removed",true)+tile("Booked + blocked seats",number(data.booked_plus_blocked_seats),"Unavailable inventory per project accounting basis")+tile("Confirmed revenue",money(data.confirmed_revenue_inr),number(data.pricing_incomplete_sessions)+" screenings have incomplete pricing")+tile("City-feed coverage",number(captured)+" / "+number(total),number(failed)+" failed · "+number(unknown)+" not collected");
+  $("advanceLastCapture").textContent=data.last_capture_utc?new Date(data.last_capture_utc).toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short",timeZone:"Asia/Kolkata"})+" IST":"No successful capture";
+  $("advanceNote").textContent="Show date "+day+". Captures: "+number(captured)+" successful, "+number(failed)+" failed, "+number(unknown)+" not collected. Missing and failed feeds are unknown, never zero shows. Source rows may overlap across city feeds; national session totals are deduplicated. "+(data.source_completeness_verified?"Source completeness verified.":"The full source roster is not certified complete.");
+  await loadAdvanceShows();
+ }catch(error){$("advanceNote").textContent="Could not load "+day+": "+error.message;$("advanceRows").innerHTML="<tr><td colspan=\"9\">"+esc(error.message)+"</td></tr>";}
+}
+async function loadAdvanceShows(){
+ const day=$("advanceDateSelect").value;if(!day)return;$("advanceSessionCount").textContent="Loading…";
+ try{
+  const params=new URLSearchParams({date:day,page:String(app.advancePage),page_size:"100",q:app.advanceQuery}),data=await apiJson("/api/live/shows?"+params.toString()),pages=Math.max(1,data.pages||1);
+  if(app.advancePage>pages){app.advancePage=pages;return loadAdvanceShows();}
+  $("advanceSessionCount").textContent=number(data.total)+" screenings";
+  $("advanceRows").innerHTML=data.rows.length?data.rows.map(row=>"<tr><td>"+esc(row.show_datetime_ist)+"</td><td>"+esc(row.cinema_name)+"</td><td>"+esc(row.actual_city)+"</td><td>"+esc(row.source_city)+"</td><td>"+number(row.total_seats)+"</td><td>"+number(row.available_seats)+"</td><td>"+number(row.booked_plus_blocked_seats)+"</td><td>"+money(row.confirmed_revenue_inr)+"</td><td>"+(row.pricing_complete?"Complete":"Incomplete")+"</td></tr>").join(""):'<tr><td colspan="9">No screenings match this service date and filter.</td></tr>';
+  const first=data.total?((app.advancePage-1)*100+1):0,last=Math.min(app.advancePage*100,data.total);$("advancePageSummary").textContent=data.total?"Showing "+number(first)+"–"+number(last)+" of "+number(data.total)+" · page "+app.advancePage+" of "+pages:"No matching screenings";$("advancePrev").disabled=app.advancePage<=1;$("advanceNext").disabled=app.advancePage>=pages;
+ }catch(error){$("advanceSessionCount").textContent="Unavailable";$("advanceRows").innerHTML="<tr><td colspan=\"9\">"+esc(error.message)+"</td></tr>";}
+}
 
 function renderMovies(){const q=$("movieSearch").value.trim().toLowerCase();const match="ramayana 176276".includes(q);$("movieListing").innerHTML=match?`<div class="movie-card"><div class="poster">RAMAYANA</div><div style="min-width:0;flex:1"><div class="eyebrow">District capture</div><h2>Ramayana</h2><p class="muted">Movie ID 176276 · November 7, 2026</p><button class="btn primary" data-go="movie">Explore movie →</button></div></div>`:`<div class="empty">No saved movie matches your search. Only movies present in saved capture data appear here.</div>`;document.querySelectorAll("#movieListing [data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));}
 $("movieSearch").addEventListener("input",renderMovies);
@@ -120,3 +156,5 @@ async function init(){
 }
 init();
 setInterval(init,300000);
+loadAdvanceDates();
+setInterval(loadAdvanceDates,300000);

@@ -71,3 +71,20 @@ Increase from 1 approved city/film to a measured small cohort, then expand movie
 - Do not compare unrelated provider sources as the same metric. Distinguish District from BookMyShow.
 - Do not ship synthetic coordinates as Government of India geometry.
 - No unrelated UI refactors; start extraction first.
+# Current advance-booking data path
+
+The implemented path is:
+
+```text
+multi-date scheduler (target service date)
+  → smart_collector captures.service_date_ist
+  → observations keyed by capture and screening session
+  → read-only live API filters on service_date_ist
+  → Movie Intelligence advance-booking date selector and paged screening table
+```
+
+The observation timestamp describes when District was checked; `service_date_ist` describes the date the scheduled show belongs to. These are separate dimensions. The API picks the latest attempt per city for the selected service date, counts an error as failed, and only uses successful captures to produce screening totals. Overlapping city results are ranked by stable `session_key`; they are not added as separate sessions. A failed request and an uncollected target are unknown coverage, not evidence of zero shows.
+
+For pre-migration successful captures, the API can infer a service date from observations only when all rows on that capture agree on one date. Legacy errors may use their collection-day window. Empty legacy captures have no evidence to assign them to an advance date, so they stay unassigned. New captures and errors store the requested date explicitly. The UI refreshes this API every five minutes while keeping the saved hourly history and matched-hour comparison view intact.
+
+The local database schema migration adds `captures.service_date_ist` and an index during collector startup. The live dashboard opens the database read-only. Keep the SQLite database and raw provider pages out of Git; version source, documentation, and parsed/public exports.

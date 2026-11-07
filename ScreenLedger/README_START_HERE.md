@@ -1,5 +1,11 @@
 # ScreenLedger — unified Codex handoff and midnight collector kit
 
+## Current implementation status (updated 7 November 2026)
+
+The active dashboard is `dashboard/index.html` (Movie Intelligence). It combines the published hourly history with live advance-booking captures from the collector's local read-only API. Captures carry `service_date_ist`, so scans made today for tomorrow or later are presented under the intended show date. The collector migrates an existing SQLite database by adding that column and its query index. The UI refreshes live service-date data every five minutes and reports captured, failed, and uncollected feeds separately; unresolved coverage is never presented as zero shows. Duplicate city feeds are deduplicated by screening session.
+
+Use `dashboard/README.md` for the current API routes and UI behavior, and `documentation/PHASE_PLAN_AND_DATA_RULES.md` for the capture-to-UI architecture. From `collector/`, run `python -m unittest discover -s tests -v` to validate the collector, multi-date scheduler, and service-date API. Keep `collector/collector_data/smart_collector.sqlite` and provider HTML local; the published prototype uses parsed exports and source code only.
+
 **Prepared for the India Standard Time service day Saturday, 7 November 2026.**
 
 ## What is in the ZIP

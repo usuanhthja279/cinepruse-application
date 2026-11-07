@@ -1,5 +1,15 @@
 # District Movie Extractor v2 — offline-first Python proof of concept
 
+## Current ScreenLedger integration
+
+`multi_city_scheduler.py` records each attempt's requested service date, while `smart_collector.py` stores it in `captures.service_date_ist`. A successful capture stores only screenings for that requested show date. On an existing database the collector adds this nullable column and an index at startup; historical rows remain null until safely attributable.
+
+`live_dashboard_server.py` serves a read-only API for Movie Intelligence. `/api/live/dates` lists recorded service dates, and the date-scoped summary, city-coverage, screening, and CSV routes select captures by service date rather than by capture timestamp. Legacy successful captures are attributed only when their screening rows identify exactly one date; legacy empty advance captures are not guessed into a date. The prototype calls these routes every five minutes and exposes future-date screening rows, confirmed revenue on the project owner's supplied payment basis, pricing completeness, and city coverage.
+
+Start the API and dashboard from PowerShell in this folder with `.\START_LIVE_DASHBOARD.ps1`. The API reads `collector_data/smart_collector.sqlite` in read-only mode. The database and any raw provider pages are local runtime artifacts and must stay out of Git; parsed exports and source code may be versioned.
+
+Run the tests with `python -m unittest discover -s tests -v`. The service-date API behavior has regression coverage in `tests/test_service_date_dashboard.py`.
+
 This project parses **user-saved movie page HTML** and extracts cinema/show/session data from embedded Next.js `__NEXT_DATA__` JSON. It now calculates **estimated gross collections by assuming every unavailable seat, including blocked/held inventory, is booked at the listed category price**. It also includes an **offline city-catalog importer**, a 500-location **candidate** list, and a Codex prompt for discovering the *actual* supported cities through authorized data.
 
 **Tested using the attached November 6, 2026 Ramayana/Kolkata HTML.** It does not independently verify live fetch access, all supported District cities or true ticket-sales revenue.
