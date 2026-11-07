@@ -1,12 +1,35 @@
 from types import SimpleNamespace
+from datetime import datetime
+from pathlib import Path
+import tempfile
 import unittest
 
 import requests
 
-from multi_city_scheduler import classify_failure
+from multi_city_scheduler import classify_failure, fail_due_pre_show_jobs
+from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_permanent_pre_show_failure_settles_only_due_jobs_for_that_city(self):
+        with tempfile.TemporaryDirectory() as temp:
+            db = open_db(Path(temp) / "collector.sqlite")
+            db.executemany("INSERT INTO final_jobs(movie_id,city,session_key,show_datetime_ist,target_utc,status) "
+                           "VALUES (?,?,?,?,?,'pending')", [
+                ("176276", "kothapeta", "due-1", "2026-11-07T10:20:00+05:30", "2026-11-07T04:45:00+00:00"),
+                ("176276", "kothapeta", "future", "2026-11-07T11:00:00+05:30", "2026-11-07T05:30:00+00:00"),
+                ("176276", "other-city", "other", "2026-11-07T10:20:00+05:30", "2026-11-07T04:45:00+00:00"),
+            ])
+            db.commit()
+            affected = fail_due_pre_show_jobs(
+                db, "176276", "kothapeta", datetime(2026, 11, 7, 10, 18, tzinfo=IST),
+                "unrecognized_page")
+            statuses = {r["session_key"]: r["status"] for r in db.execute(
+                "SELECT session_key,status FROM final_jobs")}
+            db.close()
+        self.assertEqual(affected, 1)
+        self.assertEqual(statuses, {"due-1": "failed", "future": "pending", "other": "pending"})
+
     def test_retryable_transport_errors(self):
         self.assertEqual(classify_failure(requests.Timeout("timed out")), (True, "timeout"))
         self.assertEqual(classify_failure(requests.ConnectionError("connection reset")),

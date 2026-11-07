@@ -56,6 +56,19 @@ def emit_retry_summary(counts: dict[str, int], categories: dict[str, int], *, fi
           f"failure_types: {detail}", flush=True)
 
 
+def fail_due_pre_show_jobs(db, movie_id: str, city: str, now: datetime,
+                           category: str, *, exhausted: bool = False) -> int:
+    reason = "exhausted retries" if exhausted else "permanent source error"
+    with db:
+        cur = db.execute(
+            "UPDATE final_jobs SET status='failed',note=? "
+            "WHERE movie_id=? AND city=? AND status='pending' AND target_utc<=?",
+            (f"Pre-show scan {reason}: {category}", str(movie_id), city,
+             now.astimezone(UTC).isoformat()),
+        )
+    return cur.rowcount
+
+
 def baseline_key(movie_id: str, target_date: date, city: str) -> str:
     return f"multi_baseline:{movie_id}:{target_date}:{city}"
 
@@ -231,8 +244,9 @@ def main() -> int:
                         if reason != "pre_show":
                             slot = datetime.now(IST).replace(minute=0, second=0, microsecond=0)
                             state_set(db, f"multi_hourly:{args.movie_id}:{target_date}:{city}", slot.isoformat())
-                        retry_key = f"multi_retry:{args.movie_id}:{target_date}:{city}"
-                        retry_count_key = f"multi_retry_count:{args.movie_id}:{target_date}:{city}"
+                        retry_prefix = "multi_final_retry" if reason == "pre_show" else "multi_retry"
+                        retry_key = f"{retry_prefix}:{args.movie_id}:{target_date}:{city}"
+                        retry_count_key = f"{retry_prefix}_count:{args.movie_id}:{target_date}:{city}"
                         if state_get(db, retry_key):
                             if reason == "retry":
                                 retry_counts["recovered"] += 1
@@ -243,8 +257,9 @@ def main() -> int:
                     except Exception as exc:
                         retryable, category = classify_failure(exc)
                         retry_categories[category] = retry_categories.get(category, 0) + 1
-                        retry_key = f"multi_retry:{args.movie_id}:{target_date}:{city}"
-                        retry_count_key = f"multi_retry_count:{args.movie_id}:{target_date}:{city}"
+                        retry_prefix = "multi_final_retry" if reason == "pre_show" else "multi_retry"
+                        retry_key = f"{retry_prefix}:{args.movie_id}:{target_date}:{city}"
+                        retry_count_key = f"{retry_prefix}_count:{args.movie_id}:{target_date}:{city}"
                         attempts = int(state_get(db, retry_count_key) or 0)
                         if retryable and attempts < args.max_retries:
                             attempts += 1
@@ -258,6 +273,9 @@ def main() -> int:
                             disposition = "retry limit reached; waiting for next hourly cycle"
                             db.execute("DELETE FROM kv_state WHERE key IN (?,?)", (retry_key, retry_count_key))
                             db.commit()
+                            if reason == "pre_show":
+                                fail_due_pre_show_jobs(db, args.movie_id, city, now, category,
+                                                       exhausted=True)
                             if reason in ("baseline", "retry") and state_get(
                                 db, f"multi_initial_complete:{args.movie_id}:{target_date}") != "1":
                                 state_set(db, baseline_key(args.movie_id, target_date, city), "failed")
@@ -266,6 +284,8 @@ def main() -> int:
                             disposition = "not retryable; check city slug or source response"
                             db.execute("DELETE FROM kv_state WHERE key IN (?,?)", (retry_key, retry_count_key))
                             db.commit()
+                            if reason == "pre_show":
+                                fail_due_pre_show_jobs(db, args.movie_id, city, now, category)
                             if reason in ("baseline", "retry") and state_get(
                                 db, f"multi_initial_complete:{args.movie_id}:{target_date}") != "1":
                                 state_set(db, baseline_key(args.movie_id, target_date, city), "failed")
@@ -284,6 +304,10 @@ def main() -> int:
                     ORDER BY city""", (str(args.movie_id), now.astimezone(UTC).isoformat())).fetchall()
                 for row in due_rows:
                     city = row["city"]
+                    final_retry_key = f"multi_final_retry:{args.movie_id}:{target_date}:{city}"
+                    final_retry_at = state_get(db, final_retry_key)
+                    if final_retry_at and parse_local(final_retry_at) > now:
+                        continue
                     if city in busy_final_cities or sum(r == "pre_show" for _, r in running.values()) >= 1:
                         continue
                     worker_values = vars(args).copy()
