@@ -252,21 +252,37 @@ def summary(conn: sqlite3.Connection, day: date) -> dict:
 
 
 def show_page(conn: sqlite3.Connection, day: date, city: str, page: int,
-              page_size: int, query: str) -> dict:
+              page_size: int, query: str, sort: str = "time",
+              daypart: str = "all") -> dict:
     page = max(1, page)
     page_size = min(200, max(1, page_size))
     cte, args = session_cte(day, city)
     scope = "rn=1"
     query_clause = ""
     query_args: tuple = ()
+    order_by = {
+        "time": "show_datetime_ist ASC,cinema_name ASC",
+        "fill": "COALESCE(unavailable_seats,0)*1.0/NULLIF(total_seats,0) DESC,show_datetime_ist ASC",
+        "left": "available_seats DESC,show_datetime_ist ASC",
+        "revenue": "estimated_gross_inr DESC,show_datetime_ist ASC",
+    }.get(sort, "show_datetime_ist ASC,cinema_name ASC")
+    daypart_bounds = {
+        "morning": ("00:00", "12:00"),
+        "afternoon": ("12:00", "17:00"),
+        "evening": ("17:00", "21:00"),
+        "late": ("21:00", "24:00"),
+    }.get(daypart)
+    if daypart_bounds:
+        query_clause += " AND substr(show_datetime_ist,12,5)>=? AND substr(show_datetime_ist,12,5)<?"
+        query_args += daypart_bounds
     if query:
-        query_clause = " AND (LOWER(COALESCE(cinema_name,'')) LIKE ? OR LOWER(COALESCE(source_city,'')) LIKE ?)"
+        query_clause += " AND (LOWER(COALESCE(cinema_name,'')) LIKE ? OR LOWER(COALESCE(source_city,'')) LIKE ?)"
         pattern = "%" + query.lower() + "%"
-        query_args = (pattern, pattern)
+        query_args += (pattern, pattern)
     total = conn.execute(cte + f" SELECT COUNT(*) FROM candidates WHERE {scope}{query_clause}", args + query_args).fetchone()[0]
     rows = conn.execute(cte + f"""
         SELECT * FROM candidates WHERE {scope}{query_clause}
-        ORDER BY show_datetime_ist,cinema_name
+        ORDER BY {order_by}
         LIMIT ? OFFSET ?
     """, args + query_args + (page_size, (page - 1) * page_size)).fetchall()
     return {"page": page, "page_size": page_size, "total": total,
@@ -311,7 +327,9 @@ class Handler(SimpleHTTPRequestHandler):
                 page = int(query.get("page", ["1"])[0])
                 page_size = int(query.get("page_size", ["100"])[0])
                 search = query.get("q", [""])[0].strip()
-                self.send_json(show_page(conn, day, city, page, page_size, search))
+                sort = query.get("sort", ["time"])[0]
+                daypart = query.get("daypart", ["all"])[0]
+                self.send_json(show_page(conn, day, city, page, page_size, search, sort, daypart))
             elif path == "/api/live/export.csv":
                 city = query.get("city", ["all"])[0]
                 output = StringIO()

@@ -94,6 +94,20 @@ class ServiceDateDashboardTests(unittest.TestCase):
         self.assertEqual(dates[0]["successful_captures"], 2)
         self.assertEqual(dates[0]["failed_captures"], 1)
 
+    def test_screenings_accept_safe_sort_and_daypart_filters(self):
+        self.conn.executemany("""INSERT INTO observations VALUES
+            (?,?,?,?,?,?,?,?,?,?,?,?)""", [
+            (1, dashboard.MOVIE_ID, "mumbai", "morning", "2026-11-09T10:00:00+05:30",
+             "c2", "Morning Cinema", 100, 20, 80, 8000, 1),
+            (1, dashboard.MOVIE_ID, "mumbai", "evening", "2026-11-09T18:30:00+05:30",
+             "c3", "Evening Cinema", 100, 90, 10, 1000, 1),
+        ])
+        with patch.object(dashboard, "load_targets", return_value=self.targets):
+            morning = dashboard.show_page(self.conn, date(2026, 11, 9), "all", 1, 100, "", "fill", "morning")
+            fullest = dashboard.show_page(self.conn, date(2026, 11, 9), "all", 1, 100, "", "fill", "all")
+        self.assertEqual([row["session_key"] for row in morning["rows"]], ["morning"])
+        self.assertEqual(fullest["rows"][0]["session_key"], "morning")
+
 
 if __name__ == "__main__":
     unittest.main()

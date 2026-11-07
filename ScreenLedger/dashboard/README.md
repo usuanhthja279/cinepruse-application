@@ -2,18 +2,18 @@
 
 ## Movie Intelligence UI v2
 
-The dashboard follows the supplied Claude visual reference: warm light mode, plum dark mode, Fraunces/Manrope typography, and responsive rounded panels. It has five routes: Overview, Pulse, Map, Shows, and Capture engine. The theme toggle follows the operating-system preference on first visit and remembers the user's choice. The Shows route contains the saved hourly screening explorer; advance service-date captures remain a separate table in Pulse.
+The dashboard is a faithful implementation of the supplied Claude reference shell and visual system: the same Fraunces/Manrope fonts, warm light and plum dark themes, spacing, panels, charts, map treatment, flip-card motion, drawer, and responsive layout. It keeps the reference five routes—Overview, Pulse, Map, Shows, and Capture engine—and uses the project’s real saved exports and read-only live API instead of the mockup payload. Theme preference persists. The latest completed service-date capture is selected automatically, and refresh runs every five minutes.
 
 The reference HTML's embedded demo dataset is not used. Hourly figures are loaded from the committed JSON/CSV snapshots. The currently committed November 7 data has six capture windows (00:00–05:00 IST); availability and failures are reported separately. Matched-session movement is shown only when eligible sessions exist, so the 00:00→01:00 interval appears as unavailable because its saved comparison has no matched future sessions.
 
 ## Current Movie Intelligence data flow (November 2026)
 
-The Movie Intelligence prototype combines two data paths:
+Movie Intelligence combines two real-data paths:
 
 - The saved hourly history, comparisons, and city coverage load from the published JSON/CSV files under `dashboard/data/`.
-- The **Advance booking captures** panel reads the local read-only API at `/api/live/dates`, `/api/live/summary?date=YYYY-MM-DD`, `/api/live/cities?date=YYYY-MM-DD`, and `/api/live/shows?date=YYYY-MM-DD`. It selects by **service date** (the show date being monitored), so a capture made on November 7 for November 9 appears under November 9. Search and paging query deduplicated screening rows from the same API.
+- The **Advance booking captures** panel reads the local read-only API at `/api/live/dates`, `/api/live/summary?date=YYYY-MM-DD`, `/api/live/cities?date=YYYY-MM-DD`, and `/api/live/shows?date=YYYY-MM-DD`. It selects by **service date** (the show date being monitored), so a capture made on November 7 for November 9 appears under November 9. Search, safe server-side sort, daypart filters, paging, and the detail drawer use deduplicated screening rows from the same API.
 
-Start the local API and static dashboard from PowerShell in `collector/` using `.\START_LIVE_DASHBOARD.ps1`, then open `http://127.0.0.1:8765/dashboard/index.html`. Advance captures refresh every five minutes alongside hourly history. The local database must be writable by the collector once so it can add `captures.service_date_ist`; this migration is automatic and adds an index. The dashboard API itself is read-only.
+Start the local API and static dashboard from PowerShell in `collector/` using `.\START_LIVE_DASHBOARD.ps1`, then open `http://127.0.0.1:8765/dashboard/index.html`. Advance captures refresh every five minutes alongside hourly history. The local database must be writable by the collector once so it can add `captures.service_date_ist`; this migration is automatic and adds an index. The dashboard API itself is read-only. Shows filters accept an allow-listed sort key and one of the reference dayparts; the API never evaluates client-supplied SQL.
 
 New successful and failed collector attempts both store `service_date_ist`. For older captures without that field, the API infers a date only from successful observations that all belong to one show date; it uses the collection day for legacy failures. Empty legacy advance captures cannot be reliably assigned to a future date and are left out of that date’s coverage. Failed and uncollected city feeds remain unknown, not zero shows. City feeds overlap, so show and seat totals are deduplicated by session key. Revenue uses the project owner’s confirmed payment basis; listings with incomplete pricing are counted separately.
 
