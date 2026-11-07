@@ -82,3 +82,7 @@ Then open `http://127.0.0.1:8765/dashboard/live.html`. The page reads the collec
 ### Known test scope
 
 The acquisition script passed local parsing/embedding tests using **temporary synthetic polygons** (these fixtures were deleted and are not included). A real end-to-end government download and browser geometry rendering could **not** be tested inside this environment because external DNS and headless browser navigation were blocked. The geometry is therefore **not yet installed** in this ZIP.
+
+### Overview and geographic coverage
+
+The overview switches between today and advance service dates. The last-hour movement matches screenings captured in both intervals; a missing comparison stays unavailable. Snapshot totals reflect captured screenings and incomplete feed coverage, and do not establish full-day totals for shows missing from that snapshot. The map groups city-selector mapping coverage into regions and states; it does not assign cinema revenue geographically. The film artwork is served from the [Prime Focus Studios release announcement](https://www.primefocusstudios.com/news/the-journey-begins-ramayana-part-one-arrives-worldwide).

@@ -77,3 +77,7 @@ footer{padding-bottom:40px;color:var(--mu);font-size:12px}
 @media(max-width:860px){.hero,.mapw,.g2,.g3{grid-template-columns:1fr}.hero{padding:24px}}
 @media(max-width:680px){.in{padding:10px 16px}nav{order:3;width:100%}main,footer{padding:0 16px}.caps{margin-left:0;width:100%}.row,.rowh{grid-template-columns:minmax(0,1fr) 46px 110px}.row .lf,.row .vl,.rowh span:nth-child(n+4){display:none}.run{grid-template-columns:48px 1fr 74px 74px}.run>:nth-child(n+5){display:none}.cr{grid-template-columns:minmax(0,1fr) 116px}.mv{grid-template-columns:20px minmax(0,1fr) 70px}.mv>svg{display:none}.mv .dl{grid-column:3}.dr2{grid-template-columns:44px 1fr 52px 1fr 48px;font-size:12px}.card{padding:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+#house{width:100%;max-height:280px}.seat{fill:var(--s2);transition:fill .7s ease}.seat.on{fill:var(--am);animation:tw var(--d,3.2s) ease-in-out var(--dl,0s) infinite}.v>.card>.g2,.v>.card>.g3,.v>.card>.card{margin-top:24px}.occ{text-align:center;color:var(--mu)}
+
+.poster img{width:100%;height:100%;object-fit:cover;object-position:center;mask-image:linear-gradient(#000 75%,transparent)}.regions{margin:16px 0;flex-wrap:wrap}
