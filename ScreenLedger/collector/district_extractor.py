@@ -24,6 +24,10 @@ from bs4 import BeautifulSoup
 IST = ZoneInfo("Asia/Kolkata")
 URL_PATTERN = re.compile(r"/movies/(?P<slug>[a-z0-9-]+)-movie-tickets-in-(?P<city>[a-z0-9-]+)-MV(?P<id>\d+)", re.I)
 CITY_ALIASES = {
+    "bhilai-nagar": "bhilai",
+    "bagha-purana": "baghapurana",
+    "bodinayakanur": "bodi",
+    "chikballapur": "chikkaballapura",
     "delhi": "delhi-ncr", "new-delhi": "delhi-ncr", "ncr": "delhi-ncr",
     "gurgaon": "delhi-ncr", "gurugram": "delhi-ncr", "noida": "delhi-ncr",
     "bangalore": "bengaluru", "visakhapatnam": "vizag", "vishakhapatnam": "vizag",

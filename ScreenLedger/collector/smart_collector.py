@@ -296,6 +296,11 @@ def collect_all_languages(args) -> dict:
     html = get_page_html(url)
     page = extract_next_data(html).get('props', {}).get('pageProps', {}).get('data', {})
     state = page.get('serverState', {})
+    movie_data = state.get('movieData')
+    if (not page.get('cityName') and isinstance(movie_data, dict)
+            and movie_data.get(str(args.movie_id))
+            and not state.get('movieSessions')):
+        raise ValueError('District returned a generic movie landing without city or show listings')
     content = state.get('movieContents', {}).get(str(args.movie_id), {})
     options = content.get('languageFormatGroups') or []
     if not options:

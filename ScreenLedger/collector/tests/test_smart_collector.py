@@ -30,6 +30,16 @@ def fixture(unavailable=40, at='2026-11-07T00:00:00+05:30',
     }
 
 class SmartCollectorTests(unittest.TestCase):
+    def test_generic_landing_page_is_unresolved_not_an_empty_capture(self):
+        args = SimpleNamespace(movie_slug='ramayana', movie_id='176276', city='ambikapur', date='2026-11-10')
+        payload = {'props': {'pageProps': {'data': {'cityName':'', 'serverState': {
+            'movieData': {'176276': {'movie': {'name':'Ramayana'}}},
+            'queryState': {'frmtid':'','fromdate':''}}}}}}
+        with patch('smart_collector.get_page_html', return_value='landing'), \
+             patch('smart_collector.extract_next_data', return_value=payload):
+            with self.assertRaisesRegex(ValueError, 'generic movie landing'):
+                collect_all_languages(args)
+
     def test_capture_show_count_only_counts_requested_date(self):
         snap = fixture(show='2026-11-08T10:00:00+05:30')
         cid = record_snapshot(self.db, snap, parse_local('2026-11-07T00:00:00'), 'baseline', self.day)

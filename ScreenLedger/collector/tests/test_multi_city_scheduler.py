@@ -1,6 +1,7 @@
 from types import SimpleNamespace
 from datetime import datetime
 from pathlib import Path
+import json
 import tempfile
 import unittest
 
@@ -9,11 +10,26 @@ import requests
 from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs, due_pre_show_cities,
                                  expire_stale_pre_show_jobs, advance_slots,
                                  urgent_worker_limit,load_advance_targets,write_advance_roster,
-                                 start_discovery_epoch,advance_targets_for_epoch,write_verified_roster)
+                                 start_discovery_epoch,advance_targets_for_epoch,write_verified_roster,
+                                 city_targets)
 from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_verified_city_aliases_share_one_request_and_preserve_labels(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'cities.json'
+            path.write_text(json.dumps({'letters': {'C': {'cities': [
+                'Chikballapur', 'Chikkaballapura'
+            ]}}}), encoding='utf-8')
+            targets, report = city_targets(path)
+            self.assertEqual(len(targets), 1)
+            self.assertEqual(targets[0]['slug'], 'chikkaballapura')
+            self.assertEqual(targets[0]['aliases'], ['Chikkaballapura'])
+            self.assertEqual(report['selector_entries'], 2)
+            self.assertEqual(report['unique_request_slugs'], 1)
+            self.assertEqual(report['repeated_labels_or_aliases_collapsed'], 1)
+
     def test_restart_and_midnight_reset_city_discovery_without_erasing_pre_show(self):
         from datetime import date
         with tempfile.TemporaryDirectory() as temp:
@@ -46,6 +62,8 @@ class MultiCityRetryPolicyTests(unittest.TestCase):
     def test_incomplete_language_metadata_retries(self):
         self.assertEqual(classify_failure(ValueError('District did not provide language format identifiers; capture incomplete')),
                          (True, 'incomplete_language_metadata'))
+        self.assertEqual(classify_failure(ValueError('District returned a generic movie landing without city or show listings')),
+                         (True, 'generic_movie_landing'))
 
     def test_default_daily_advance_times_start_after_midnight(self):
         from datetime import date

@@ -49,6 +49,10 @@ class ExtractorTests(unittest.TestCase):
         self.assertEqual(url, 'https://www.district.in/movies/ramayana-movie-tickets-in-delhi-ncr-MV176276?frmtid=rtb7dmwvuo&fromdate=2026-11-07')
         self.assertEqual(parse_movie_url(url)['city'], 'delhi-ncr')
         self.assertEqual(slugify_city('Visakhapatnam'), 'vizag')
+        self.assertEqual(slugify_city('Bhilai Nagar'), 'bhilai')
+        self.assertEqual(slugify_city('Bagha Purana'), 'baghapurana')
+        self.assertEqual(slugify_city('Bodinayakanur'), 'bodi')
+        self.assertEqual(slugify_city('Chikballapur'), 'chikkaballapura')
 
     def test_catalog_example(self):
         rows = extract_catalog(BASE / 'fixtures/sample_authorized_city_export.json')

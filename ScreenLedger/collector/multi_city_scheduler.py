@@ -61,6 +61,8 @@ def classify_failure(exc: Exception) -> tuple[bool, str]:
             return True, f"http_{status}"
         return False, f"http_{status or 'unknown'}"
     message = str(exc).lower()
+    if 'generic movie landing without city or show listings' in message:
+        return True, 'generic_movie_landing'
     if 'did not provide language format identifiers' in message:
         return True, 'incomplete_language_metadata'
     if "no movie metadata found" in message:
@@ -230,24 +232,29 @@ class Tee:
 def city_targets(path: Path) -> tuple[list[dict], dict]:
     data = json.loads(path.read_text(encoding="utf-8"))
     labels = [name for letter in data["letters"].values() for name in letter["cities"]]
-    seen = set()
+    seen = {}
     targets = []
     duplicates = 0
     for label in labels:
         slug = slugify_city(label)
-        if not slug or slug in seen:
+        if not slug:
             duplicates += 1
             continue
-        seen.add(slug)
-        targets.append({"display_name": label, "slug": slug,
+        if slug in seen:
+            seen[slug].setdefault('aliases', []).append(label)
+            duplicates += 1
+            continue
+        target = {"display_name": label, "slug": slug,
                         "slug_confidence": "verified_sample" if slug in {
                             "mumbai", "delhi-ncr", "bengaluru", "hyderabad", "chennai",
-                            "pune", "kolkata", "ahmedabad", "jaipur", "lucknow"}
-                        else "inferred_from_selector_label"})
+                            "pune", "kolkata", "ahmedabad", "jaipur", "lucknow", "bhilai", "baghapurana", "bodi", "chikkaballapura"}
+                        else "inferred_from_selector_label"}
+        seen[slug] = target
+        targets.append(target)
     report = {"selector_entries": len(labels), "unique_request_slugs": len(targets),
               "repeated_labels_or_aliases_collapsed": duplicates,
               "source_completeness_verified": False,
-              "slug_note": "Only sampled major-city slugs were live-verified. Other URL slugs are normalized from selector display labels; city mismatches are rejected.",
+              "slug_note": "Only sampled city slugs were live-verified. Other URL slugs are normalized from selector display labels; city mismatches are rejected.",
               "cities": targets}
     return targets, report
 
