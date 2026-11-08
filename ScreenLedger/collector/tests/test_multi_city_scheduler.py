@@ -6,12 +6,32 @@ import unittest
 
 import requests
 
-from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs, advance_slots,
+from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs,
+                                 expire_stale_pre_show_jobs, advance_slots,
                                  urgent_worker_limit,load_advance_targets,write_advance_roster)
 from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_stale_pre_show_jobs_expire_without_touching_current_or_future_jobs(self):
+        from datetime import date
+        with tempfile.TemporaryDirectory() as temp:
+            db = open_db(Path(temp) / "collector.sqlite")
+            db.executemany("INSERT INTO final_jobs(movie_id,city,session_key,show_datetime_ist,target_utc,status) "
+                           "VALUES (?,?,?,?,?,'pending')", [
+                ("176276", "old", "old", "2026-11-08T20:45:00+05:30", "2026-11-08T15:10:00+00:00"),
+                ("176276", "due", "due", "2026-11-08T21:05:00+05:30", "2026-11-08T15:30:00+00:00"),
+                ("176276", "future", "future", "2026-11-08T21:20:00+05:30", "2026-11-08T15:45:00+00:00"),
+            ])
+            db.commit()
+            affected = expire_stale_pre_show_jobs(
+                db, "176276", date(2026, 11, 8), datetime(2026, 11, 8, 21, 1, tzinfo=IST))
+            statuses = {r["session_key"]: r["status"] for r in db.execute(
+                "SELECT session_key,status FROM final_jobs")}
+            db.close()
+        self.assertEqual(affected, 1)
+        self.assertEqual(statuses, {"old": "failed", "due": "pending", "future": "pending"})
+
     def test_pre_show_bursts_borrow_workers_within_fixed_pool(self):
         self.assertEqual([urgent_worker_limit(n) for n in range(6)],[0,1,2,3,4,5])
         self.assertEqual(urgent_worker_limit(50),5)
@@ -41,6 +61,15 @@ class MultiCityRetryPolicyTests(unittest.TestCase):
         after_midnight = advance_slots(datetime(2026, 11, 8, 0, 35, tzinfo=IST), first)
         self.assertEqual([(d.isoformat(), s.strftime('%H:%M')) for d, s in after_midnight],
                          [('2026-11-09', '00:20'), ('2026-11-10', '00:35'), ('2026-11-11', '00:35')])
+
+    def test_evening_restart_aligns_both_advance_slots(self):
+        from datetime import date
+        first = date(2026, 11, 8)
+        self.assertEqual(advance_slots(datetime(2026, 11, 8, 21, 19, tzinfo=IST), first, 21), [])
+        slots = advance_slots(datetime(2026, 11, 8, 21, 35, tzinfo=IST), first, 21)
+        self.assertEqual([(d.isoformat(), s.strftime('%H:%M')) for d, s in slots],
+                         [('2026-11-09', '21:20'), ('2026-11-10', '21:35'),
+                          ('2026-11-11', '21:35')])
     def test_permanent_pre_show_failure_settles_only_due_jobs_for_that_city(self):
         with tempfile.TemporaryDirectory() as temp:
             db = open_db(Path(temp) / "collector.sqlite")

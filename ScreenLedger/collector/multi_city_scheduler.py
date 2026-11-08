@@ -26,12 +26,13 @@ from district_extractor import slugify_city
 from smart_collector import IST, UTC, open_db, parse_local, scan, state_get, state_set
 
 
-def advance_slots(now: datetime, first_day: date) -> list[tuple[date, datetime]]:
+def advance_slots(now: datetime, first_day: date,
+                  first_day_hour: int = 13) -> list[tuple[date, datetime]]:
     """Return the latest due advance slot for each of the next three service dates."""
     now = now.astimezone(IST)
     result = []
     for offset, interval, minute in ((1, 2, 20), (2, 3, 35), (3, 3, 35)):
-        first_hour = 13 if now.date() == first_day else 0
+        first_hour = first_day_hour if now.date() == first_day else 0
         first = now.replace(hour=first_hour, minute=minute, second=0, microsecond=0)
         if now < first:
             continue
@@ -86,6 +87,19 @@ def fail_due_pre_show_jobs(db, movie_id: str, city: str, now: datetime,
             "WHERE movie_id=? AND city=? AND status='pending' AND target_utc<=?",
             (f"Pre-show scan {reason}: {category}", str(movie_id), city,
              now.astimezone(UTC).isoformat()),
+        )
+    return cur.rowcount
+
+
+def expire_stale_pre_show_jobs(db, movie_id: str, service_day: date, now: datetime) -> int:
+    """Do not let old T-5 jobs crowd out the current hourly sweep."""
+    cutoff = (now - timedelta(minutes=10)).astimezone(UTC).isoformat()
+    with db:
+        cur = db.execute(
+            "UPDATE final_jobs SET status='failed',note='Missed T-5 capture window' "
+            "WHERE movie_id=? AND status='pending' AND substr(show_datetime_ist,1,10)=? "
+            "AND target_utc<?",
+            (str(movie_id), service_day.isoformat(), cutoff),
         )
     return cur.rowcount
 
@@ -209,6 +223,9 @@ def main() -> int:
     p.add_argument("--date", required=True)
     p.add_argument("--movie-id", default="176276")
     p.add_argument("--movie-slug", default="ramayana")
+    p.add_argument("--start-at", help="Delay this launch until the given IST datetime")
+    p.add_argument("--first-day-hour", type=int, default=13,
+                   help="IST hour anchoring today's advance :20 and :35 cycles")
     p.add_argument("--store", type=Path, default=Path("collector_data"))
     p.add_argument("--workers", type=int, default=5)
     p.add_argument("--retry-seconds", type=int, default=30)
@@ -238,7 +255,9 @@ def main() -> int:
     original_out, original_err = sys.stdout, sys.stderr
     sys.stdout, sys.stderr = Tee(original_out, log_file), Tee(original_err, log_file)
     db = open_db(args.store / "smart_collector.sqlite")
-    start = datetime.combine(target_date, datetime.min.time(), IST)
+    start = parse_local(args.start_at) if args.start_at else datetime.combine(target_date, datetime.min.time(), IST)
+    if not 0 <= args.first_day_hour <= 23:
+        p.error("--first-day-hour must be from 0 to 23")
     end = start + timedelta(days=1)
     db.execute("INSERT INTO kv_state(key,value) VALUES (?,?) ON CONFLICT(key) DO NOTHING",
                (f"multi_city_started:{args.movie_id}:{target_date}", datetime.now(UTC).isoformat()))
@@ -400,7 +419,11 @@ def main() -> int:
 
                 # After the first full scan for each future service date, retain
                 # only cities whose successful response actually listed shows.
-                for service_day, advance_slot in advance_slots(now, first_day):
+                for service_day, advance_slot in advance_slots(now, first_day, args.first_day_hour):
+                    complete_key = (f"multi_advance_complete:{args.movie_id}:"
+                                    f"{service_day}:{advance_slot.isoformat()}")
+                    if state_get(db, complete_key) == "1":
+                        continue
                     roster_path=advance_roster_path(args.store,args.movie_id,service_day)
                     cycle_targets=load_advance_targets(args.store,args.movie_id,service_day,targets)
                     cycle_done=all(
@@ -408,6 +431,7 @@ def main() -> int:
                         and parse_local(last)>=advance_slot for target in cycle_targets)
                     if cycle_done:
                         roster=write_advance_roster(args.store,db,cycle_targets,args.movie_id,service_day,advance_slot)
+                        state_set(db, complete_key, "1")
                         print(f"ADVANCE SWEEP COMPLETE: {roster['cities_with_listings']} of "
                               f"{roster['initial_target_count']} current targets have listings for {service_day}; "
                               "later scans use the refreshed service-date roster.",flush=True)
@@ -415,6 +439,9 @@ def main() -> int:
                 # Due pre-show scans have priority. A single city uses one worker;
                 # simultaneous cities borrow idle pool slots up to the fixed pool
                 # ceiling. Routine sweeps pause until the urgent backlog drains.
+                expired = expire_stale_pre_show_jobs(db, args.movie_id, target_date, now)
+                if expired:
+                    print(f"[{now.isoformat(timespec='seconds')}] Expired {expired} stale T-5 jobs", flush=True)
                 due_rows = db.execute("""SELECT DISTINCT city FROM final_jobs
                     WHERE movie_id=? AND status='pending' AND target_utc<=? AND substr(show_datetime_ist,1,10)=?
                     ORDER BY city""", (str(args.movie_id), now.astimezone(UTC).isoformat(), target_date.isoformat())).fetchall()
@@ -475,7 +502,7 @@ def main() -> int:
                             break
                 # Advance sweeps borrow idle scan workers; the fifth remains reserved for T-5.
                 if hourly_active < 4 and not urgent_backlog:
-                    for service_day, advance_slot in advance_slots(now, first_day):
+                    for service_day, advance_slot in advance_slots(now, first_day, args.first_day_hour):
                         advance_targets=load_advance_targets(args.store,args.movie_id,service_day,targets)
                         for target in advance_targets:
                             city = target["slug"]
