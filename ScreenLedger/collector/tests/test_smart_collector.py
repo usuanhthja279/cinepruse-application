@@ -2,6 +2,8 @@ import sys
 import sqlite3
 import tempfile
 import unittest
+from unittest.mock import patch
+from types import SimpleNamespace
 from copy import deepcopy
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -10,7 +12,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from smart_collector import (parse_local, pre_show_target, upcoming_pre_show_plan,
                              open_db, record_snapshot, due_final_jobs, last_hour_proxy,
-                             prune_started_jobs, state_get, state_set)
+                             prune_started_jobs, state_get, state_set, collect_all_languages, scan)
 
 IST = ZoneInfo('Asia/Kolkata')
 
@@ -28,6 +30,47 @@ def fixture(unavailable=40, at='2026-11-07T00:00:00+05:30',
     }
 
 class SmartCollectorTests(unittest.TestCase):
+    def test_all_language_pages_are_combined_and_wrong_format_fails(self):
+        args = SimpleNamespace(movie_slug='ramayana', movie_id='176276', city='kolkata', date='2026-11-07')
+        def payload(html):
+            selected = 'tel' if html == 'default' else 'hin'
+            state = {'queryState': {'frmtid': selected}, 'movieContents': {'176276': {
+                'languageFormatGroups': [{'language':'Telugu','fmtGrpId':'tel'},
+                                         {'language':'Hindi','fmtGrpId':'hin'}]}}}
+            return {'props': {'pageProps': {'data': {'serverState': state}}}}
+        def snapshot(html, **kwargs):
+            result = fixture()
+            result['shows'][0]['session_key'] = html
+            result['shows'][0]['language'] = kwargs['language']
+            return result
+        with patch('smart_collector.get_page_html', side_effect=['default','other']) as fetch, \
+             patch('smart_collector.extract_next_data', side_effect=payload), \
+             patch('smart_collector.extract_snapshot', side_effect=snapshot):
+            result = collect_all_languages(args)
+            self.assertEqual({s['language'] for s in result['shows']}, {'Hindi','Telugu'})
+            self.assertIn('frmtid=hin', fetch.call_args_list[1].args[0])
+        with patch('smart_collector.get_page_html', side_effect=['default','default']), \
+             patch('smart_collector.extract_next_data', side_effect=payload), \
+             patch('smart_collector.extract_snapshot', side_effect=snapshot):
+            with self.assertRaisesRegex(ValueError, 'unexpected language format'):
+                collect_all_languages(args)
+
+    def test_language_auditorium_and_screen_format_are_persisted(self):
+        snap = fixture()
+        snap['shows'][0].update(language='Hindi', auditorium='Screen 1', screen_format='4DX-3D', format_group_id='fmt')
+        cid = record_snapshot(self.db, snap, parse_local('2026-11-07T00:00:00'), 'baseline', self.day)
+        row = self.db.execute('SELECT language,auditorium,screen_format,format_group_id FROM observation_details WHERE capture_id=?', (cid,)).fetchone()
+        self.assertEqual(tuple(row), ('Hindi','Screen 1','4DX-3D','fmt'))
+
+    def test_failed_language_fetch_cannot_publish_partial_success(self):
+        args = SimpleNamespace(acknowledge_permission=True, movie_slug='ramayana',
+                               movie_id='176276', city='kolkata', date='2026-11-07', final_minutes=5)
+        with patch('smart_collector.collect_all_languages', side_effect=ValueError('language format failed')):
+            with self.assertRaisesRegex(ValueError, 'language format failed'):
+                scan(self.db, args, parse_local('2026-11-07T00:00:00'), 'baseline', Path(self.temp.name))
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM captures WHERE status='ok'").fetchone()[0], 0)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM captures WHERE status='error'").fetchone()[0], 1)
+
     def test_existing_capture_database_is_migrated_for_service_date(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'legacy.sqlite'

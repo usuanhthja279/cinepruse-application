@@ -32,7 +32,7 @@ CITY_ALIASES = {
     "allahabad": "prayagraj", "panaji": "goa",
 }
 SHOW_FIELDS = [
-    "snapshot_utc", "source_city", "actual_city", "movie_id", "movie_name", "format_group_id",
+    "snapshot_utc", "source_city", "actual_city", "movie_id", "movie_name", "format_group_id", "language",
     "show_date_ist", "show_time_ist", "show_datetime_ist", "cinema_id", "cinema_name",
     "cinema_chain", "cinema_address", "latitude", "longitude", "session_id", "provider_id",
     "provider_movie_id", "session_key", "auditorium", "screen_format", "premium_label", "subtitle",
@@ -135,7 +135,8 @@ def safe_int(value):
 
 
 def extract_snapshot(html: str, source_url: str | None = None, source_city: str | None = None,
-                     expected_movie_id: str | None = None, snapshot_utc: str | None = None) -> dict:
+                     expected_movie_id: str | None = None, snapshot_utc: str | None = None,
+                     language: str | None = None) -> dict:
     payload = extract_next_data(html)
     page = payload.get("props", {}).get("pageProps", {}).get("data", {})
     state = page.get("serverState", {})
@@ -238,6 +239,7 @@ def extract_snapshot(html: str, source_url: str | None = None, source_city: str 
                 row = {
                     "snapshot_utc": stamp, "source_city": requested_city, "actual_city": actual_city,
                     "movie_id": movie_id, "movie_name": movie.get("name"), "format_group_id": format_group_id,
+                    "language": language,
                     "show_date_ist": show_dt.date().isoformat() if show_dt else None,
                     "show_time_ist": show_dt.strftime("%H:%M") if show_dt else None,
                     "show_datetime_ist": show_dt.isoformat() if show_dt else None,

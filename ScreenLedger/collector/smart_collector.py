@@ -14,7 +14,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from district_extractor import extract_snapshot, get_page_html, make_url, slugify_city
+from district_extractor import extract_next_data, extract_snapshot, get_page_html, make_url, slugify_city
 
 IST = ZoneInfo("Asia/Kolkata")
 UTC = timezone.utc
@@ -75,6 +75,13 @@ CREATE TABLE IF NOT EXISTS observations (
 );
 CREATE INDEX IF NOT EXISTS idx_observations_lookup ON observations(movie_id,city,session_key,capture_id);
 CREATE INDEX IF NOT EXISTS idx_observations_service_day ON observations(movie_id,substr(show_datetime_ist,1,10),session_key,capture_id);
+
+CREATE TABLE IF NOT EXISTS observation_details (
+    capture_id INTEGER NOT NULL, session_key TEXT NOT NULL,
+    language TEXT, auditorium TEXT, screen_format TEXT, format_group_id TEXT,
+    PRIMARY KEY(capture_id, session_key),
+    FOREIGN KEY(capture_id, session_key) REFERENCES observations(capture_id, session_key)
+);
 
 CREATE TABLE IF NOT EXISTS cinema_location_observations (
     capture_id INTEGER NOT NULL REFERENCES captures(id),
@@ -174,6 +181,9 @@ def record_snapshot(conn: sqlite3.Connection, snapshot: dict, observed_at: datet
                  show.get("cinema_name"),show.get("total_seats"),
                  show.get("available_seats"),show.get("unavailable_seats"),
                  show.get("estimated_gross_inr"),1 if show.get("pricing_complete") else 0))
+            conn.execute("INSERT INTO observation_details VALUES (?,?,?,?,?,?)",
+                         (capture_id, key, show.get("language"), show.get("auditorium"),
+                          show.get("screen_format"), show.get("format_group_id")))
             target = start - timedelta(minutes=final_minutes)
             if target > observed_at.astimezone(IST):
                 status, note = "pending", None
@@ -278,27 +288,73 @@ def log_error(conn: sqlite3.Connection, movie_id: str, city: str,
         conn.execute("INSERT INTO captures(movie_id,city,observed_at_utc,reason,status,error,service_date_ist) "
                      "VALUES(?,?,?,?,?,?,?)", (movie_id,city,to_utc_iso(now),reason,"error",msg,service_date))
 
+def collect_all_languages(args) -> dict:
+    """Collect every advertised language before recording a complete city capture."""
+    url = make_url(args.movie_slug, args.movie_id, args.city, args.date)
+    html = get_page_html(url)
+    page = extract_next_data(html).get('props', {}).get('pageProps', {}).get('data', {})
+    state = page.get('serverState', {})
+    content = state.get('movieContents', {}).get(str(args.movie_id), {})
+    options = content.get('languageFormatGroups') or []
+    if not options:
+        bundle = state.get('mdpV2MovieData', {}).get(str(args.movie_id), {})
+        options = [{'language': option.get('title'), 'fmtGrpId': option.get('key')}
+                   for bucket in bundle.get('filterBuckets', []) if bucket.get('bucketKey') == 'language'
+                   for option in bucket.get('buckets', []) if option.get('isEnabled', True)]
+    formats = {}
+    for option in options:
+        fmt = option.get('fmtGrpId') or option.get('format')
+        language = option.get('language') or option.get('lang')
+        if fmt and language:
+            formats.setdefault(str(fmt).lower(), (str(fmt), str(language)))
+    selected = str((state.get('queryState') or {}).get('frmtid') or '').lower()
+    if not formats:
+        raise ValueError('District did not provide language format identifiers; capture incomplete')
+    if selected not in formats:
+        raise ValueError('District default language does not match advertised formats; capture incomplete')
+
+    snapshots = []
+    for key, (fmt, language) in formats.items():
+        language_url = url if key == selected else make_url(args.movie_slug, args.movie_id, args.city, args.date, fmt)
+        language_html = html if key == selected else get_page_html(language_url)
+        language_page = extract_next_data(language_html).get('props', {}).get('pageProps', {}).get('data', {})
+        selected_page = str((language_page.get('serverState', {}).get('queryState') or {}).get('frmtid') or '').lower()
+        if selected_page != key:
+            raise ValueError(f'District returned unexpected language format for {language}; capture incomplete')
+        snapshot = extract_snapshot(language_html, source_url=language_url, source_city=args.city,
+                                    expected_movie_id=str(args.movie_id), language=language)
+        if snapshot['metadata']['actual_city'] != snapshot['metadata']['source_city']:
+            raise ValueError(f'City redirect for {language}; capture incomplete')
+        snapshots.append(snapshot)
+    result = snapshots[0]
+    shows, areas, seen = [], [], set()
+    for snapshot in snapshots:
+        for show in snapshot['shows']:
+            if show['session_key'] not in seen:
+                seen.add(show['session_key'])
+                shows.append(show)
+        areas.extend(snapshot['areas'])
+    result['shows'], result['areas'] = shows, areas
+    result['metadata']['shows'] = len(shows)
+    result['metadata']['collected_languages'] = [value[1] for value in formats.values()]
+    return result
+
+
 def scan(conn: sqlite3.Connection, args, now: datetime, reason: str, store: Path) -> int:
     if not args.acknowledge_permission:
         raise RuntimeError("Live mode requires --acknowledge-permission; it does not grant provider permission")
-    url = make_url(args.movie_slug,args.movie_id,args.city,args.date)
     print(f"[{now.astimezone(IST).isoformat(timespec='seconds')}] {reason} scan: {args.city}", flush=True)
     try:
         phase_start = time.perf_counter()
-        html = get_page_html(url)
-        fetch_seconds = time.perf_counter() - phase_start
+        parsed = collect_all_languages(args)
+        fetch_parse_seconds = time.perf_counter() - phase_start
         at = datetime.now(UTC)
-        phase_start = time.perf_counter()
-        parsed = extract_snapshot(html,source_url=url,source_city=args.city,
-                                  expected_movie_id=str(args.movie_id),
-                                  snapshot_utc=to_utc_iso(at))
-        parse_seconds = time.perf_counter() - phase_start
         phase_start = time.perf_counter()
         cid = record_snapshot(conn,parsed,at,reason,date.fromisoformat(args.date),
                               requested_at=now,
                               final_minutes=args.final_minutes)
         write_seconds = time.perf_counter() - phase_start
-        print(f"  timing fetch={fetch_seconds:.3f}s parse={parse_seconds:.3f}s "
+        print(f"  timing fetch_and_parse={fetch_parse_seconds:.3f}s "
               f"write={write_seconds:.3f}s", flush=True)
         print(f"  capture #{cid}: {len(parsed['shows'])} source show rows, "
               f"{len([s for s in parsed['shows'] if s['show_date_ist']==args.date])} target-date shows",flush=True)
