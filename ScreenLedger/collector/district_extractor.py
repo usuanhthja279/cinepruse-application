@@ -12,6 +12,7 @@ import json
 import re
 import sys
 import time
+import threading
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -82,10 +83,15 @@ def parse_movie_url(url: str) -> dict:
     return fields
 
 
+_http_local = threading.local()
+
+
 def get_page_html(url: str, timeout: float = 25.0) -> str:
     """One plain HTML GET. Do not retry or bypass 403 / 429 or challenge pages."""
     import requests
-    response = requests.get(url, timeout=timeout, headers={
+    if not hasattr(_http_local, "session"):
+        _http_local.session = requests.Session()
+    response = _http_local.session.get(url, timeout=timeout, headers={
         "Accept": "text/html,application/xhtml+xml",
         "User-Agent": "DistrictMovieExtractor/0.1 (authorized research; HTML parser)",
     }, allow_redirects=True)

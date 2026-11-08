@@ -277,6 +277,8 @@ def main() -> int:
     last_retry_summary = time.monotonic()
     dashboard_dirty = False
     last_dashboard_publish = 0.0
+    dashboard_process = None
+    dashboard_output = None
     verified_report = None
     with concurrent.futures.ThreadPoolExecutor(max_workers=5, thread_name_prefix="district") as pool:
         try:
@@ -526,21 +528,30 @@ def main() -> int:
                         if hourly_active >= 4:
                             break
                 time.sleep(1)
-                if dashboard_dirty and time.monotonic() - last_dashboard_publish >= 300:
-                    exporter = Path(__file__).with_name("export_public_hourly_runs.py")
-                    result = subprocess.run(
-                        [sys.executable, str(exporter), "--date", target_date.isoformat(),
-                         "--store", str(args.store.resolve())],
-                        cwd=str(Path(__file__).resolve().parents[1]),
-                        capture_output=True, text=True, check=False,
-                    )
-                    if result.returncode == 0:
-                        print(f"[{datetime.now(IST).isoformat(timespec='seconds')}] Dashboard data refreshed: "
-                              f"{result.stdout.strip()}", flush=True)
-                        dashboard_dirty = False
+                if dashboard_process is not None and dashboard_process.poll() is not None:
+                    code = dashboard_process.returncode
+                    dashboard_output.close()
+                    dashboard_process = None
+                    if code:
+                        dashboard_dirty = True
+                        print(f"Dashboard refresh failed: exit {code}", file=sys.stderr, flush=True)
                     else:
-                        print(f"[{datetime.now(IST).isoformat(timespec='seconds')}] Dashboard refresh failed: "
-                              f"{result.stderr.strip() or result.stdout.strip()}", file=sys.stderr, flush=True)
+                        print("Dashboard data refreshed", flush=True)
+                if dashboard_dirty and dashboard_process is None and time.monotonic() - last_dashboard_publish >= 300:
+                    exporter = Path(__file__).with_name("export_public_hourly_runs.py")
+                    try:
+                        dashboard_output = (logs_dir / "dashboard_export.log").open("a", encoding="utf-8")
+                        dashboard_process = subprocess.Popen(
+                            [sys.executable, str(exporter), "--date", target_date.isoformat(),
+                             "--store", str(args.store.resolve())],
+                            cwd=str(Path(__file__).resolve().parents[1]),
+                            stdout=dashboard_output, stderr=subprocess.STDOUT,
+                        )
+                        dashboard_dirty = False
+                    except OSError as exc:
+                        if dashboard_output is not None:
+                            dashboard_output.close()
+                        print(f"Dashboard refresh could not start: {exc}", file=sys.stderr, flush=True)
                     last_dashboard_publish = time.monotonic()
                 if time.monotonic() - last_retry_summary >= 60:
                     emit_retry_summary(retry_counts, retry_categories)
@@ -554,7 +565,7 @@ def main() -> int:
             db.close()
             sys.stdout, sys.stderr = original_out, original_err
             log_file.close()
-    if dashboard_dirty:
+    if dashboard_dirty and dashboard_process is None:
         exporter = Path(__file__).with_name("export_public_hourly_runs.py")
         result = subprocess.run(
             [sys.executable, str(exporter), "--date", target_date.isoformat(),

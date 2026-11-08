@@ -284,14 +284,22 @@ def scan(conn: sqlite3.Connection, args, now: datetime, reason: str, store: Path
     url = make_url(args.movie_slug,args.movie_id,args.city,args.date)
     print(f"[{now.astimezone(IST).isoformat(timespec='seconds')}] {reason} scan: {args.city}", flush=True)
     try:
+        phase_start = time.perf_counter()
         html = get_page_html(url)
+        fetch_seconds = time.perf_counter() - phase_start
         at = datetime.now(UTC)
+        phase_start = time.perf_counter()
         parsed = extract_snapshot(html,source_url=url,source_city=args.city,
                                   expected_movie_id=str(args.movie_id),
                                   snapshot_utc=to_utc_iso(at))
+        parse_seconds = time.perf_counter() - phase_start
+        phase_start = time.perf_counter()
         cid = record_snapshot(conn,parsed,at,reason,date.fromisoformat(args.date),
                               requested_at=now,
                               final_minutes=args.final_minutes)
+        write_seconds = time.perf_counter() - phase_start
+        print(f"  timing fetch={fetch_seconds:.3f}s parse={parse_seconds:.3f}s "
+              f"write={write_seconds:.3f}s", flush=True)
         print(f"  capture #{cid}: {len(parsed['shows'])} source show rows, "
               f"{len([s for s in parsed['shows'] if s['show_date_ist']==args.date])} target-date shows",flush=True)
         return cid
