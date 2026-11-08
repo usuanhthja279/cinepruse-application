@@ -27,7 +27,7 @@ from smart_collector import IST, UTC, open_db, parse_local, scan, state_get, sta
 
 
 def advance_slots(now: datetime, first_day: date,
-                  first_day_hour: int = 13) -> list[tuple[date, datetime]]:
+                  first_day_hour: int = 0) -> list[tuple[date, datetime]]:
     """Return the latest due advance slot for each of the next three service dates."""
     now = now.astimezone(IST)
     result = []
@@ -61,6 +61,8 @@ def classify_failure(exc: Exception) -> tuple[bool, str]:
             return True, f"http_{status}"
         return False, f"http_{status or 'unknown'}"
     message = str(exc).lower()
+    if 'did not provide language format identifiers' in message:
+        return True, 'incomplete_language_metadata'
     if "no movie metadata found" in message:
         return False, "unrecognized_page"
     if "city redirect" in message:
@@ -115,6 +117,26 @@ def baseline_key(movie_id: str, target_date: date, city: str) -> str:
     return f"multi_baseline:{movie_id}:{target_date}:{city}"
 
 
+def start_discovery_epoch(db, movie_id: str, target_date: date, now: datetime) -> tuple[str, set[date]]:
+    """Start a new full-city pass without changing capture or pre-show history."""
+    movie_id = str(movie_id)
+    day = target_date.isoformat()
+    future_days = {target_date + timedelta(days=n) for n in (1, 2, 3)}
+    started_at = now.astimezone(UTC).isoformat(timespec='seconds')
+    with db:
+        for prefix in ('multi_baseline', 'multi_hourly', 'multi_retry', 'multi_retry_count'):
+            key_prefix = f'{prefix}:{movie_id}:{day}:'
+            db.execute('DELETE FROM kv_state WHERE substr(key,1,?)=?', (len(key_prefix), key_prefix))
+        db.execute('DELETE FROM kv_state WHERE key=?', (f'multi_initial_complete:{movie_id}:{day}',))
+        for future in future_days:
+            for prefix in ('multi_advance', 'multi_advance_complete'):
+                key_prefix = f'{prefix}:{movie_id}:{future.isoformat()}:'
+                db.execute('DELETE FROM kv_state WHERE substr(key,1,?)=?', (len(key_prefix), key_prefix))
+        db.execute('INSERT INTO kv_state(key,value) VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value',
+                   (f'multi_city_started:{movie_id}:{day}', started_at))
+    return started_at, future_days
+
+
 def refresh_baseline_statuses(db, targets: list[dict], movie_id: str,
                               target_date: date, started_at: str) -> None:
     """Resume initial discovery from captures saved by this run, including older runner versions."""
@@ -132,11 +154,11 @@ def refresh_baseline_statuses(db, targets: list[dict], movie_id: str,
 
 
 def write_verified_roster(store: Path, targets: list[dict], movie_id: str,
-                          target_date: date, db) -> dict:
+                          target_date: date, db, observed_since: str | None = None) -> dict:
     latest_with_listings={row["city"] for row in db.execute("""SELECT c.city FROM captures c
         JOIN (SELECT city,MAX(id) id FROM captures WHERE movie_id=? AND service_date_ist=?
-              AND status='ok' GROUP BY city) latest ON latest.id=c.id
-        WHERE c.show_count>0""",(str(movie_id),target_date.isoformat())).fetchall()}
+              AND status='ok' AND (? IS NULL OR observed_at_utc>=?) GROUP BY city) latest ON latest.id=c.id
+        WHERE c.show_count>0""",(str(movie_id),target_date.isoformat(), observed_since, observed_since)).fetchall()}
     verified = [target for target in targets if target["slug"] in latest_with_listings]
     report = {"service_date": target_date.isoformat(), "movie_id": str(movie_id),
               "verified_city_count": len(verified), "initial_target_count": len(targets),
@@ -165,12 +187,18 @@ def load_advance_targets(store: Path, movie_id: str, service_day: date,
         return all_targets
 
 
+def advance_targets_for_epoch(store: Path, movie_id: str, service_day: date,
+                              all_targets: list[dict], needs_full: set[date]) -> list[dict]:
+    return all_targets if service_day in needs_full else load_advance_targets(store, movie_id, service_day, all_targets)
+
+
 def write_advance_roster(store: Path, db, targets: list[dict], movie_id: str,
-                         service_day: date, slot: datetime) -> dict:
+                         service_day: date, slot: datetime, observed_since: str | None = None) -> dict:
     rows=db.execute("""SELECT city,show_count FROM (
         SELECT city,show_count,ROW_NUMBER() OVER(PARTITION BY city ORDER BY id DESC) rn
         FROM captures WHERE movie_id=? AND service_date_ist=? AND reason='advance' AND status='ok'
-        ) WHERE rn=1 AND show_count>0""",(str(movie_id),service_day.isoformat())).fetchall()
+          AND (? IS NULL OR observed_at_utc>=?)
+        ) WHERE rn=1 AND show_count>0""",(str(movie_id),service_day.isoformat(),observed_since,observed_since)).fetchall()
     present={row["city"] for row in rows}
     cities=[target for target in targets if target["slug"] in present]
     payload={"movie_id":str(movie_id),"service_date":service_day.isoformat(),
@@ -231,7 +259,7 @@ def main() -> int:
     p.add_argument("--movie-id", default="176276")
     p.add_argument("--movie-slug", default="ramayana")
     p.add_argument("--start-at", help="Delay this launch until the given IST datetime")
-    p.add_argument("--first-day-hour", type=int, default=13,
+    p.add_argument("--first-day-hour", type=int, default=0,
                    help="IST hour anchoring today's advance :20 and :35 cycles")
     p.add_argument("--store", type=Path, default=Path("collector_data"))
     p.add_argument("--workers", type=int, default=5)
@@ -266,15 +294,14 @@ def main() -> int:
     if not 0 <= args.first_day_hour <= 23:
         p.error("--first-day-hour must be from 0 to 23")
     end = start + timedelta(days=1)
-    db.execute("INSERT INTO kv_state(key,value) VALUES (?,?) ON CONFLICT(key) DO NOTHING",
-               (f"multi_city_started:{args.movie_id}:{target_date}", datetime.now(UTC).isoformat()))
-    db.commit()
-    run_started_at = state_get(db, f"multi_city_started:{args.movie_id}:{target_date}")
-    refresh_baseline_statuses(db, targets, args.movie_id, target_date, run_started_at)
+    run_started_at, advance_needs_full = start_discovery_epoch(db, args.movie_id, target_date, datetime.now(UTC))
+    announced_advance_days = set()
     print(f"MULTI-CITY COLLECTOR: {len(targets)} unique URL slugs, {args.movie_slug}/{args.movie_id}, "
           f"service date {target_date} IST; four hourly workers plus one reserved T-5 worker.", flush=True)
     print(f"Coverage caveat: {report['slug_note']}", flush=True)
     print(f"Data store: {args.store.resolve()}; parsed captures only (raw pages are not retained); live log: {log_path.resolve()}", flush=True)
+    print(f"FULL-CITY DISCOVERY ARMED: {target_date}, {len(targets)} live targets; "
+          "each advance date also starts with the full target list", flush=True)
 
     running: dict[concurrent.futures.Future, tuple[str, str]] = {}
     busy_final_cities: set[str] = set()
@@ -298,14 +325,10 @@ def main() -> int:
                 now = datetime.now(IST)
                 if now.date() != target_date and not running:
                     target_date = now.date()
-                    if verified_report is not None:
-                        db.executemany("INSERT INTO kv_state(key,value) VALUES (?,?) "
-                                       "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
-                                       [(baseline_key(args.movie_id, target_date, item["slug"]), "ok")
-                                        for item in verified_report["cities"]])
-                        db.commit()
-                        state_set(db, f"multi_initial_complete:{args.movie_id}:{target_date}", "1")
-                        verified_report = None
+                    run_started_at, advance_needs_full = start_discovery_epoch(db, args.movie_id, target_date, datetime.now(UTC))
+                    announced_advance_days.clear()
+                    verified_report = None
+                    print(f"NEW DAILY FULL-CITY DISCOVERY: {target_date}, {len(targets)} targets", flush=True)
                 rollover_pending = now.date() != target_date
                 initial_complete_key = f"multi_initial_complete:{args.movie_id}:{target_date}"
                 initial_complete = state_get(db, initial_complete_key) == "1"
@@ -315,7 +338,7 @@ def main() -> int:
                 ):
                     state_set(db, initial_complete_key, "1")
                     verified_report = write_verified_roster(args.store, targets, args.movie_id,
-                                                             target_date, db)
+                                                             target_date, db, run_started_at)
                     initial_complete = True
                     print(f"INITIAL CITY SWEEP COMPLETE: {verified_report['verified_city_count']} of "
                           f"{verified_report['initial_target_count']} targets returned valid data; "
@@ -324,7 +347,7 @@ def main() -> int:
                 if initial_complete:
                     if verified_report is None:
                         verified_report = write_verified_roster(args.store, targets, args.movie_id,
-                                                                 target_date, db)
+                                                                 target_date, db, run_started_at)
                     active_targets = verified_report["cities"]
                 # Rebuild the roster once per completed batch, rather than once per city.
                 roster_dirty = False
@@ -425,7 +448,7 @@ def main() -> int:
 
                 if roster_dirty:
                     metric_start = time.perf_counter()
-                    verified_report = write_verified_roster(args.store, targets, args.movie_id, target_date, db)
+                    verified_report = write_verified_roster(args.store, targets, args.movie_id, target_date, db, run_started_at)
                     scheduler_db_seconds += time.perf_counter() - metric_start
                     scheduler_db_samples += 1
 
@@ -440,18 +463,23 @@ def main() -> int:
                 # After the first full scan for each future service date, retain
                 # only cities whose successful response actually listed shows.
                 for service_day, advance_slot in advance_slots(now, first_day, args.first_day_hour):
+                    if service_day in advance_needs_full and service_day not in announced_advance_days:
+                        print(f"ADVANCE FULL-CITY SWEEP DUE: {service_day}, {len(targets)} targets, "
+                              f"slot {advance_slot.isoformat()}", flush=True)
+                        announced_advance_days.add(service_day)
                     complete_key = (f"multi_advance_complete:{args.movie_id}:"
                                     f"{service_day}:{advance_slot.isoformat()}")
                     if state_get(db, complete_key) == "1":
                         continue
                     roster_path=advance_roster_path(args.store,args.movie_id,service_day)
-                    cycle_targets=load_advance_targets(args.store,args.movie_id,service_day,targets)
+                    cycle_targets=advance_targets_for_epoch(args.store,args.movie_id,service_day,targets,advance_needs_full)
                     cycle_done=all(
                         (last:=state_get(db,f"multi_advance:{args.movie_id}:{service_day}:{target['slug']}"))
                         and parse_local(last)>=advance_slot for target in cycle_targets)
                     if cycle_done:
-                        roster=write_advance_roster(args.store,db,cycle_targets,args.movie_id,service_day,advance_slot)
+                        roster=write_advance_roster(args.store,db,cycle_targets,args.movie_id,service_day,advance_slot,run_started_at)
                         state_set(db, complete_key, "1")
+                        advance_needs_full.discard(service_day)
                         print(f"ADVANCE SWEEP COMPLETE: {roster['cities_with_listings']} of "
                               f"{roster['initial_target_count']} current targets have listings for {service_day}; "
                               "later scans use the refreshed service-date roster.",flush=True)
@@ -528,7 +556,7 @@ def main() -> int:
                 # Advance sweeps borrow idle scan workers; the fifth remains reserved for T-5.
                 if hourly_active < 4 and not urgent_backlog:
                     for service_day, advance_slot in advance_slots(now, first_day, args.first_day_hour):
-                        advance_targets=load_advance_targets(args.store,args.movie_id,service_day,targets)
+                        advance_targets=advance_targets_for_epoch(args.store,args.movie_id,service_day,targets,advance_needs_full)
                         for target in advance_targets:
                             city = target["slug"]
                             key = f"multi_advance:{args.movie_id}:{service_day}:{city}"

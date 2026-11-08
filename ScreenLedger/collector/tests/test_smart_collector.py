@@ -30,6 +30,11 @@ def fixture(unavailable=40, at='2026-11-07T00:00:00+05:30',
     }
 
 class SmartCollectorTests(unittest.TestCase):
+    def test_capture_show_count_only_counts_requested_date(self):
+        snap = fixture(show='2026-11-08T10:00:00+05:30')
+        cid = record_snapshot(self.db, snap, parse_local('2026-11-07T00:00:00'), 'baseline', self.day)
+        self.assertEqual(self.db.execute('SELECT show_count FROM captures WHERE id=?',(cid,)).fetchone()[0], 0)
+
     def test_all_language_pages_are_combined_and_wrong_format_fails(self):
         args = SimpleNamespace(movie_slug='ramayana', movie_id='176276', city='kolkata', date='2026-11-07')
         def payload(html):

@@ -8,11 +8,56 @@ import requests
 
 from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs, due_pre_show_cities,
                                  expire_stale_pre_show_jobs, advance_slots,
-                                 urgent_worker_limit,load_advance_targets,write_advance_roster)
+                                 urgent_worker_limit,load_advance_targets,write_advance_roster,
+                                 start_discovery_epoch,advance_targets_for_epoch,write_verified_roster)
 from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_restart_and_midnight_reset_city_discovery_without_erasing_pre_show(self):
+        from datetime import date
+        with tempfile.TemporaryDirectory() as temp:
+            store = Path(temp); db = open_db(store / 'collector.sqlite')
+            db.executemany('INSERT INTO kv_state(key,value) VALUES(?,?)', [
+                ('multi_initial_complete:176276:2026-11-09','1'),
+                ('multi_baseline:176276:2026-11-09:alpha','ok'),
+                ('multi_hourly:176276:2026-11-09:alpha','old'),
+                ('multi_advance:176276:2026-11-10:alpha','old'),
+                ('multi_final_retry:176276:2026-11-09:alpha','keep'),
+            ]); db.commit()
+            day = date(2026,11,9)
+            started, needs_full = start_discovery_epoch(db, '176276', day, datetime(2026,11,9,0,0,tzinfo=IST))
+            self.assertEqual(db.execute("SELECT value FROM kv_state WHERE key='multi_final_retry:176276:2026-11-09:alpha'").fetchone()[0], 'keep')
+            for key in ('multi_initial_complete:176276:2026-11-09', 'multi_baseline:176276:2026-11-09:alpha', 'multi_hourly:176276:2026-11-09:alpha', 'multi_advance:176276:2026-11-10:alpha'):
+                self.assertIsNone(db.execute('SELECT value FROM kv_state WHERE key=?',(key,)).fetchone())
+            targets = [{'slug':'alpha'},{'slug':'beta'}]
+            (store/'city_targets_advance_176276_2026-11-10.json').write_text('{"cities":[{"slug":"alpha"}]}',encoding='utf8')
+            future=date(2026,11,10)
+            self.assertEqual(advance_targets_for_epoch(store,'176276',future,targets,needs_full),targets)
+            needs_full.remove(future)
+            self.assertEqual(advance_targets_for_epoch(store,'176276',future,targets,needs_full),[{'slug':'alpha'}])
+            db.executemany("INSERT INTO captures(movie_id,city,observed_at_utc,reason,status,show_count,service_date_ist) VALUES(?,?,?,?,?,?,?)",[
+                ('176276','alpha','2026-11-08T18:00:00+00:00','baseline','ok',1,day.isoformat()),
+                ('176276','beta',started,'baseline','ok',1,day.isoformat())])
+            report=write_verified_roster(store,targets,'176276',day,db,started)
+            self.assertEqual([x['slug'] for x in report['cities']],['beta'])
+            db.close()
+
+    def test_incomplete_language_metadata_retries(self):
+        self.assertEqual(classify_failure(ValueError('District did not provide language format identifiers; capture incomplete')),
+                         (True, 'incomplete_language_metadata'))
+
+    def test_default_daily_advance_times_start_after_midnight(self):
+        from datetime import date
+        day = date(2026, 11, 9)
+        self.assertEqual(advance_slots(datetime(2026,11,9,0,19,tzinfo=IST), day), [])
+        self.assertEqual([(d.isoformat(), t.strftime('%H:%M')) for d,t in
+                          advance_slots(datetime(2026,11,9,0,20,tzinfo=IST), day)],
+                         [('2026-11-10','00:20')])
+        self.assertEqual([(d.isoformat(), t.strftime('%H:%M')) for d,t in
+                          advance_slots(datetime(2026,11,9,0,35,tzinfo=IST), day)],
+                         [('2026-11-10','00:20'),('2026-11-11','00:35'),('2026-11-12','00:35')])
+
     def test_due_pre_show_cities_are_ordered_by_earliest_deadline(self):
         from datetime import date
         with tempfile.TemporaryDirectory() as temp:
@@ -67,10 +112,10 @@ class MultiCityRetryPolicyTests(unittest.TestCase):
     def test_advance_schedule_today_and_midnight_reset(self):
         from datetime import date
         first = date(2026, 11, 7)
-        self.assertEqual(advance_slots(datetime(2026, 11, 7, 13, 19, tzinfo=IST), first), [])
-        at_1320 = advance_slots(datetime(2026, 11, 7, 13, 20, tzinfo=IST), first)
+        self.assertEqual(advance_slots(datetime(2026, 11, 7, 13, 19, tzinfo=IST), first, 13), [])
+        at_1320 = advance_slots(datetime(2026, 11, 7, 13, 20, tzinfo=IST), first, 13)
         self.assertEqual([(d.isoformat(), s.strftime('%H:%M')) for d, s in at_1320], [('2026-11-08', '13:20')])
-        at_1335 = advance_slots(datetime(2026, 11, 7, 13, 35, tzinfo=IST), first)
+        at_1335 = advance_slots(datetime(2026, 11, 7, 13, 35, tzinfo=IST), first, 13)
         self.assertEqual([s.strftime('%H:%M') for _, s in at_1335], ['13:20', '13:35', '13:35'])
         after_midnight = advance_slots(datetime(2026, 11, 8, 0, 35, tzinfo=IST), first)
         self.assertEqual([(d.isoformat(), s.strftime('%H:%M')) for d, s in after_midnight],

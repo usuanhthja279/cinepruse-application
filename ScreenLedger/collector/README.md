@@ -2,6 +2,8 @@
 
 ## Current ScreenLedger integration
 
+At each process restart and each IST date rollover, the scheduler starts a new discovery pass over the full city target list for the live date and each of the three advance dates. After each date's discovery pass finishes, later sweeps use that date's roster of cities with successful captures containing shows on that service date. Existing captures and pre-show jobs are retained. Advance sweeps start at the configured :20 and :35 slots and share capacity with live and pre-show scans, so they can begin late during a busy sweep.
+
 Each live city capture discovers District's advertised language format identifiers and fetches each language page without applying a screen-format filter. Shows from all returned pages are merged into one city capture. Language, auditorium, screen format and format group are stored in `observation_details`; older observations have no corresponding details until recollected. If a language page fails or returns a different format or city, the city capture fails instead of publishing a partial success. Multiple language requests increase run time and can delay pre-show scans; monitor the due-time logs. District's response determines which details are available.
 
 `multi_city_scheduler.py` records each attempt's requested service date, while `smart_collector.py` stores it in `captures.service_date_ist`. A successful capture stores only screenings for that requested show date. On an existing database the collector adds this nullable column and an index at startup; historical rows remain null until safely attributable.

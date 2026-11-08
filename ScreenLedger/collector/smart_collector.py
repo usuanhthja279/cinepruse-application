@@ -153,7 +153,9 @@ def record_snapshot(conn: sqlite3.Connection, snapshot: dict, observed_at: datet
             "INSERT INTO captures(movie_id,city,actual_city,observed_at_utc,reason,"
             "requested_at_utc,status,show_count,raw_path,service_date_ist) VALUES (?,?,?,?,?,?,?,?,?,?)",
             (str(meta["movie_id"]),requested,actual,to_utc_iso(observed_at),reason,
-             to_utc_iso(requested_at) if requested_at else None,"ok",len(shows),raw_path,target_date.isoformat()))
+             to_utc_iso(requested_at) if requested_at else None,"ok",
+             sum(1 for show in shows if (start := show_start(show)) and start.date() == target_date),
+             raw_path,target_date.isoformat()))
         capture_id = cur.lastrowid
         seen_cinemas = set()
         for show in shows:

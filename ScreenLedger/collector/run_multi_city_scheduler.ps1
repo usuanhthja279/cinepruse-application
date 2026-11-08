@@ -2,7 +2,7 @@ param(
     [string]$ServiceDate = (Get-Date).ToString('yyyy-MM-dd'),
     [int]$Workers = 5,
     [string]$StartAt = '',
-    [int]$FirstDayHour = 13
+    [int]$FirstDayHour = 0
 )
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
