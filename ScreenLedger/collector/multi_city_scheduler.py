@@ -104,6 +104,13 @@ def expire_stale_pre_show_jobs(db, movie_id: str, service_day: date, now: dateti
     return cur.rowcount
 
 
+def due_pre_show_cities(db, movie_id: str, service_day: date, now: datetime):
+    return db.execute("""SELECT city, MIN(target_utc) AS earliest_due FROM final_jobs
+        WHERE movie_id=? AND status='pending' AND target_utc<=? AND substr(show_datetime_ist,1,10)=?
+        GROUP BY city ORDER BY earliest_due, city""",
+        (str(movie_id), now.astimezone(UTC).isoformat(), service_day.isoformat())).fetchall()
+
+
 def baseline_key(movie_id: str, target_date: date, city: str) -> str:
     return f"multi_baseline:{movie_id}:{target_date}:{city}"
 
@@ -277,6 +284,9 @@ def main() -> int:
     last_retry_summary = time.monotonic()
     dashboard_dirty = False
     last_dashboard_publish = 0.0
+    scheduler_db_seconds = 0.0
+    scheduler_db_samples = 0
+    last_scheduler_metrics = time.monotonic()
     dashboard_process = None
     dashboard_output = None
     verified_report = None
@@ -316,6 +326,8 @@ def main() -> int:
                         verified_report = write_verified_roster(args.store, targets, args.movie_id,
                                                                  target_date, db)
                     active_targets = verified_report["cities"]
+                # Rebuild the roster once per completed batch, rather than once per city.
+                roster_dirty = False
                 # Completed jobs update hourly state; exceptions are logged by scan().
                 for future in list(running):
                     if not future.done():
@@ -354,7 +366,7 @@ def main() -> int:
                             slot = datetime.now(IST).replace(minute=0, second=0, microsecond=0)
                             state_set(db, f"multi_hourly:{args.movie_id}:{target_date}:{city}", slot.isoformat())
                             if state_get(db,f"multi_initial_complete:{args.movie_id}:{target_date}")=="1":
-                                verified_report=write_verified_roster(args.store,targets,args.movie_id,target_date,db)
+                                roster_dirty = True
                         retry_prefix = "multi_final_retry" if reason == "pre_show" else "multi_retry"
                         retry_key = f"{retry_prefix}:{args.movie_id}:{target_date}:{city}"
                         retry_count_key = f"{retry_prefix}_count:{args.movie_id}:{target_date}:{city}"
@@ -411,6 +423,12 @@ def main() -> int:
                         if "403" in str(exc) or "429" in str(exc):
                             failure.set()
 
+                if roster_dirty:
+                    metric_start = time.perf_counter()
+                    verified_report = write_verified_roster(args.store, targets, args.movie_id, target_date, db)
+                    scheduler_db_seconds += time.perf_counter() - metric_start
+                    scheduler_db_samples += 1
+
                 if failure.is_set():
                     print("District access restriction detected; stopping all new requests.", file=sys.stderr, flush=True)
                     break
@@ -441,13 +459,15 @@ def main() -> int:
                 # Due pre-show scans have priority. A single city uses one worker;
                 # simultaneous cities borrow idle pool slots up to the fixed pool
                 # ceiling. Routine sweeps pause until the urgent backlog drains.
+                metric_start = time.perf_counter()
                 expired = expire_stale_pre_show_jobs(db, args.movie_id, target_date, now)
                 if expired:
                     print(f"[{now.isoformat(timespec='seconds')}] Expired {expired} stale T-5 jobs", flush=True)
-                due_rows = db.execute("""SELECT DISTINCT city FROM final_jobs
-                    WHERE movie_id=? AND status='pending' AND target_utc<=? AND substr(show_datetime_ist,1,10)=?
-                    ORDER BY city""", (str(args.movie_id), now.astimezone(UTC).isoformat(), target_date.isoformat())).fetchall()
+                due_rows = due_pre_show_cities(db, args.movie_id, target_date, now)
+                scheduler_db_seconds += time.perf_counter() - metric_start
+                scheduler_db_samples += 1
                 eligible_due = []
+                due_by_city = {}
                 for row in due_rows:
                     city = row["city"]
                     final_retry_key = f"multi_final_retry:{args.movie_id}:{target_date}:{city}"
@@ -457,6 +477,7 @@ def main() -> int:
                     if city in busy_final_cities:
                         continue
                     eligible_due.append(city)
+                    due_by_city[city] = row["earliest_due"]
                 pre_show_active = sum(r == "pre_show" for _, r in running.values())
                 urgent_limit = urgent_worker_limit(len(eligible_due), pool_size=5)
                 slots_available = max(0, 5 - len(running))
@@ -469,7 +490,9 @@ def main() -> int:
                     f = pool.submit(_scan_new_connection, worker_args, "pre_show", args.store)
                     running[f] = (city, "pre_show")
                     busy_final_cities.add(city)
-                    print(f"[{now.isoformat(timespec='seconds')}] PRIORITY T-5 scan queued: {city}", flush=True)
+                    delay = max(0.0, (datetime.now(UTC) - parse_local(due_by_city[city])).total_seconds())
+                    print(f"[{now.isoformat(timespec='seconds')}] PRIORITY T-5 scan queued: {city} "
+                          f"due={due_by_city[city]} delay_seconds={delay:.1f}", flush=True)
 
                 # Refill at most four hourly slots. Each city is due once per local hour.
                 hourly_active = sum(reason != "pre_show" for _, reason in running.values())
@@ -556,6 +579,12 @@ def main() -> int:
                 if time.monotonic() - last_retry_summary >= 60:
                     emit_retry_summary(retry_counts, retry_categories)
                     last_retry_summary = time.monotonic()
+                if time.monotonic() - last_scheduler_metrics >= 60:
+                    print(f"Scheduler measured DB work: {scheduler_db_seconds:.3f}s "
+                          f"across {scheduler_db_samples} due-check and roster operations", flush=True)
+                    scheduler_db_seconds = 0.0
+                    scheduler_db_samples = 0
+                    last_scheduler_metrics = time.monotonic()
         except KeyboardInterrupt:
             print("Interrupted by operator; pending state and captures remain in SQLite.", flush=True)
         finally:

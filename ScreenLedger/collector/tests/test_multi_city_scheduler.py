@@ -6,13 +6,27 @@ import unittest
 
 import requests
 
-from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs,
+from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs, due_pre_show_cities,
                                  expire_stale_pre_show_jobs, advance_slots,
                                  urgent_worker_limit,load_advance_targets,write_advance_roster)
 from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_due_pre_show_cities_are_ordered_by_earliest_deadline(self):
+        from datetime import date
+        with tempfile.TemporaryDirectory() as temp:
+            db = open_db(Path(temp) / "collector.sqlite")
+            db.executemany("INSERT INTO final_jobs(movie_id,city,session_key,show_datetime_ist,target_utc,status) VALUES(?,?,?,?,?,'pending')", [
+                ("176276", "alpha", "a", "2026-11-08T21:05:00+05:30", "2026-11-08T15:30:00+00:00"),
+                ("176276", "zeta", "z", "2026-11-08T21:03:00+05:30", "2026-11-08T15:28:00+00:00"),
+                ("176276", "later", "l", "2026-11-08T21:10:00+05:30", "2026-11-08T15:35:00+00:00"),
+            ])
+            db.commit()
+            due = due_pre_show_cities(db, "176276", date(2026, 11, 8), datetime(2026, 11, 8, 21, 1, tzinfo=IST))
+            self.assertEqual([row["city"] for row in due], ["zeta", "alpha"])
+            db.close()
+
     def test_stale_pre_show_jobs_expire_without_touching_current_or_future_jobs(self):
         from datetime import date
         with tempfile.TemporaryDirectory() as temp:
