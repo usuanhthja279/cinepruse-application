@@ -41,6 +41,23 @@ def advance_slots(now: datetime, first_day: date,
     return result
 
 
+def round_robin_advance_targets(
+        schedules: list[tuple[date, datetime, list[dict]]]):
+    """Yield one city per due service date per pass to prevent date starvation."""
+    active = [(service_day, slot, iter(targets))
+              for service_day, slot, targets in schedules]
+    while active:
+        next_active = []
+        for service_day, slot, targets in active:
+            try:
+                target = next(targets)
+            except StopIteration:
+                continue
+            yield service_day, slot, target
+            next_active.append((service_day, slot, targets))
+        active = next_active
+
+
 def urgent_worker_limit(due_city_count: int, pool_size: int = 5) -> int:
     """Borrow idle pool capacity for due pre-show bursts; never grow the pool."""
     if due_city_count <= 0:
@@ -562,29 +579,36 @@ def main() -> int:
                             break
                 # Advance sweeps borrow idle scan workers; the fifth remains reserved for T-5.
                 if hourly_active < 4 and not urgent_backlog:
-                    for service_day, advance_slot in advance_slots(now, first_day, args.first_day_hour):
-                        advance_targets=advance_targets_for_epoch(args.store,args.movie_id,service_day,targets,advance_needs_full)
-                        for target in advance_targets:
-                            city = target["slug"]
-                            key = f"multi_advance:{args.movie_id}:{service_day}:{city}"
-                            last = state_get(db, key)
-                            retry_at = state_get(db, f"{key}:retry")
-                            if last and parse_local(last) >= advance_slot:
-                                continue
-                            if retry_at and parse_local(retry_at) > now:
-                                continue
-                            if any(c == city for c, _ in running.values()):
-                                continue
-                            worker_values = vars(args).copy()
-                            worker_values.update(city=city, date=service_day.isoformat(),
-                                                 acknowledge_permission=True, final_minutes=5)
-                            f = pool.submit(_scan_new_connection, SimpleNamespace(**worker_values), "advance", args.store)
-                            running[f] = (city, f"advance|{service_day}|{advance_slot.isoformat()}")
-                            hourly_active += 1
-                            if hourly_active >= 4:
-                                break
+                    schedules = [
+                        (service_day, advance_slot,
+                         advance_targets_for_epoch(args.store, args.movie_id, service_day,
+                                                   targets, advance_needs_full))
+                        for service_day, advance_slot in
+                        advance_slots(now, first_day, args.first_day_hour)
+                    ]
+                    for service_day, advance_slot, target in round_robin_advance_targets(schedules):
                         if hourly_active >= 4:
                             break
+                        city = target["slug"]
+                        key = f"multi_advance:{args.movie_id}:{service_day}:{city}"
+                        last = state_get(db, key)
+                        retry_at = state_get(db, f"{key}:retry")
+                        if last and parse_local(last) >= advance_slot:
+                            continue
+                        if retry_at and parse_local(retry_at) > now:
+                            continue
+                        same_date_running = any(
+                            c == city and reason.startswith(f"advance|{service_day.isoformat()}|")
+                            for c, reason in running.values()
+                        )
+                        if same_date_running:
+                            continue
+                        worker_values = vars(args).copy()
+                        worker_values.update(city=city, date=service_day.isoformat(),
+                                             acknowledge_permission=True, final_minutes=5)
+                        f = pool.submit(_scan_new_connection, SimpleNamespace(**worker_values), "advance", args.store)
+                        running[f] = (city, f"advance|{service_day}|{advance_slot.isoformat()}")
+                        hourly_active += 1
                 time.sleep(1)
                 if dashboard_process is not None and dashboard_process.poll() is not None:
                     code = dashboard_process.returncode

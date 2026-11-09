@@ -9,6 +9,7 @@ import requests
 
 from multi_city_scheduler import (classify_failure, fail_due_pre_show_jobs, due_pre_show_cities,
                                  expire_stale_pre_show_jobs, advance_slots,
+                                 round_robin_advance_targets,
                                  urgent_worker_limit,load_advance_targets,write_advance_roster,
                                  start_discovery_epoch,advance_targets_for_epoch,write_verified_roster,
                                  city_targets)
@@ -75,6 +76,23 @@ class MultiCityRetryPolicyTests(unittest.TestCase):
         self.assertEqual([(d.isoformat(), t.strftime('%H:%M')) for d,t in
                           advance_slots(datetime(2026,11,9,0,35,tzinfo=IST), day)],
                          [('2026-11-10','00:20'),('2026-11-11','00:35'),('2026-11-12','00:35')])
+
+    def test_due_advance_dates_are_interleaved_instead_of_starving_later_dates(self):
+        from datetime import date
+        schedules = [
+            (date(2026, 11, 10), datetime(2026, 11, 9, 0, 20, tzinfo=IST),
+             [{'slug': 'alpha'}, {'slug': 'beta'}]),
+            (date(2026, 11, 11), datetime(2026, 11, 9, 0, 35, tzinfo=IST),
+             [{'slug': 'alpha'}, {'slug': 'beta'}]),
+            (date(2026, 11, 12), datetime(2026, 11, 9, 0, 35, tzinfo=IST),
+             [{'slug': 'alpha'}, {'slug': 'beta'}]),
+        ]
+        result = list(round_robin_advance_targets(schedules))
+        self.assertEqual([(day.isoformat(), target['slug']) for day, _, target in result], [
+            ('2026-11-10', 'alpha'), ('2026-11-11', 'alpha'),
+            ('2026-11-12', 'alpha'), ('2026-11-10', 'beta'),
+            ('2026-11-11', 'beta'), ('2026-11-12', 'beta'),
+        ])
 
     def test_due_pre_show_cities_are_ordered_by_earliest_deadline(self):
         from datetime import date
