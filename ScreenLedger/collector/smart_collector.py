@@ -57,7 +57,6 @@ def upcoming_pre_show_plan(shows: list[dict], target_date: date,
     return sorted(result, key=lambda x: (x["pre_show_scan_ist"], x["session_key"]))
 
 SCHEMA = """
-PRAGMA journal_mode=WAL;
 CREATE TABLE IF NOT EXISTS captures (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_id TEXT NOT NULL, city TEXT NOT NULL, actual_city TEXT,
@@ -102,10 +101,16 @@ CREATE INDEX IF NOT EXISTS idx_jobs_due ON final_jobs(status,target_utc);
 CREATE TABLE IF NOT EXISTS kv_state (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 """
 
-def open_db(path: Path) -> sqlite3.Connection:
+def open_db(path: Path, *, initialize: bool = True,
+            timeout: float = 30.0) -> sqlite3.Connection:
     path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(path)
+    conn = sqlite3.connect(path, timeout=timeout)
     conn.row_factory = sqlite3.Row
+    conn.execute(f"PRAGMA busy_timeout={max(0, int(timeout * 1000))}")
+    conn.execute("PRAGMA synchronous=NORMAL")
+    if not initialize:
+        return conn
+    conn.execute("PRAGMA journal_mode=WAL")
     conn.executescript(SCHEMA)
     if "service_date_ist" not in {row[1] for row in conn.execute("PRAGMA table_info(captures)")}:
         try:

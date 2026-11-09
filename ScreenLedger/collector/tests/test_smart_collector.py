@@ -30,6 +30,17 @@ def fixture(unavailable=40, at='2026-11-07T00:00:00+05:30',
     }
 
 class SmartCollectorTests(unittest.TestCase):
+    def test_worker_connection_skips_schema_setup_and_uses_busy_timeout(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'worker.sqlite'
+            initialized = open_db(path)
+            initialized.close()
+            worker = open_db(path, initialize=False, timeout=42.0)
+            self.assertEqual(worker.execute('PRAGMA busy_timeout').fetchone()[0], 42000)
+            self.assertIsNotNone(worker.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name='captures'").fetchone())
+            worker.close()
+
     def test_generic_landing_page_is_unresolved_not_an_empty_capture(self):
         args = SimpleNamespace(movie_slug='ramayana', movie_id='176276', city='ambikapur', date='2026-11-10')
         payload = {'props': {'pageProps': {'data': {'cityName':'', 'serverState': {

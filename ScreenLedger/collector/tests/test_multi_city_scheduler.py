@@ -2,6 +2,7 @@ from types import SimpleNamespace
 from datetime import datetime
 from pathlib import Path
 import json
+import sqlite3
 import tempfile
 import unittest
 
@@ -17,6 +18,22 @@ from smart_collector import IST, open_db
 
 
 class MultiCityRetryPolicyTests(unittest.TestCase):
+    def test_stale_job_cleanup_defers_when_another_writer_holds_sqlite(self):
+        from datetime import date
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'locked.sqlite'
+            writer = open_db(path)
+            scheduler_db = open_db(path, initialize=False)
+            writer.execute('BEGIN IMMEDIATE')
+            with self.assertRaisesRegex(sqlite3.OperationalError, 'locked|busy'):
+                expire_stale_pre_show_jobs(
+                    scheduler_db, '176276', date(2026, 11, 9),
+                    datetime(2026, 11, 9, 12, 0, tzinfo=IST))
+            self.assertEqual(scheduler_db.execute('PRAGMA busy_timeout').fetchone()[0], 30000)
+            writer.rollback()
+            scheduler_db.close()
+            writer.close()
+
     def test_verified_city_aliases_share_one_request_and_preserve_labels(self):
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / 'cities.json'

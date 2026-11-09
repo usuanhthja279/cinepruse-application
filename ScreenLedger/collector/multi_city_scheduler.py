@@ -12,6 +12,7 @@ import concurrent.futures
 import contextlib
 import json
 import os
+import sqlite3
 import subprocess
 import sys
 import threading
@@ -115,14 +116,19 @@ def fail_due_pre_show_jobs(db, movie_id: str, city: str, now: datetime,
 def expire_stale_pre_show_jobs(db, movie_id: str, service_day: date, now: datetime) -> int:
     """Do not let old T-5 jobs crowd out the current hourly sweep."""
     cutoff = (now - timedelta(minutes=10)).astimezone(UTC).isoformat()
-    with db:
-        cur = db.execute(
-            "UPDATE final_jobs SET status='failed',note='Missed T-5 capture window' "
-            "WHERE movie_id=? AND status='pending' AND substr(show_datetime_ist,1,10)=? "
-            "AND target_utc<?",
-            (str(movie_id), service_day.isoformat(), cutoff),
-        )
-    return cur.rowcount
+    previous_timeout = db.execute("PRAGMA busy_timeout").fetchone()[0]
+    db.execute("PRAGMA busy_timeout=1000")
+    try:
+        with db:
+            cur = db.execute(
+                "UPDATE final_jobs SET status='failed',note='Missed T-5 capture window' "
+                "WHERE movie_id=? AND status='pending' AND substr(show_datetime_ist,1,10)=? "
+                "AND target_utc<?",
+                (str(movie_id), service_day.isoformat(), cutoff),
+            )
+        return cur.rowcount
+    finally:
+        db.execute(f"PRAGMA busy_timeout={int(previous_timeout)}")
 
 
 def due_pre_show_cities(db, movie_id: str, service_day: date, now: datetime):
@@ -338,6 +344,7 @@ def main() -> int:
     scheduler_db_seconds = 0.0
     scheduler_db_samples = 0
     last_scheduler_metrics = time.monotonic()
+    last_db_lock_warning = 0.0
     dashboard_process = None
     dashboard_output = None
     verified_report = None
@@ -512,7 +519,16 @@ def main() -> int:
                 # simultaneous cities borrow idle pool slots up to the fixed pool
                 # ceiling. Routine sweeps pause until the urgent backlog drains.
                 metric_start = time.perf_counter()
-                expired = expire_stale_pre_show_jobs(db, args.movie_id, target_date, now)
+                try:
+                    expired = expire_stale_pre_show_jobs(db, args.movie_id, target_date, now)
+                except sqlite3.OperationalError as exc:
+                    if "locked" not in str(exc).lower() and "busy" not in str(exc).lower():
+                        raise
+                    expired = 0
+                    if time.monotonic() - last_db_lock_warning >= 30:
+                        print(f"SQLite busy during stale-job cleanup; deferring cleanup while scans continue: {exc}",
+                              file=sys.stderr, flush=True)
+                        last_db_lock_warning = time.monotonic()
                 if expired:
                     print(f"[{now.isoformat(timespec='seconds')}] Expired {expired} stale T-5 jobs", flush=True)
                 due_rows = due_pre_show_cities(db, args.movie_id, target_date, now)
@@ -670,7 +686,7 @@ def main() -> int:
 
 
 def _scan_new_connection(args, reason: str, store: Path):
-    db = open_db(store / "smart_collector.sqlite")
+    db = open_db(store / "smart_collector.sqlite", initialize=False, timeout=60.0)
     try:
         started = time.perf_counter()
         capture_id = scan(db, args, datetime.now(IST), reason, store)
